@@ -1,30 +1,35 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { createPortal } from "react-dom"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, ChevronDown, Github, ExternalLink } from "lucide-react"
+import { Menu, X, ChevronDown, Search, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
 
 const products = [
-  { name: "Xplain AI", description: "Document & media intelligence", href: "https://xplain-ai.net", external: true },
-  { name: "Genestudio", description: "Business chatbot creation", href: "https://genistud.io", external: true },
-  { name: "Kay-X", description: "Krio-to-English speech-to-text", href: "https://kay-x-entreprise.vercel.app", external: true },
-  {
-    name: "AI Infrastructure",
-    description: "RAG, vector databases, AI agents",
-    href: "https://gen-x-service-dashboard.vercel.app",
-    external: true,
-  }
+  { name: "Xplain AI", description: "Document & media intelligence", href: "https://xplain-ai.net" },
+  { name: "Genestudio", description: "Business chatbot creation", href: "https://genistud.io" },
+  { name: "Kay-X", description: "Krio-to-English speech-to-text", href: "https://kay-x-entreprise.vercel.app" },
+  { name: "AI Infrastructure", description: "RAG, vector databases, AI agents", href: "https://gen-x-service-dashboard.vercel.app" }
+]
+
+const companyLinks = [
+  { name: "About", description: "Learn about our mission and vision", href: "/company#about" },
+  { name: "Career", description: "Join our talented team", href: "/company#career" },
+  { name: "Events", description: "Upcoming events and webinars", href: "/company#events" },
+  { name: "Contact Us", description: "Get in touch with us", href: "/contact-us" }
 ]
 
 const navLinks = [
-  { name: "Solutions", href: "/solutions" },
-  { name: "Docs", href: "https://docs.geneline-x.com", external: true },
-  { name: "Company", href: "/company" },
-  { name: "Contact Us", href: "/contact-us" },
+  { name: "Products", type: "dropdown" },
+  { name: "Customers", href: "/company#customers" },
+  { name: "Developers", href: "https://docs.geneline-x.com" },
+  { name: "Resources", href: "/solutions" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Company", type: "dropdown" },
 ]
 
 const socialLinks = [
@@ -78,71 +83,123 @@ const socialLinks = [
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [isSearchClosing, setIsSearchClosing] = useState(false)
+
+  const handleCloseSearch = () => {
+    setIsSearchClosing(true)
+    setTimeout(() => {
+      setSearchOpen(false)
+      setIsSearchClosing(false)
+    }, 300) // Match animation duration
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY < 10) {
+        // Always show navbar at the top
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setIsVisible(false)
+      } else {
+        // Scrolling up
+        setIsVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [lastScrollY])
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleCloseSearch()
+      }
+    }
+
+    if (searchOpen) {
+      window.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [searchOpen])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <nav className={cn(
+      "fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-xl transition-transform duration-300",
+      isVisible ? "translate-y-0" : "-translate-y-full"
+    )}>
+      <div className="mx-auto max-w-8xl px-6 lg:px-28">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
-              alt="Geneline-X Logo"
-              width={32}
-              height={32}
-              className="h-8 w-8 object-contain"
+              alt="GenelineX"
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
             />
-            <span className="text-lg font-semibold tracking-tight text-foreground">Geneline-X</span>
+            <span className="text-2xl font-bold tracking-tight">GenelineX</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-1">
-            {/* Products Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-muted-foreground hover:text-foreground gap-1">
-                  Products
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-72">
-                {products.map((product) => (
-                  <DropdownMenuItem key={product.name} asChild>
-                    <a
-                      href={product.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-start gap-1 py-3"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="font-medium">{product.name}</span>
-                        <ExternalLink className="h-3 w-3 text-muted-foreground" />
-                      </div>
-                      <span className="text-sm text-muted-foreground">{product.description}</span>
-                    </a>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* Nav Links */}
+          {/* Center Navigation - Desktop */}
+          <div className="hidden lg:flex lg:items-center lg:gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) =>
-              link.external ? (
-                <a
+              link.type === "dropdown" ? (
+                <DropdownMenu 
                   key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  open={openDropdown === link.name}
+                  onOpenChange={(open) => setOpenDropdown(open ? link.name : null)}
                 >
-                  {link.name}
-                  <ExternalLink className="h-3 w-3" />
-                </a>
+                  <DropdownMenuTrigger 
+                    className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                    onMouseEnter={() => setOpenDropdown(link.name)}
+                  >
+                    {link.name}
+                    <ChevronDown className="h-4 w-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent 
+                    align="start" 
+                    className="w-72 rounded-none border-gray-200"
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    {(link.name === "Products" ? products : companyLinks).map((item) => (
+                      <DropdownMenuItem key={item.name} asChild>
+                        <a
+                          href={item.href}
+                          target={link.name === "Products" ? "_blank" : undefined}
+                          rel={link.name === "Products" ? "noopener noreferrer" : undefined}
+                          className="flex flex-col items-start gap-1 py-3 cursor-pointer"
+                        >
+                          <span className="font-semibold text-gray-900">{item.name}</span>
+                          <span className="text-sm text-gray-600">{item.description}</span>
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               ) : (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -150,40 +207,49 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Right Side - Social + CTA */}
-          <div className="hidden lg:flex lg:items-center lg:gap-4">
-            {/* Social Icons */}
-            <div className="flex items-center gap-1">
-              {socialLinks.slice(0, 3).map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={social.name}
-                >
-                  <social.icon />
-                </a>
-              ))}
-            </div>
+          {/* Right Side - Search + CTAs */}
+          <div className="hidden lg:flex lg:items-center lg:gap-3 lg:ml-12">
+            {/* Search Button */}
+            <Button 
+              variant="ghost" 
+              className="rounded-none text-gray-700 hover:text-gray-900 hover:bg-gray-100 h-12 w-12 p-0"
+              onClick={() => setSearchOpen(true)}
+            >
+              <Search className="size-5" />
+            </Button>
 
-            {/* CTA Button */}
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <a href="/contact-us" target="_blank" rel="noopener noreferrer">
-                Book a Demo
-              </a>
+            {/* Contact Us Button */}
+            <Button variant="outline" className="rounded-none border-2 border-gray-900 text-gray-900 hover:bg-gray-900  font-semibold uppercase text-xs tracking-wider px-6 h-12">
+              <Link href="/contact-us">Contact Us</Link>
+            </Button>
+
+            {/* Get Started Button */}
+            <Button className="rounded-none bg-primary hover:bg-primary/90 text-white font-semibold uppercase text-xs tracking-wider px-6 h-12 shadow-none">
+              <Link href="/contact-us">Get Started</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden p-2 text-muted-foreground hover:text-foreground"
+            className="lg:hidden p-2 text-gray-700 relative z-50 transition-transform hover:scale-110"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Open menu</span>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <div className="relative w-6 h-6">
+              <span className={cn(
+                "absolute block h-0.5 w-6 bg-gray-900 transition-all duration-300 ease-in-out",
+                mobileMenuOpen ? "top-3 rotate-45" : "top-1"
+              )} />
+              <span className={cn(
+                "absolute block h-0.5 w-6 bg-gray-900 top-3 transition-all duration-300 ease-in-out",
+                mobileMenuOpen ? "opacity-0 translate-x-3" : "opacity-100"
+              )} />
+              <span className={cn(
+                "absolute block h-0.5 w-6 bg-gray-900 transition-all duration-300 ease-in-out",
+                mobileMenuOpen ? "top-3 -rotate-45" : "top-5"
+              )} />
+            </div>
           </button>
         </div>
       </div>
@@ -191,84 +257,163 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "lg:hidden border-t border-border/40 bg-background/95 backdrop-blur-xl",
-          mobileMenuOpen ? "block" : "hidden",
+          "lg:hidden fixed inset-0 top-20 z-40 transition-all duration-500 ease-in-out",
+          mobileMenuOpen 
+            ? "opacity-100 translate-y-0 pointer-events-auto" 
+            : "opacity-0 -translate-y-4 pointer-events-none"
         )}
       >
-        <div className="px-4 py-4 space-y-4">
-          {/* Products Section */}
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Products</p>
-            {products.map((product) => (
-              <a
-                key={product.name}
-                href={product.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between py-2 text-foreground"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <div>
-                  <p className="font-medium">{product.name}</p>
-                  <p className="text-sm text-muted-foreground">{product.description}</p>
-                </div>
-                <ExternalLink className="h-4 w-4 text-muted-foreground" />
-              </a>
-            ))}
-          </div>
-
-          {/* Nav Links */}
-          <div className="space-y-2 border-t border-border pt-4">
-            {navLinks.map((link) =>
-              link.external ? (
+        {/* Backdrop */}
+        <div 
+          className={cn(
+            "absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-500",
+            mobileMenuOpen ? "opacity-100" : "opacity-0"
+          )}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+        
+        {/* Menu Content */}
+        <div className={cn(
+          "relative bg-white border-t border-gray-200 shadow-2xl overflow-y-auto max-h-[calc(100vh-5rem)] transition-transform duration-500 ease-out",
+          mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+        )}>
+          <div className="px-6 py-6 space-y-6">
+            {/* Products Section */}
+            <div className="space-y-3">
+              <p className={cn(
+                "text-xs font-bold uppercase tracking-wider text-gray-500 transition-all duration-500 delay-100",
+                mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+              )}>Products</p>
+              {products.map((product, index) => (
                 <a
-                  key={link.name}
-                  href={link.href}
+                  key={product.name}
+                  href={product.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between py-2 text-foreground"
+                  className={cn(
+                    "block py-2 transition-all duration-500 hover:translate-x-2 hover:text-primary",
+                    mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                  )}
+                  style={{ transitionDelay: `${150 + index * 50}ms` }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.name}
-                  <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                  <p className="font-semibold text-gray-900">{product.name}</p>
+                  <p className="text-sm text-gray-600">{product.description}</p>
                 </a>
-              ) : (
+              ))}
+            </div>
+
+            {/* Nav Links */}
+            <div className="space-y-2 border-t border-gray-200 pt-6">
+              {navLinks.slice(1).map((link, index) => (
                 <Link
                   key={link.name}
-                  href={link.href}
-                  className="block py-2 text-foreground"
+                  href={link.href || "#"}
+                  className={cn(
+                    "block py-3 text-base font-medium text-gray-700 hover:text-primary hover:translate-x-2 transition-all duration-500",
+                    mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+                  )}
+                  style={{ transitionDelay: `${350 + index * 50}ms` }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
-              ),
-            )}
-          </div>
+              ))}
+            </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4 border-t border-border pt-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                aria-label={social.name}
-              >
-                <social.icon />
-              </a>
-            ))}
+            {/* CTAs */}
+            <div className={cn(
+              "space-y-3 border-t border-gray-200 pt-6 transition-all duration-500 delay-500",
+              mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            )}>
+              <Button variant="outline" className="w-full rounded-none border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold uppercase text-xs h-12 transition-all hover:scale-105" asChild>
+                <Link href="/contact-us">Contact Us</Link>
+              </Button>
+              <Button className="w-full rounded-none bg-primary hover:bg-primary/90 text-white font-semibold uppercase text-xs h-12 transition-all hover:scale-105" asChild>
+                <Link href="/contact-us">Get Started</Link>
+              </Button>
+            </div>
           </div>
-
-          {/* CTA */}
-          <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-            <a href="https://cal.com/geneline-x/demo" target="_blank" rel="noopener noreferrer">
-              Book a Demo
-            </a>
-          </Button>
         </div>
       </div>
+
+      {/* Search Modal - Rendered using Portal */}
+      {searchOpen && typeof window !== 'undefined' ? createPortal(
+        <div className="fixed inset-0 z-[100]">
+          {/* Backdrop - Full viewport blur */}
+          <div 
+            className={cn(
+              "fixed inset-0 bg-black/50 backdrop-blur-lg transition-all duration-300 ease-out",
+              isSearchClosing ? "opacity-0 backdrop-blur-0" : "animate-in fade-in"
+            )}
+            onClick={handleCloseSearch}
+          />
+          
+          {/* Modal Content Container */}
+          <div className="fixed inset-0 z-[101] flex items-start justify-center pt-32 pointer-events-none">
+            {/* Modal Content - Glass Effect */}
+            <div className={cn(
+              "relative w-full max-w-2xl mx-4 bg-white/90 backdrop-blur-xl shadow-2xl border border-white/20 pointer-events-auto transition-all duration-300 ease-out",
+              isSearchClosing 
+                ? "opacity-0 -translate-y-4 scale-95" 
+                : "animate-in slide-in-from-top-4 fade-in zoom-in-95"
+            )}>
+              <div className="p-6">
+                {/* Search Input */}
+                <div className="flex items-center gap-3 border-b-2 border-gray-200 pb-4">
+                  <Search className="h-5 w-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    autoFocus
+                    className="flex-1 text-lg outline-none placeholder:text-gray-400"
+                  />
+                  <button
+                    onClick={handleCloseSearch}
+                    className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded hover:bg-gray-200 transition-colors"
+                  >
+                    ESC
+                  </button>
+                </div>
+
+                {/* Search Results/Suggestions */}
+                <div className="mt-6 space-y-4">
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">Quick Links</p>
+                    <Link
+                      href="/solutions"
+                      className="block py-2 px-3 hover:bg-gray-50 transition-colors group"
+                      onClick={handleCloseSearch}
+                    >
+                      <p className="font-medium text-gray-900 group-hover:text-primary">Solutions</p>
+                      <p className="text-sm text-gray-600">Explore our AI solutions</p>
+                    </Link>
+                    <Link
+                      href="/company"
+                      className="block py-2 px-3 hover:bg-gray-50 transition-colors group"
+                      onClick={handleCloseSearch}
+                    >
+                      <p className="font-medium text-gray-900 group-hover:text-primary">About Us</p>
+                      <p className="text-sm text-gray-600">Learn about our mission</p>
+                    </Link>
+                    <a
+                      href="https://docs.geneline-x.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block py-2 px-3 hover:bg-gray-50 transition-colors group"
+                      onClick={handleCloseSearch}
+                    >
+                      <p className="font-medium text-gray-900 group-hover:text-primary">Documentation</p>
+                      <p className="text-sm text-gray-600">API docs and guides</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      ) : null}
     </nav>
   )
 }

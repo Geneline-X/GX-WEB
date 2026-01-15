@@ -64,29 +64,24 @@ const social = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/40 bg-background">
-      {/* Radial gradient background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full" />
-      </div>
-
+    <footer className="relative bg-white overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="py-12 lg:py-16">
+        <div className="py-16 lg:py-20 border-t border-gray-200">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
             {/* Company description */}
             <div className="col-span-2 lg:col-span-2">
-              <Link href="/" className="flex items-center gap-2 group mb-4">
+              <Link href="/" className="flex items-center gap-2 group mb-6">
                 <Image
                   src="/logo.png"
                   alt="Geneline-X Logo"
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 object-contain"
                 />
-                <span className="text-lg font-semibold tracking-tight text-foreground">Geneline-X</span>
+                <span className="text-xl font-bold tracking-tight text-gray-900">Geneline-X</span>
               </Link>
-              <p className="text-sm text-muted-foreground max-w-xs leading-relaxed mb-6">
+              <p className="text-sm text-gray-600 max-w-xs leading-relaxed mb-8">
                 African-founded AI company building intelligent platforms, infrastructure, and language technologies.
                 Powering the future of AI across the continent.
               </p>
@@ -97,7 +92,7 @@ export function Footer() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-gray-500 hover:text-gray-900 transition-all hover:scale-110"
                     aria-label={item.name}
                   >
                     {item.icon}
@@ -108,7 +103,7 @@ export function Footer() {
 
             {/* Products */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">Products</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-900 mb-6">Products</h3>
               <ul className="space-y-3">
                 {products.map((item) => (
                   <li key={item.name}>
@@ -116,10 +111,10 @@ export function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                      className="text-sm text-gray-600 hover:text-gray-900 transition-colors inline-flex items-center gap-1 group"
                     >
-                      {item.name}
-                      <ExternalLink className="h-3 w-3" />
+                      <span className="group-hover:translate-x-0.5 transition-transform">{item.name}</span>
+                      <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                 ))}
@@ -128,7 +123,7 @@ export function Footer() {
 
             {/* Company */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">Company</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-900 mb-6">Company</h3>
               <ul className="space-y-3">
                 {company.map((item) => (
                   <li key={item.name}>
@@ -137,15 +132,15 @@ export function Footer() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                        className="text-sm text-gray-600 hover:text-gray-900 transition-colors inline-flex items-center gap-1 group"
                       >
-                        {item.name}
-                        <ExternalLink className="h-3 w-3" />
+                        <span className="group-hover:translate-x-0.5 transition-transform">{item.name}</span>
+                        <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-sm text-gray-600 hover:text-gray-900 transition-all inline-block hover:translate-x-0.5"
                       >
                         {item.name}
                       </Link>
@@ -157,13 +152,13 @@ export function Footer() {
 
             {/* Legal */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">Legal</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-900 mb-6">Legal</h3>
               <ul className="space-y-3">
                 {legal.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-gray-600 hover:text-gray-900 transition-all inline-block hover:translate-x-0.5"
                     >
                       {item.name}
                     </Link>
@@ -174,44 +169,47 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Brand statement with radiating effect */}
-        <div className="py-12 border-t border-border/40">
-          <div className="text-center">
-            <div className="relative inline-block">
-              {/* Radiating lines */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px]">
-                  {[...Array(8)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute top-1/2 left-1/2 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"
-                      style={{
-                        width: "100%",
-                        transform: `translate(-50%, -50%) rotate(${i * 22.5}deg)`,
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-              <h2 className="relative text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-foreground/10">
+        {/* Big Brand Name Section */}
+        <div className="relative py-24 lg:py-40 overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-full h-full max-w-6xl">
+              {/* Subtle grid pattern */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
+              {/* Radial glow */}
+              <div className="absolute inset-0 bg-gradient-radial from-gray-100 via-transparent to-transparent opacity-60" />
+            </div>
+          </div>
+          
+          <div className="relative text-center">
+            {/* Main Brand Text */}
+            <h2 className="text-[clamp(4rem,20vw,18rem)] font-black tracking-tighter leading-[0.9] select-none">
+              <span className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-600 bg-clip-text text-transparent drop-shadow-sm">
                 Geneline-X
-              </h2>
+              </span>
+            </h2>
+            
+            {/* Accent line */}
+            <div className="mt-12 flex items-center justify-center gap-6">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-gray-300" />
+              <div className="h-2 w-2 rounded-full bg-gray-400" />
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-gray-300" />
             </div>
           </div>
         </div>
 
-        {/* Legal footer */}
-        <div className="py-6 border-t border-border/40">
+        {/* Bottom Bar */}
+        <div className="py-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-500">
               &copy; {new Date().getFullYear()} Geneline-X. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-8">
               {legal.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
                 >
                   {item.name}
                 </Link>

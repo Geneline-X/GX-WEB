@@ -34,22 +34,22 @@ export function PartnershipsSection() {
 
       <div className="relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* <div className="text-center mb-16 lg:mb-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">Ecosystem</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6 text-balance">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 text-balance">
             Powered by Industry Leaders
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             We integrate with the best tools and platforms to deliver enterprise-grade AI solutions.
           </p>
-        </div>
+        </div> */}
 
         <div className="mb-12 overflow-hidden">
           <div className="flex animate-marquee items-center">
             {[...partners, ...partners].map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 mx-10 lg:mx-16 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 mx-10 lg:mx-16 opacity-70 hover:opacity-100 transition-opacity duration-300"
                 title={partner.name}
               >
                 <Image
@@ -57,7 +57,7 @@ export function PartnershipsSection() {
                   alt={`${partner.name} logo`}
                   width={120}
                   height={48}
-                  className="h-10 lg:h-12 w-auto object-contain brightness-0 invert"
+                  className="h-10 lg:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all"
                 />
               </div>
             ))}

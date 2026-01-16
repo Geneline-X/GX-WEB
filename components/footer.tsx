@@ -1,25 +1,9 @@
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import Image from "next/image"
-import { ExternalLink, Github, Instagram, Facebook, MessageCircle, Linkedin } from "lucide-react"
-
-const products = [
-  { name: "Xplain AI", href: "https://xplain-ai.net", external: true },
-  { name: "Genestudio", href: "https://genistud.io", external: true },
-  { name: "Kay-X", href: "https://kay-x-entreprise.vercel.app", external: true },
-  { name: "AI Infrastructure", href: "https://gen-x-service-dashboard.vercel.app", external: true },
-]
-
-const company = [
-  { name: "Solutions", href: "/solutions" },
-  { name: "Company", href: "/company" },
-  { name: "Contact Us", href: "/contact-us" },
-  { name: "Docs", href: "https://docs.geneline-x.com", external: true },
-]
-
-const legal = [
-  { name: "Privacy Policy", href: "/privacy" },
-  { name: "Terms of Service", href: "/terms" },
-]
+import { ExternalLink, Github, Instagram, Facebook, Linkedin } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 const social = [
   {
@@ -63,11 +47,32 @@ const social = [
 ]
 
 export function Footer() {
+  const t = useTranslations("Footer")
+
+  const productsList = [
+    { name: "Xplain AI", href: "https://xplain-ai.net", external: true },
+    { name: "Genestudio", href: "https://genistud.io", external: true },
+    { name: "Kay-X", href: "https://kay-x-entreprise.vercel.app", external: true },
+    { name: "AI Infrastructure", href: "https://gen-x-service-dashboard.vercel.app", external: true },
+  ]
+
+  const companyList = [
+    { name: t("links.solutions"), href: "/solutions" },
+    { name: t("links.about"), href: "/company" },
+    { name: t("links.contact"), href: "/contact-us" },
+    { name: t("links.docs"), href: "https://docs.geneline-x.com", external: true },
+  ]
+
+  const legalList = [
+    { name: t("privacy"), href: "/privacy" },
+    { name: t("terms"), href: "/terms" },
+  ]
+
   return (
-    <footer className="relative bg-white overflow-hidden">
+    <footer className="relative bg-background overflow-hidden transition-colors duration-300">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="py-16 lg:py-20 border-t border-gray-200">
+        <div className="py-16 lg:py-20 border-t border-border">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
             {/* Company description */}
             <div className="col-span-2 lg:col-span-2">
@@ -79,11 +84,10 @@ export function Footer() {
                   height={40}
                   className="h-10 w-10 object-contain"
                 />
-                <span className="text-xl font-bold tracking-tight text-gray-900">Geneline-X</span>
+                <span className="text-xl font-bold tracking-tight text-foreground transition-colors">Geneline-X</span>
               </Link>
-              <p className="text-sm text-gray-600 max-w-xs leading-relaxed mb-8">
-                African-founded AI company building intelligent platforms, infrastructure, and language technologies.
-                Powering the future of AI across the continent.
+              <p className="text-sm text-muted-foreground max-w-xs leading-relaxed mb-8">
+                {t("description")}
               </p>
               <div className="flex items-center gap-4">
                 {social.map((item) => (
@@ -92,7 +96,7 @@ export function Footer() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-gray-900 transition-all hover:scale-110"
+                    className="text-muted-foreground hover:text-foreground transition-all hover:scale-110"
                     aria-label={item.name}
                   >
                     {item.icon}
@@ -103,15 +107,15 @@ export function Footer() {
 
             {/* Products */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-900 mb-6">Products</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-foreground mb-6">{t("products")}</h3>
               <ul className="space-y-3">
-                {products.map((item) => (
+                {productsList.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-600 hover:text-gray-900 transition-colors inline-flex items-center gap-1 group"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
                     >
                       <span className="group-hover:translate-x-0.5 transition-transform">{item.name}</span>
                       <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -123,16 +127,16 @@ export function Footer() {
 
             {/* Company */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-900 mb-6">Company</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-foreground mb-6">{t("company")}</h3>
               <ul className="space-y-3">
-                {company.map((item) => (
+                {companyList.map((item) => (
                   <li key={item.name}>
                     {item.external ? (
                       <a
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-600 hover:text-gray-900 transition-colors inline-flex items-center gap-1 group"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group"
                       >
                         <span className="group-hover:translate-x-0.5 transition-transform">{item.name}</span>
                         <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -140,7 +144,7 @@ export function Footer() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm text-gray-600 hover:text-gray-900 transition-all inline-block hover:translate-x-0.5"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-all inline-block hover:translate-x-0.5"
                       >
                         {item.name}
                       </Link>
@@ -152,13 +156,13 @@ export function Footer() {
 
             {/* Legal */}
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-900 mb-6">Legal</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-foreground mb-6">{t("legal")}</h3>
               <ul className="space-y-3">
-                {legal.map((item) => (
+                {legalList.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-gray-600 hover:text-gray-900 transition-all inline-block hover:translate-x-0.5"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-all inline-block hover:translate-x-0.5"
                     >
                       {item.name}
                     </Link>
@@ -177,43 +181,49 @@ export function Footer() {
               {/* Subtle grid pattern */}
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
               {/* Radial glow */}
-              <div className="absolute inset-0 bg-gradient-radial from-gray-100 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-radial from-gray-100/20 dark:from-primary/5 via-transparent to-transparent opacity-60" />
             </div>
           </div>
-          
+
           <div className="relative text-center">
             {/* Main Brand Text */}
             <h2 className="text-[clamp(4rem,20vw,18rem)] font-black tracking-tighter leading-[0.9] select-none">
-              <span className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-600 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="bg-gradient-to-br from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent drop-shadow-sm">
                 Geneline-X
               </span>
             </h2>
-            
+
             {/* Accent line */}
             <div className="mt-12 flex items-center justify-center gap-6">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-gray-300" />
-              <div className="h-2 w-2 rounded-full bg-gray-400" />
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-gray-300" />
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-border" />
+              <div className="h-2 w-2 rounded-full bg-border" />
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-border" />
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-gray-200">
+        <div className="py-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500">
-              &copy; {new Date().getFullYear()} Geneline-X. All rights reserved.
+            <p className="text-sm text-muted-foreground">
+              &copy; {new Date().getFullYear()} Geneline-X. {t("rights")}
             </p>
-            <div className="flex items-center gap-8">
-              {legal.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
+            <div className="flex items-center gap-4 sm:gap-8">
+              <div className="flex items-center">
+                <LanguageSwitcher />
+                <ThemeToggle />
+              </div>
+              <div className="flex items-center gap-4 sm:gap-8">
+                {legalList.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

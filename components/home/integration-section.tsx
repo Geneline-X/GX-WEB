@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowRight, Check, Copy } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 
 const codeExamples = {
   python: {
@@ -119,7 +119,7 @@ export function IntegrationSection() {
     <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-white">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50 pointer-events-none" />
-      
+
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none">
         <div
           className="absolute inset-0"
@@ -148,7 +148,7 @@ export function IntegrationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6"
+            className="text-[clamp(2.5rem,8vw,4rem)] sm:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
           >
             Easier Integration
           </motion.h2>
@@ -159,7 +159,7 @@ export function IntegrationSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto"
           >
-            Get started in minutes with our comprehensive SDKs and APIs. 
+            Get started in minutes with our comprehensive SDKs and APIs.
             Build powerful AI applications with just a few lines of code.
           </motion.p>
         </div>
@@ -176,14 +176,14 @@ export function IntegrationSection() {
             <Card className="overflow-hidden border-2 border-gray-200 bg-white shadow-lg">
               <div className="bg-muted/50 border-b border-border/50 p-4 flex items-center justify-between">
                 <Tabs value={selectedTab} onValueChange={(v) => setSelectedTab(v as keyof typeof codeExamples)} className="w-full">
-                  <TabsList className="grid w-full grid-cols-3">
-                    <TabsTrigger value="python">Python</TabsTrigger>
-                    <TabsTrigger value="javascript">JavaScript</TabsTrigger>
-                    <TabsTrigger value="curl">cURL</TabsTrigger>
+                  <TabsList className="grid w-full grid-cols-3 h-9 sm:h-10">
+                    <TabsTrigger value="python" className="text-[10px] sm:text-xs">Python</TabsTrigger>
+                    <TabsTrigger value="javascript" className="text-[10px] sm:text-xs">JavaScript</TabsTrigger>
+                    <TabsTrigger value="curl" className="text-[10px] sm:text-xs">cURL</TabsTrigger>
                   </TabsList>
                 </Tabs>
               </div>
-              
+
               <CardContent className="p-0 relative">
                 <Button
                   variant="ghost"
@@ -216,7 +216,7 @@ export function IntegrationSection() {
 
                 <pre
                   ref={codeRef}
-                  className="p-6 overflow-x-auto text-sm leading-relaxed font-mono bg-muted/30 min-h-[400px]"
+                  className="p-4 sm:p-6 overflow-x-auto text-[10px] sm:text-sm leading-relaxed font-mono bg-muted/30 min-h-[300px] sm:min-h-[400px]"
                 >
                   <code className="text-foreground/90">{typedCode}</code>
                   <motion.span
@@ -263,9 +263,9 @@ export function IntegrationSection() {
 
             <div className="pt-6">
               <h3 className="text-xl font-bold mb-4">Integration Time</h3>
-              <div className="bg-muted/30 rounded-lg p-6 border border-border/50">
-                <div className="text-5xl font-bold text-primary mb-2">~5 min</div>
-                <p className="text-muted-foreground">Average time to first API call</p>
+              <div className="bg-muted/30 rounded-lg p-4 sm:p-6 border border-border/50">
+                <div className="text-3xl sm:text-5xl font-bold text-primary mb-2">~5 min</div>
+                <p className="text-sm sm:text-base text-muted-foreground">Average time to first API call</p>
               </div>
             </div>
 

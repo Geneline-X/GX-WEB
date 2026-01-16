@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Calendar, Clock } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import Image from "next/image"
 
 const newsArticles = [
@@ -119,7 +119,7 @@ export function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight"
+              className="text-[clamp(2.5rem,7vw,4rem)] sm:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]"
             >
               News & Announcements
             </motion.h2>
@@ -153,10 +153,10 @@ export function NewsSection() {
               <Link href={`/news/${article.slug}`}>
                 <Card className="h-full overflow-hidden border-2 border-gray-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 bg-white">
                   {/* Image */}
-                  <div className="relative h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5">
+                  <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5">
                     {/* Placeholder gradient - replace with actual images */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent" />
-                    
+
                     {/* Animated overlay */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"
@@ -237,8 +237,8 @@ export function NewsSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-20 p-8 lg:p-12 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/20 shadow-lg text-center"
         >
-          <h3 className="text-2xl lg:text-3xl font-bold mb-4">Stay Updated</h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <h3 className="text-xl lg:text-2xl lg:text-3xl font-bold mb-4">Stay Updated</h3>
+          <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
             Subscribe to our newsletter to receive the latest news, product updates, and insights directly in your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">

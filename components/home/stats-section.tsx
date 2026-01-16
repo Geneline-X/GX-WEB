@@ -1,13 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-
-const stats = [
-  { value: 50, suffix: "K+", label: "Documents Processed Daily" },
-  { value: 99.9, suffix: "%", label: "Uptime Guarantee" },
-  { value: 500, suffix: "ms", label: "Average Response Time" },
-  { value: 10, suffix: "+", label: "African Languages Supported" },
-]
+import { useTranslations } from "next-intl"
 
 function AnimatedNumber({ value, suffix, isVisible }: { value: number; suffix: string; isVisible: boolean }) {
   const [displayValue, setDisplayValue] = useState(0)
@@ -46,8 +40,16 @@ function AnimatedNumber({ value, suffix, isVisible }: { value: number; suffix: s
 }
 
 export function StatsSection() {
+  const t = useTranslations("Stats")
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+
+  const stats = [
+    { value: 50, suffix: "K+", label: t("processed") },
+    { value: 99.9, suffix: "%", label: t("uptime") },
+    { value: 500, suffix: "ms", label: t("latency") },
+    { value: 10, suffix: "+", label: t("languages") },
+  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,26 +71,27 @@ export function StatsSection() {
   }, [isVisible])
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 bg-background transition-colors duration-500">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent dark:via-primary/10" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`text-center transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-2">
+              <div className="text-[clamp(2.5rem,10vw,4rem)] sm:text-5xl lg:text-7xl font-black text-foreground mb-2 sm:mb-4 tracking-tighter">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} isVisible={isVisible} />
               </div>
-              <p className="text-sm sm:text-base text-muted-foreground">{stat.label}</p>
+              <p className="text-[10px] sm:text-xs sm:text-sm font-bold text-muted-foreground uppercase tracking-[0.2em] max-w-[120px] sm:max-w-[150px] mx-auto leading-relaxed">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

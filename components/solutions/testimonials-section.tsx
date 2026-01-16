@@ -62,12 +62,36 @@ const testimonials = [
   },
 ]
 
+import { useTranslations } from "next-intl"
+
 export function TestimonialsSection() {
+  const t = useTranslations("Testimonials")
   const sectionRef = useRef<HTMLElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [cardsPerView, setCardsPerView] = useState(3)
+
+  const testimonials = [
+    {
+      quote: t("items.aminata.quote"),
+      author: t("items.aminata.author"),
+      role: t("items.aminata.role"),
+      organization: t("items.aminata.org"),
+    },
+    {
+      quote: t("items.mohamed.quote"),
+      author: t("items.mohamed.author"),
+      role: t("items.mohamed.role"),
+      organization: t("items.mohamed.org"),
+    },
+    {
+      quote: t("items.fatmata.quote"),
+      author: t("items.fatmata.author"),
+      role: t("items.fatmata.role"),
+      organization: t("items.fatmata.org"),
+    },
+  ]
 
   useEffect(() => {
     const updateCardsPerView = () => {
@@ -106,14 +130,14 @@ export function TestimonialsSection() {
 
   const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? testimonials.length - cardsPerView : prev - 1))
-  }, [cardsPerView])
+  }, [cardsPerView, testimonials.length])
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev >= testimonials.length - cardsPerView ? 0 : prev + 1))
-  }, [cardsPerView])
+  }, [cardsPerView, testimonials.length])
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-background">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
@@ -121,13 +145,13 @@ export function TestimonialsSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
-          <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">Testimonials</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6 text-balance">
-            Trusted by Leaders
+        <div className="text-center mb-12 lg:mb-20">
+          <p className="text-primary font-medium tracking-wide uppercase text-[10px] sm:text-sm mb-4">{t("badge")}</p>
+          <h2 className="text-[clamp(1.75rem,7vw,3.5rem)] sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6 text-balance">
+            {t("title")}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            See what organizations across Africa say about working with Geneline-X.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            {t("description")}
           </p>
         </div>
 
@@ -135,7 +159,7 @@ export function TestimonialsSection() {
           {/* Navigation Buttons */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300 shadow-lg dark:shadow-none"
             aria-label="Previous testimonials"
           >
             <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" />
@@ -143,7 +167,7 @@ export function TestimonialsSection() {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300 shadow-lg dark:shadow-none"
             aria-label="Next testimonials"
           >
             <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
@@ -173,7 +197,7 @@ export function TestimonialsSection() {
                     <Quote className="w-8 h-8 text-primary/30 mb-4" />
 
                     {/* Quote text */}
-                    <blockquote className="text-foreground mb-6 leading-relaxed">"{testimonial.quote}"</blockquote>
+                    <blockquote className="text-foreground mb-6 leading-relaxed italic">"{testimonial.quote}"</blockquote>
 
                     {/* Author */}
                     <div className="border-t border-border/50 pt-4 mt-auto">

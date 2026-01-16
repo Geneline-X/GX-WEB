@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-animations"
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 
 const customerStories = [
   {
@@ -99,7 +99,7 @@ export function CustomerStoriesSection() {
   const [displayedStories, setDisplayedStories] = useState(customerStories.slice(0, 6))
   const [isShuffling, setIsShuffling] = useState(false)
   const sectionRef = useScrollReveal<HTMLElement>()
-  const intervalRef = useRef<NodeJS.Timeout>()
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     // Auto-shuffle every 6 seconds
@@ -147,7 +147,7 @@ export function CustomerStoriesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6"
+            className="text-[clamp(2rem,8vw,4rem)] sm:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
           >
             Trusted by Industry Leaders
           </motion.h2>
@@ -207,7 +207,7 @@ export function CustomerStoriesSection() {
                       <Quote className="w-10 h-10 text-primary/20 mb-4" />
 
                       {/* Quote */}
-                      <blockquote className="text-base leading-relaxed mb-6 min-h-[120px]">
+                      <blockquote className="text-sm sm:text-base leading-relaxed mb-6 min-h-[100px] sm:min-h-[120px]">
                         "{story.quote}"
                       </blockquote>
 
@@ -285,8 +285,8 @@ export function CustomerStoriesSection() {
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               className="text-center"
             >
-              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+              <div className="text-[10px] sm:text-sm text-muted-foreground">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

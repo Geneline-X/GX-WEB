@@ -1,0 +1,171 @@
+{
+    "Navbar": {
+        "products": "Productos",
+        "developers": "Desarrolladores",
+        "solutions": "Soluciones",
+        "company": "Compañía",
+        "getStarted": "Empezar",
+        "search": "Buscar...",
+        "quickLinks": "Enlaces Rápidos",
+        "about": "Sobre nosotros",
+        "events": "Eventos",
+        "contactUs": "Contáctenos",
+        "tryDemo": "Probar Demo",
+        "documentation": "Documentación",
+        "productsDesc": {
+            "xplain": "Inteligencia de documentos y medios",
+            "genestudio": "Creación de chatbots empresariales",
+            "kayx": "Speech-to-text de Krio a Inglés",
+            "infra": "RAG, bases de datos vectoriales, agentes de IA"
+        },
+        "companyDesc": {
+            "about": "Conozca nuestra misión y visión",
+            "events": "Próximos eventos y seminarios web",
+            "contact": "Póngase en contacto con nosotros"
+        }
+    },
+    "Footer": {
+        "description": "Empresa de IA fundada en África que construye plataformas inteligentes, infraestructura y tecnologías lingüísticas.",
+        "products": "Productos",
+        "company": "Compañía",
+        "legal": "Legal",
+        "privacy": "Política de Privacidad",
+        "terms": "Términos de Servicio",
+        "rights": "Todos los derechos reservados.",
+        "links": {
+            "solutions": "Soluciones",
+            "about": "Compañía",
+            "contact": "Contáctenos",
+            "docs": "Docs"
+        }
+    },
+    "Partnerships": {
+        "ecosystem": "Ecosistema",
+        "title": "Impulsado por Líderes de la Industria",
+        "description": "Nos integramos con las mejores herramientas y plataformas.",
+        "tools": {
+            "rag": "Pipelines RAG",
+            "vector": "Bases de Datos Vectoriales",
+            "llm": "Orquestación de LLM",
+            "stt": "Speech-to-Text",
+            "doc": "Procesamiento de Documentos",
+            "agents": "Agentes de IA",
+            "embeddings": "Embeddings",
+            "fineTuning": "Sintonización Fina"
+        }
+    },
+    "Testimonials": {
+        "badge": "Testimonios",
+        "title": "Confiado por Líderes",
+        "description": "Vea lo que dicen las organizaciones de toda África.",
+        "items": {
+            "aminata": {
+                "quote": "Geneline-X ha transformado nuestro procesamiento de documentos.",
+                "author": "Aminata Kamara",
+                "role": "CTO",
+                "org": "TechAfrica"
+            },
+            "mohamed": {
+                "quote": "Las capacidades STT de Kay-X son un cambio de juego.",
+                "author": "Mohamed Bangura",
+                "role": "Director de Operaciones",
+                "org": "SaloneTel"
+            },
+            "fatmata": {
+                "quote": "La infraestructura de IA más robusta que hemos usado.",
+                "author": "Fatmata Sesay",
+                "role": "Científico de Datos Principal",
+                "org": "DataFlow"
+            }
+        }
+    },
+    "Hero": {
+        "title": "La primera infraestructura de <africanAI>IA Africana</africanAI>",
+        "subtitle": "Inteligencia multilingue, construida para escala global.",
+        "getStarted": "Empezar",
+        "tryDemo": "Probar Demo",
+        "contactUs": "Contáctenos",
+        "footer": "Impulsando la innovación en toda África y más allá",
+        "trustedBy": "Confiado por Líderes de la Industria",
+        "stats": {
+            "languages": "Idiomas",
+            "uptime": "Tiempo de Actividad",
+            "latency": "Latencia"
+        }
+    },
+    "KrioModel": {
+        "badge": "IA en Idioma Nativo",
+        "title": "Rompiendo la Barrera del Idioma",
+        "description": "Nuestros modelos personalizados entienden los matices de los idiomas africanos.",
+        "watchDemo": "Ver Demo",
+        "experience": "Experimente el poder de KRIO en acción",
+        "components": {
+            "neural": {
+                "title": "Arquitectura Neuronal",
+                "desc": "Arquitectura avanzada basada en transformadores.",
+                "highlight": "Basado en investigación de vanguardia"
+            },
+            "performance": {
+                "title": "Rendimiento Relámpago",
+                "desc": "Velocidad de inferencia sin precedentes.",
+                "highlight": "10 veces más rápido que los competidores"
+            },
+            "security": {
+                "title": "Seguridad Empresarial",
+                "desc": "Cifrado de grado militar.",
+                "highlight": "Arquitectura de confianza cero"
+            },
+            "modular": {
+                "title": "Marco Modular",
+                "desc": "Módulos flexibles y componibles.",
+                "highlight": "Capacidades plug-and-play"
+            }
+        }
+    },
+    "HowItWorks": {
+        "badge": "Cómo Funciona",
+        "title": "De los Datos a la Inteligencia",
+        "description": "Nuestra plataforma transforma cómo trabajas con IA.",
+        "steps": {
+            "ingest": {
+                "title": "Ingerir sus Datos",
+                "desc": "Conecte documentos, medios o fuentes de datos."
+            },
+            "process": {
+                "title": "Procesar y Comprender",
+                "desc": "Pipelines RAG y modelos de IA."
+            },
+            "build": {
+                "title": "Construir y Desplegar",
+                "desc": "Use nuestras API y SDK."
+            },
+            "scale": {
+                "title": "Escalar y Optimizar",
+                "desc": "Infraestructura de grado empresarial."
+            }
+        }
+    },
+    "Stats": {
+        "processed": "Documentos Procesados Diariamente",
+        "uptime": "Garantía de Tiempo de Actividad",
+        "latency": "Tiempo de Respuesta Promedio",
+        "languages": "Idiomas Africanos Soportados"
+    },
+    "Events": {
+        "title": "Próximos Eventos",
+        "badge": "Comunidad",
+        "noEvents": "Todo tranquilo por ahora...",
+        "description": "Estamos planificando nuestra próxima ola de talleres y conferencias. Algo grande se está cocinando.",
+        "stayTuned": "Mantente Sintonizado",
+        "notifyMe": "Notificarme"
+    },
+    "Developers": {
+        "title": "Construido para Desarrolladores",
+        "badge": "Ecosistema",
+        "description": "API potentes y SDK flexibles. Construye el futuro de la IA africana.",
+        "integrationTitle": "Integración Perfecta",
+        "integrationDesc": "Nuestros servicios están diseñados para integrarse en cualquier flujo de trabajo.",
+        "docsSoon": "Documentación Próximamente",
+        "docsDesc": "Estamos puliendo nuestras referencias de API."
+    }
+}

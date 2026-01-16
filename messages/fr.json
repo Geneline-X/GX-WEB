@@ -1,0 +1,171 @@
+{
+    "Navbar": {
+        "products": "Produits",
+        "developers": "Développeurs",
+        "solutions": "Solutions",
+        "company": "Entreprise",
+        "getStarted": "Commencer",
+        "search": "Rechercher...",
+        "quickLinks": "Liens Rapides",
+        "about": "À Propos",
+        "events": "Événements",
+        "contactUs": "Contactez-nous",
+        "tryDemo": "Essayer la Démo",
+        "documentation": "Documentation",
+        "productsDesc": {
+            "xplain": "Intelligence documentaire et média",
+            "genestudio": "Création de chatbot d'entreprise",
+            "kayx": "Reconnaissance vocale Krio-Anglais",
+            "infra": "RAG, bases de données vectorielles, agents IA"
+        },
+        "companyDesc": {
+            "about": "Découvrez notre mission et notre vision",
+            "events": "Événements et webinaires à venir",
+            "contact": "Entrez en contact avec nous"
+        }
+    },
+    "Footer": {
+        "description": "Entreprise d'IA fondée en Afrique, créant des plateformes intelligentes, des infrastructures et des technologies linguistiques.",
+        "products": "Produits",
+        "company": "Entreprise",
+        "legal": "Juridique",
+        "privacy": "Politique de Confidentialité",
+        "terms": "Conditions d'Utilisation",
+        "rights": "Tous droits réservés.",
+        "links": {
+            "solutions": "Solutions",
+            "about": "Entreprise",
+            "contact": "Contactez-nous",
+            "docs": "Docs"
+        }
+    },
+    "Partnerships": {
+        "ecosystem": "Écosystème",
+        "title": "Propulsé par les leaders du secteur",
+        "description": "Nous intégrons les meilleurs outils et plateformes pour fournir des solutions d'IA de niveau entreprise.",
+        "tools": {
+            "rag": "Pipelines RAG",
+            "vector": "Bases de données vectorielles",
+            "llm": "Orchestration LLM",
+            "stt": "Reconnaissance vocale",
+            "doc": "Traitement de documents",
+            "agents": "Agents IA",
+            "embeddings": "Plongements",
+            "fineTuning": "Affinage"
+        }
+    },
+    "Testimonials": {
+        "badge": "Témoignages",
+        "title": "Approuvé par des leaders",
+        "description": "Découvrez ce que les organisations à travers l'Afrique disent de leur collaboration avec Geneline-X.",
+        "items": {
+            "aminata": {
+                "quote": "Geneline-X a transformé notre traitement de documents. La précision dans plusieurs langues africaines est inégalée.",
+                "author": "Aminata Kamara",
+                "role": "CTO",
+                "org": "TechAfrica"
+            },
+            "mohamed": {
+                "quote": "Les capacités STT de Kay-X changent la donne pour notre service client en Sierra Leone.",
+                "author": "Mohamed Bangura",
+                "role": "Directeur des Opérations",
+                "org": "SaloneTel"
+            },
+            "fatmata": {
+                "quote": "L'infrastructure d'IA la plus robuste que nous ayons utilisée. Elle gère nos besoins complexes en données avec aisance.",
+                "author": "Fatmata Sesay",
+                "role": "Data Scientist Principal",
+                "org": "DataFlow"
+            }
+        }
+    },
+    "Hero": {
+        "title": "La première infrastructure d'<africanAI>IA africaine</africanAI>",
+        "subtitle": "Intelligence multilingue, conçue pour une échelle mondiale.",
+        "getStarted": "Commencer",
+        "tryDemo": "Essayer la Démo",
+        "contactUs": "Contactez-nous",
+        "footer": "Propulser l'innovation à travers l'Afrique et au-delà",
+        "trustedBy": "Approuvé par les leaders de l'industrie",
+        "stats": {
+            "languages": "Langues",
+            "uptime": "Temps de disponibilité",
+            "latency": "Latence"
+        }
+    },
+    "KrioModel": {
+        "badge": "IA en Langue Native",
+        "title": "Briser la Barrière de la Langue",
+        "description": "Nos modèles personnalisés comprennent les nuances des langues et dialectes africains, à commencer par le Krio de Sierra Leone.",
+        "watchDemo": "Voir la Démo",
+        "experience": "Découvrez la puissance de KRIO en action",
+        "components": {
+            "neural": {
+                "title": "Architecture Neurale",
+                "desc": "Architecture avancée basée sur les transformeurs, optimisée pour la compréhension et la génération multimodales.",
+                "highlight": "Basé sur des recherches de pointe"
+            },
+            "performance": {
+                "title": "Performance Éclair",
+                "desc": "Vitesse d'inférence sans précédent avec une efficacité de calcul optimisée, atteignant des temps de réponse en millisecondes.",
+                "highlight": "10x plus rapide que les concurrents"
+            },
+            "security": {
+                "title": "Sécurité Entreprise",
+                "desc": "Chiffrement de qualité militaire et conformité aux normes RGPD, SOC2 et HIPAA intégrés au cœur.",
+                "highlight": "Architecture zéro confiance"
+            },
+            "modular": {
+                "title": "Cadre Modulaire",
+                "desc": "Modules flexibles et composables qui s'adaptent à vos cas d'utilisation spécifiques sans réentraîner l'ensemble du modèle.",
+                "highlight": "Capacités prêt-à-l'emploi"
+            }
+        }
+    },
+    "HowItWorks": {
+        "badge": "Comment ça marche",
+        "title": "De la Donnée à l'Intelligence",
+        "description": "Notre plateforme transforme votre façon de travailler avec l'IA — simple au début, puissante à grande échelle.",
+        "steps": {
+            "ingest": {
+                "title": "Ingérez vos Données",
+                "desc": "Connectez vos documents, médias ou sources de données personnalisées. Nos pipelines s'occupent du reste."
+            },
+            "process": {
+                "title": "Traitez & Comprenez",
+                "desc": "Les pipelines RAG, les enchâssements vectoriels et les modèles d'IA transforment les données brutes en intelligence exploitable."
+            },
+            "build": {
+                "title": "Créez & Déployez",
+                "desc": "Utilisez nos API et SDK pour créer des applications d'IA personnalisées, des chatbots ou des intégrations."
+            },
+            "scale": {
+                "title": "Évoluez & Optimisez",
+                "desc": "Une infrastructure de classe entreprise qui évolue selon vos besoins. Surveillez, itérez, améliorez."
+            }
+        }
+    },
+    "Stats": {
+        "processed": "Documents Traités Quotidiennement",
+        "uptime": "Garantie de Disponibilité",
+        "latency": "Temps de Réponse Moyen",
+        "languages": "Langues Africaines Prises en Charge"
+    },
+    "Events": {
+        "title": "Événements à Venir",
+        "badge": "Communauté",
+        "noEvents": "Calme pour l'instant...",
+        "description": "Nous planifions actuellement notre prochaine vague d'ateliers, de hackathons et de conférences. Quelque chose d'important se prépare chez Geneline-X.",
+        "stayTuned": "Restez à l'Écoute",
+        "notifyMe": "M'informer"
+    },
+    "Developers": {
+        "title": "Conçu pour les Développeurs",
+        "badge": "Écosystème",
+        "description": "Des API puissantes, des SDK flexibles et une infrastructure de classe entreprise. Construisez l'avenir de l'IA africaine avec nous.",
+        "integrationTitle": "Intégration Transparente",
+        "integrationDesc": "Nos services sont conçus pour être intégrés dans n'importe quel flux de travail. De la santé à la finance, nous fournissons les briques de l'intelligence.",
+        "docsSoon": "Documentation Bientôt Disponible",
+        "docsDesc": "Nous peaufinons nos références d'API et nos guides. Bientôt, vous aurez tout ce dont vous avez besoin pour déployer Geneline-X en quelques minutes."
+    }
+}

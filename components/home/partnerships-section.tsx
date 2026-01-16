@@ -24,32 +24,36 @@ const tools = [
   "Fine-tuning",
 ]
 
+import { useTranslations } from "next-intl"
+
 export function PartnershipsSection() {
+  const t = useTranslations("Partnerships")
+
+  const tools = [
+    t("tools.rag"),
+    t("tools.vector"),
+    t("tools.llm"),
+    t("tools.stt"),
+    t("tools.doc"),
+    t("tools.agents"),
+    t("tools.embeddings"),
+    t("tools.fineTuning"),
+  ]
+
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-24 lg:py-32 overflow-hidden bg-background">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full translate-x-1/2" />
       </div>
 
       <div className="relative z-10">
-        {/* Section Header */}
-        {/* <div className="text-center mb-16 lg:mb-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">Ecosystem</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 text-balance">
-            Powered by Industry Leaders
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            We integrate with the best tools and platforms to deliver enterprise-grade AI solutions.
-          </p>
-        </div> */}
-
         <div className="mb-12 overflow-hidden">
           <div className="flex animate-marquee items-center">
             {[...partners, ...partners].map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 mx-10 lg:mx-16 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 mx-6 sm:mx-10 lg:mx-16 opacity-70 hover:opacity-100 transition-opacity duration-300"
                 title={partner.name}
               >
                 <Image
@@ -57,7 +61,7 @@ export function PartnershipsSection() {
                   alt={`${partner.name} logo`}
                   width={120}
                   height={48}
-                  className="h-10 lg:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all"
+                  className="h-7 sm:h-10 lg:h-12 w-auto object-contain grayscale dark:invert-[0.8] hover:grayscale-0 dark:hover:invert-0 transition-all opacity-50 hover:opacity-100"
                 />
               </div>
             ))}
@@ -70,7 +74,7 @@ export function PartnershipsSection() {
             {[...tools, ...tools].map((tool, index) => (
               <div
                 key={`${tool}-${index}`}
-                className="flex-shrink-0 mx-4 px-6 py-3 rounded-full border border-primary/30 bg-primary/5"
+                className="flex-shrink-0 mx-4 px-6 py-3 rounded-full border border-primary/30 bg-primary/5 dark:bg-primary/10 backdrop-blur-sm"
               >
                 <span className="text-sm font-medium text-foreground whitespace-nowrap">{tool}</span>
               </div>

@@ -6,7 +6,7 @@ import { useStaggerReveal } from "@/hooks/use-scroll-animations"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import Image from "next/image"
 
 const features = [
@@ -74,10 +74,10 @@ export function FeaturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6"
+            className="text-[clamp(2rem,7vw,4rem)] sm:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
           >
-            <span className="text-primary">The GenelineX Advantage</span>
-            <br />
+            <span className="text-primary text-[clamp(1.5rem,5vw,2.5rem)] lg:text-3xl xl:text-4xl block mb-2 uppercase tracking-[0.2em]">The GenelineX Advantage</span>
+            {/* Building Products that Others Can't */}
             Build Products that Others Can't
           </motion.h2>
         </div>
@@ -92,7 +92,7 @@ export function FeaturesSection() {
             >
               <Card className="relative h-full overflow-hidden bg-white border border-gray-200 hover:shadow-2xl transition-all duration-300 group">
                 {/* Image Section */}
-                <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${feature.backgroundColor}`}>
+                <div className={`relative h-48 sm:h-64 overflow-hidden bg-gradient-to-br ${feature.backgroundColor}`}>
                   {/* Placeholder for actual image - you can add real images here */}
                   <div className="absolute inset-0 flex items-center justify-center p-6">
                     <div className="w-full h-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-sm text-gray-600 text-center">
@@ -108,14 +108,14 @@ export function FeaturesSection() {
                   <h3 className="text-xl font-bold mb-3 text-gray-900">
                     {feature.title}
                   </h3>
-                  
+
                   {/* Description */}
                   <p className="text-gray-600 mb-6 leading-relaxed text-sm">
                     {feature.description}
                   </p>
 
                   {/* CTA Link */}
-                  <Link 
+                  <Link
                     href={feature.link}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary px-4 py-2 hover:bg-primary/90 transition-colors group/link"
                   >

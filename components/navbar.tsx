@@ -17,6 +17,8 @@ export function Navbar() {
   const t = useTranslations("Navbar")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -64,12 +66,29 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+
+      // Handle navbar visibility
+      if (currentScrollY < 10) {
+        // Always show navbar at the top
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setIsVisible(false)
+      } else {
+        // Scrolling up
+        setIsVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
+
+      // Handle navbar styling
+      setIsScrolled(currentScrollY > 20)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -90,7 +109,10 @@ export function Navbar() {
   }, [searchOpen])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-background/95 backdrop-blur-xl h-20 transition-all duration-300">
+    <nav className={cn(
+      "fixed top-0 left-0 right-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-background/95 backdrop-blur-xl h-20 transition-all duration-300",
+      isVisible ? "translate-y-0" : "-translate-y-full"
+    )}>
       <div className="mx-auto max-w-8xl px-6 lg:px-28 h-full">
         <div className="flex h-full items-center justify-between">
           {/* Logo */}
@@ -205,11 +227,6 @@ export function Navbar() {
                 <Link href="/developers">{t("tryDemo")}</Link>
               </Button>
             </div>
-          </div>
-
-          {/* Mobile Theme Toggle */}
-          <div className="lg:hidden flex items-center mr-2">
-            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
@@ -327,11 +344,32 @@ export function Navbar() {
               ))}
             </div>
 
+            {/* Settings Section */}
+            <div className="space-y-3 border-t border-border pt-6">
+              <p className={cn(
+                "text-xs font-bold uppercase tracking-wider text-muted-foreground transition-all duration-500",
+                mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+              )} style={{ transitionDelay: '600ms' }}>Settings</p>
+              <div className={cn(
+                "flex items-center gap-4 py-2 transition-all duration-500",
+                mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+              )} style={{ transitionDelay: '650ms' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-foreground">Theme</span>
+                  <ThemeToggle />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-foreground">Language</span>
+                  <LanguageSwitcher />
+                </div>
+              </div>
+            </div>
+
             {/* CTAs */}
             <div className={cn(
               "space-y-3 border-t border-border pt-6 transition-all duration-500",
               mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            )} style={{ transitionDelay: '650ms' }}>
+            )} style={{ transitionDelay: '700ms' }}>
               <Button className="w-full rounded-none bg-primary hover:bg-primary/90 text-white font-semibold uppercase text-xs h-12 transition-all hover:scale-[1.02]" asChild>
                 <Link href="/contact-us">{t("getStarted")}</Link>
               </Button>

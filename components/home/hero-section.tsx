@@ -66,21 +66,21 @@ export function HeroSection() {
             {/* Hero Visual Section */}
             <div className="relative aspect-square w-full max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto order-1 lg:order-2 animate-fade-in-up animation-delay-200">
               {/* Floating Stats Cards */}
-              <div className="absolute top-2 sm:top-4 lg:top-8 -left-2 sm:-left-4 lg:-left-8 z-20 animate-float">
+              <div className="absolute top-6 sm:top-4 lg:top-8 left-4 sm:-left-4 lg:-left-8 z-20 animate-float">
                 <div className="bg-card/80 backdrop-blur-md border border-border p-2 sm:p-3 lg:p-4 shadow-xl">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-0.5 sm:mb-1">150+</div>
                   <div className="text-[8px] sm:text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">{t("stats.languages")}</div>
                 </div>
               </div>
 
-              <div className="absolute top-16 sm:top-24 lg:top-32 -right-2 sm:-right-4 lg:-right-8 z-20 animate-float" style={{ animationDelay: '0.5s' }}>
+              <div className="absolute top-16 sm:top-24 lg:top-32 right-10 sm:-right-4 lg:-right-8 z-20 animate-float" style={{ animationDelay: '0.5s' }}>
                 <div className="bg-card/80 backdrop-blur-md border border-border p-2 sm:p-3 lg:p-4 shadow-xl">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-0.5 sm:mb-1">99.9%</div>
                   <div className="text-[8px] sm:text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">{t("stats.uptime")}</div>
                 </div>
               </div>
 
-              <div className="absolute bottom-12 sm:bottom-16 lg:bottom-24 left-2 sm:left-4 lg:left-8 z-20 animate-float" style={{ animationDelay: '1s' }}>
+              <div className="absolute bottom-20 sm:bottom-16 lg:bottom-24 left-10 sm:left-4 lg:left-8 z-20 animate-float" style={{ animationDelay: '1s' }}>
                 <div className="bg-card/80 backdrop-blur-md border border-border p-2 sm:p-3 lg:p-4 shadow-xl">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-0.5 sm:mb-1">&lt;50ms</div>
                   <div className="text-[8px] sm:text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">{t("stats.latency")}</div>
@@ -89,7 +89,7 @@ export function HeroSection() {
 
               {/* AI Hero Image */}
               <div className="relative w-full h-full flex items-center justify-center">
-                <div className="relative w-full h-full p-8 lg:p-12">
+                <div className="relative w-full h-full p-10 lg:p-12">
                   <img
                     src="/ai_hero.png"
                     alt="AI Infrastructure"

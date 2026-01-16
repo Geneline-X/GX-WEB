@@ -213,13 +213,13 @@ export function KrioModelSection() {
               whileHover={{ y: -8, transition: { duration: 0.4, ease: "easeOut" } }}
               className="h-full"
             >
-              <Card className="relative h-full bg-card border border-border/50 hover:border-primary/40 hover:shadow-2xl transition-all duration-500 group overflow-hidden">
+              <Card className="relative h-full bg-card border border-border hover:border-primary/60 hover:shadow-xl transition-all duration-500 group overflow-hidden rounded-none">
                 <CardHeader className="relative z-10">
-                  <div className="mb-6 inline-flex p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors duration-500">
+                  <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors duration-500">
                     <component.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg font-bold mb-3 text-foreground">{component.title}</CardTitle>
-                  <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider mb-4">
+                  <CardTitle className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-500">{component.title}</CardTitle>
+                  <div className="inline-block px-3 py-1 rounded-full bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider">
                     {component.highlight}
                   </div>
                 </CardHeader>
@@ -229,8 +229,8 @@ export function KrioModelSection() {
                   </CardDescription>
                 </CardContent>
 
-                {/* Hover gradient effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                {/* Subtle hover gradient effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </Card>
             </motion.div>
           ))}

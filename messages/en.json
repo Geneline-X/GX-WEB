@@ -1,0 +1,171 @@
+{
+    "Navbar": {
+        "products": "Products",
+        "developers": "Developers",
+        "solutions": "Solutions",
+        "company": "Company",
+        "getStarted": "Get Started",
+        "search": "Search...",
+        "quickLinks": "Quick Links",
+        "about": "About",
+        "events": "Events",
+        "contactUs": "Contact Us",
+        "tryDemo": "Try Demo",
+        "documentation": "Documentation",
+        "productsDesc": {
+            "xplain": "Document & media intelligence",
+            "genestudio": "Business chatbot creation",
+            "kayx": "Krio-to-English speech-to-text",
+            "infra": "RAG, vector databases, AI agents"
+        },
+        "companyDesc": {
+            "about": "Learn about our mission and vision",
+            "events": "Upcoming events and webinars",
+            "contact": "Get in touch with us"
+        }
+    },
+    "Footer": {
+        "description": "African-founded AI company building intelligent platforms, infrastructure, and language technologies. Powering the future of AI across the continent.",
+        "products": "Products",
+        "company": "Company",
+        "legal": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "rights": "All rights reserved.",
+        "links": {
+            "solutions": "Solutions",
+            "about": "Company",
+            "contact": "Contact Us",
+            "docs": "Docs"
+        }
+    },
+    "Partnerships": {
+        "ecosystem": "Ecosystem",
+        "title": "Powered by Industry Leaders",
+        "description": "We integrate with the best tools and platforms to deliver enterprise-grade AI solutions.",
+        "tools": {
+            "rag": "RAG Pipelines",
+            "vector": "Vector Databases",
+            "llm": "LLM Orchestration",
+            "stt": "Speech-to-Text",
+            "doc": "Document Processing",
+            "agents": "AI Agents",
+            "embeddings": "Embeddings",
+            "fineTuning": "Fine-tuning"
+        }
+    },
+    "Testimonials": {
+        "badge": "Testimonials",
+        "title": "Trusted by Leaders",
+        "description": "See what organizations across Africa say about working with Geneline-X.",
+        "items": {
+            "aminata": {
+                "quote": "Geneline-X has transformed our document processing. The accuracy in multiple African languages is unmatched.",
+                "author": "Aminata Kamara",
+                "role": "CTO",
+                "org": "TechAfrica"
+            },
+            "mohamed": {
+                "quote": "Kay-X's STT capabilities are a game-changer for our customer service in Sierra Leone.",
+                "author": "Mohamed Bangura",
+                "role": "Operations Director",
+                "org": "SaloneTel"
+            },
+            "fatmata": {
+                "quote": "The most robust AI infrastructure we've used. It handles our complex data needs with ease.",
+                "author": "Fatmata Sesay",
+                "role": "Lead Data Scientist",
+                "org": "DataFlow"
+            }
+        }
+    },
+    "Hero": {
+        "title": "The First <africanAI>African AI</africanAI> Infrastructure",
+        "subtitle": "Multilingual intelligence, built for global scale.",
+        "getStarted": "Get Started",
+        "tryDemo": "Try Demo",
+        "contactUs": "Contact Us",
+        "footer": "Powering Innovation Across Africa and Beyond",
+        "trustedBy": "Trusted by Industry Leaders",
+        "stats": {
+            "languages": "Languages",
+            "uptime": "Uptime",
+            "latency": "Latency"
+        }
+    },
+    "KrioModel": {
+        "badge": "Native Language AI",
+        "title": "Breaking the Language Barrier",
+        "description": "Our custom models understand the nuances of African languages and dialects, starting with Sierra Leone's Krio.",
+        "watchDemo": "Watch Demo",
+        "experience": "Experience the power of KRIO in action",
+        "components": {
+            "neural": {
+                "title": "Neural Architecture",
+                "desc": "Advanced transformer-based architecture optimized for multi-modal understanding and generation.",
+                "highlight": "Built on cutting-edge research"
+            },
+            "performance": {
+                "title": "Lightning Performance",
+                "desc": "Unprecedented inference speed with optimized compute efficiency, achieving millisecond-level response times.",
+                "highlight": "10x faster than competitors"
+            },
+            "security": {
+                "title": "Enterprise Security",
+                "desc": "Military-grade encryption and compliance with GDPR, SOC2, and HIPAA standards built into the core.",
+                "highlight": "Zero-trust architecture"
+            },
+            "modular": {
+                "title": "Modular Framework",
+                "desc": "Flexible, composable modules that adapt to your specific use cases without retraining the entire model.",
+                "highlight": "Plug-and-play capabilities"
+            }
+        }
+    },
+    "HowItWorks": {
+        "badge": "How It Works",
+        "title": "From Data to Intelligence",
+        "description": "Our platform transforms how you work with AI — simple to start, powerful to scale.",
+        "steps": {
+            "ingest": {
+                "title": "Ingest Your Data",
+                "desc": "Connect documents, media, or custom data sources. Our pipelines handle the heavy lifting."
+            },
+            "process": {
+                "title": "Process & Understand",
+                "desc": "RAG pipelines, vector embeddings, and AI models transform raw data into actionable intelligence."
+            },
+            "build": {
+                "title": "Build & Deploy",
+                "desc": "Use our APIs and SDKs to build custom AI applications, chatbots, or integrations."
+            },
+            "scale": {
+                "title": "Scale & Optimize",
+                "desc": "Enterprise-grade infrastructure that scales with your needs. Monitor, iterate, improve."
+            }
+        }
+    },
+    "Stats": {
+        "processed": "Documents Processed Daily",
+        "uptime": "Uptime Guarantee",
+        "latency": "Average Response Time",
+        "languages": "African Languages Supported"
+    },
+    "Events": {
+        "title": "Upcoming Events",
+        "badge": "Community",
+        "noEvents": "Quiet for now...",
+        "description": "We're currently planning our next major wave of workshops, hackathons, and conferences. Something big is brewing at Geneline-X.",
+        "stayTuned": "Stay Tuned",
+        "notifyMe": "Notify Me"
+    },
+    "Developers": {
+        "title": "Built for Developers",
+        "badge": "Ecosystem",
+        "description": "Powerful APIs, flexible SDKs, and enterprise-grade infrastructure. Build the future of African AI with us.",
+        "integrationTitle": "Seamless Integration",
+        "integrationDesc": "Our services are designed to be integrated into any workflow. From healthcare to finance, we provide the building blocks for intelligence.",
+        "docsSoon": "Documentation Coming Soon",
+        "docsDesc": "We're polishing our API references and guides. Soon, you'll have everything you need to deploy Geneline-X in minutes."
+    }
+}

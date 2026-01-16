@@ -1,0 +1,63 @@
+{
+    "Navbar": {
+        "products": "Produtos",
+        "developers": "Desenvolvedores",
+        "solutions": "Soluções",
+        "company": "Empresa",
+        "getStarted": "Começar",
+        "search": "Pesquisar...",
+        "quickLinks": "Links Rápidos",
+        "about": "Sobre",
+        "events": "Eventos",
+        "contactUs": "Contate-nos",
+        "tryDemo": "Experimentar Demo",
+        "documentation": "Documentação",
+        "productsDesc": {
+            "xplain": "Inteligência de documentos e mídia",
+            "genestudio": "Criação de chatbots de negócios",
+            "kayx": "Reconhecimento de voz Krio-Inglês",
+            "infra": "RAG, bancos de dados vetoriais, agentes IA"
+        },
+        "companyDesc": {
+            "about": "Saiba mais sobre nossa missão e visão",
+            "events": "Próximos eventos e webinars",
+            "contact": "Entre em contato conosco"
+        }
+    },
+    "Footer": {
+        "description": "Empresa de IA fundada na África, construindo plataformas inteligentes, infraestrutura e tecnologias de linguagem.",
+        "products": "Produtos",
+        "company": "Empresa",
+        "legal": "Jurídico",
+        "privacy": "Política de Privacidade",
+        "terms": "Termos de Serviço",
+        "rights": "Todos os direitos reservados."
+    },
+    "Stats": {
+        "processed": "Documentos Processados Diariamente",
+        "uptime": "Garantia de Uptime",
+        "latency": "Tempo de Resposta Médio",
+        "languages": "Idiomas Africanos Suportados"
+    },
+    "Hero": {
+        "title": "A primeira infraestrutura de <africanAI>IA Africana</africanAI>",
+        "noEvents": "Tudo calmo por enquanto...",
+        "description": "Estamos planejando nossa próxima onda de workshops e conferências. Algo grande está por vir.",
+        "stayTuned": "Fique Atento",
+        "notifyMe": "Notifique-me",
+        "contactUs": "Contate-nos"
+    },
+    "Events": {
+        "title": "Próximos Eventos",
+        "badge": "Comunidade"
+    },
+    "Developers": {
+        "title": "Feito para Desenvolvedores",
+        "badge": "Ecossistema",
+        "description": "APIs poderosas e SDKs flexíveis. Construa o futuro da IA africana conosco.",
+        "integrationTitle": "Integração Perfeita",
+        "integrationDesc": "Nossos serviços são projetados para qualquer fluxo de trabajo.",
+        "docsSoon": "Documentação em Breve",
+        "docsDesc": "Estamos polindo nossas referências de API."
+    }
+}

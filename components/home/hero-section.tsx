@@ -2,136 +2,159 @@
 
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
+import { Link } from "@/i18n/routing"
 import { ArrowRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function HeroSection() {
+  const t = useTranslations("Hero")
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // GSAP animations would be initialized here
-    // For now, using CSS animations as placeholder
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background gradient */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full" />
-        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-primary/5 blur-[100px] rounded-full" />
-      </div>
+    <>
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 bg-background transition-colors duration-500">
+        {/* Background gradient */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 dark:bg-primary/20 blur-[150px] rounded-full" />
+          <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-primary/5 dark:bg-primary/10 blur-[100px] rounded-full" />
+        </div>
 
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: "64px 64px",
-        }}
-      />
+        {/* Grid pattern overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
+            backgroundSize: "64px 64px",
+          }}
+        />
 
-      <div ref={containerRef} className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content */}
-          <div className="text-center lg:text-left">
-            <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4 animate-fade-in-up">
-              African-Founded AI Company
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-foreground mb-6 animate-fade-in-up animation-delay-100 text-balance">
-              The Intelligent Core of{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
-                AI Innovation
-              </span>
-            </h1>
-            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up animation-delay-200">
-              Building AI platforms, infrastructure, and language technologies. Xplain AI, Genestudio, Kay-X, and more —
-              all from one powerful ecosystem.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground group" asChild>
-                <a href="/contact-us" target="_blank" rel="noopener noreferrer">
-                  Book a Demo
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="border-border hover:bg-muted bg-transparent" asChild>
-                <a href="https://docs.geneline-x.com" target="_blank" rel="noopener noreferrer">
-                  Explore Documentation
-                </a>
-              </Button>
+        <div ref={containerRef} className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 items-center">
+            {/* Text Content */}
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <h1 className="text-[clamp(2.5rem,8vw,4.5rem)] sm:text-6xl lg:text-5xl xl:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up text-foreground leading-[1.1]">
+                {t.rich("title", {
+                  africanAI: (chunks) => <span className="text-primary">{chunks}</span>
+                })}
+              </h1>
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up animation-delay-100">
+                {t("subtitle")}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-200 mb-8 sm:mb-12">
+                <Button size="lg" className="h-12 sm:h-14 px-8 sm:px-12 min-w-[180px] sm:min-w-[200px] rounded-none bg-primary hover:bg-primary/90 text-white font-semibold uppercase text-[10px] sm:text-xs tracking-wider shadow-lg hover:shadow-xl transition-all group overflow-hidden" asChild>
+                  <Link href="/developers" className="flex items-center justify-center">
+                    <span className="transition-transform duration-300">{t("tryDemo")}</span>
+                    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 -ml-5 opacity-0 group-hover:ml-2 group-hover:opacity-100 transition-all duration-300 font-bold" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="h-12 sm:h-14 px-8 sm:px-12 min-w-[180px] sm:min-w-[200px] rounded-none border-2 border-foreground hover:bg-foreground hover:text-background bg-transparent font-semibold uppercase text-[10px] sm:text-xs tracking-wider shadow-sm hover:shadow-md transition-all group overflow-hidden" asChild>
+                  <Link href="/contact-us" className="flex items-center justify-center text-foreground group-hover:text-background transition-colors">
+                    <span className="transition-transform duration-300">{t("contactUs")}</span>
+                    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 -ml-5 opacity-0 group-hover:ml-2 group-hover:opacity-100 transition-all duration-300 font-bold" />
+                  </Link>
+                </Button>
+              </div>
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-[0.2em] animate-fade-in-up animation-delay-300">
+                {t("footer")}
+              </p>
             </div>
-          </div>
 
-          {/* Hero Animation Placeholder */}
-          <div className="relative aspect-square max-w-lg mx-auto lg:max-w-none animate-fade-in-up animation-delay-200">
-            {/* 
-              HERO ANIMATION CONTAINER
-              TODO: Replace with Lottie animation or 3D visualization
-              This placeholder represents the nucleus/core visual concept from brand guidelines
-            */}
-            <div className="relative w-full h-full">
-              {/* Outer rotating ring */}
-              <div className="absolute inset-0 rounded-full border border-primary/20 animate-spin-slow" />
-              <div
-                className="absolute inset-4 rounded-full border border-primary/15 animate-spin-slow"
-                style={{ animationDirection: "reverse", animationDuration: "25s" }}
-              />
-              <div className="absolute inset-8 rounded-full border border-primary/10 animate-spin-slow" />
-
-              {/* Center nucleus */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 w-32 h-32 bg-primary/30 blur-3xl rounded-full animate-pulse-slow" />
-
-                  {/* Core diamond shapes */}
-                  <div className="relative w-32 h-32 flex items-center justify-center">
-                    <div className="absolute w-24 h-24 bg-primary/20 rotate-45 rounded-lg animate-pulse-slow" />
-                    <div className="absolute w-16 h-16 bg-primary/40 rotate-45 rounded-md" />
-                    <div className="absolute w-8 h-8 bg-primary rounded-sm rotate-45" />
-                  </div>
+            {/* Hero Visual Section */}
+            <div className="relative aspect-square w-full max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto order-1 lg:order-2 animate-fade-in-up animation-delay-200">
+              {/* Floating Stats Cards */}
+              <div className="absolute top-2 sm:top-4 lg:top-8 -left-2 sm:-left-4 lg:-left-8 z-20 animate-float">
+                <div className="bg-card/80 backdrop-blur-md border border-border p-2 sm:p-3 lg:p-4 shadow-xl">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-0.5 sm:mb-1">150+</div>
+                  <div className="text-[8px] sm:text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">{t("stats.languages")}</div>
                 </div>
               </div>
 
-              {/* Orbiting elements */}
-              {[0, 60, 120, 180, 240, 300].map((degree, i) => (
-                <div
-                  key={i}
-                  className="absolute top-1/2 left-1/2 w-3 h-3"
-                  style={{
-                    transform: `rotate(${degree}deg) translateX(140px) rotate(-${degree}deg)`,
-                  }}
-                >
-                  <div
-                    className="w-full h-full bg-primary/60 rounded-full animate-pulse-slow"
-                    style={{ animationDelay: `${i * 200}ms` }}
-                  />
+              <div className="absolute top-16 sm:top-24 lg:top-32 -right-2 sm:-right-4 lg:-right-8 z-20 animate-float" style={{ animationDelay: '0.5s' }}>
+                <div className="bg-card/80 backdrop-blur-md border border-border p-2 sm:p-3 lg:p-4 shadow-xl">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-0.5 sm:mb-1">99.9%</div>
+                  <div className="text-[8px] sm:text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">{t("stats.uptime")}</div>
                 </div>
-              ))}
+              </div>
+
+              <div className="absolute bottom-12 sm:bottom-16 lg:bottom-24 left-2 sm:left-4 lg:left-8 z-20 animate-float" style={{ animationDelay: '1s' }}>
+                <div className="bg-card/80 backdrop-blur-md border border-border p-2 sm:p-3 lg:p-4 shadow-xl">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-0.5 sm:mb-1">&lt;50ms</div>
+                  <div className="text-[8px] sm:text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">{t("stats.latency")}</div>
+                </div>
+              </div>
+
+              {/* AI Hero Image */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                <div className="relative w-full h-full p-8 lg:p-12">
+                  <img
+                    src="/ai_hero.png"
+                    alt="AI Infrastructure"
+                    className="w-full h-full object-contain filter drop-shadow-2xl dark:brightness-110"
+                  />
+                  {/* Glow behind image */}
+                  <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full scale-75 opacity-50 dark:opacity-70" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partners Section - Integrated */}
+          <div className="mt-24 lg:mt-32 animate-fade-in-up animation-delay-300">
+            <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-12">
+              {t("trustedBy")}
+            </p>
+            <div className="overflow-hidden">
+              <div className="flex animate-marquee items-center">
+                {[
+                  { name: "OpenAI", logo: "/openai-logo.svg" },
+                  { name: "AWS", logo: "/Amazon_Web_Services_Logo.svg" },
+                  { name: "Google Cloud", logo: "/Google Cloud.svg" },
+                  { name: "Microsoft Azure", logo: "/Microsoft_Azure-OXJddnt9u_brandlogos.net.svg" },
+                  { name: "Vercel", logo: "/vercel.svg" },
+                  { name: "Pinecone", logo: "/Pinecone-Icon--Streamline-Svg-Logos.svg" },
+                ].concat([
+                  { name: "OpenAI", logo: "/openai-logo.svg" },
+                  { name: "AWS", logo: "/Amazon_Web_Services_Logo.svg" },
+                  { name: "Google Cloud", logo: "/Google Cloud.svg" },
+                  { name: "Microsoft Azure", logo: "/Microsoft_Azure-OXJddnt9u_brandlogos.net.svg" },
+                  { name: "Vercel", logo: "/vercel.svg" },
+                  { name: "Pinecone", logo: "/Pinecone-Icon--Streamline-Svg-Logos.svg" },
+                ]).map((partner, index) => (
+                  <div
+                    key={`${partner.name}-${index}`}
+                    className="flex-shrink-0 mx-4 sm:mx-8 lg:mx-12 opacity-40 hover:opacity-100 transition-opacity duration-500"
+                    title={partner.name}
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      className="h-5 sm:h-7 lg:h-9 w-auto object-contain grayscale dark:invert-[0.8] hover:grayscale-0 dark:hover:invert-0 transition-all duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
 
-      <style jsx>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
+        <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
           }
-          to {
-            transform: rotate(360deg);
+          100% {
+            transform: translateX(-50%);
           }
         }
-        @keyframes pulse-slow {
-          0%,
-          100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.6;
-          }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
         }
         @keyframes fade-in-up {
           from {
@@ -143,11 +166,16 @@ export function HeroSection() {
             transform: translateY(0);
           }
         }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
         }
-        .animate-pulse-slow {
-          animation: pulse-slow 3s ease-in-out infinite;
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
         }
         .animate-fade-in-up {
           animation: fade-in-up 0.8s ease-out forwards;
@@ -163,6 +191,7 @@ export function HeroSection() {
           animation-delay: 300ms;
         }
       `}</style>
-    </section>
+      </section>
+    </>
   )
 }

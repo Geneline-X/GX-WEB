@@ -1,0 +1,157 @@
+{
+    "Navbar": {
+        "products": "Produkte",
+        "developers": "Entwickler",
+        "solutions": "Lösungen",
+        "company": "Unternehmen",
+        "companyDesc": {
+            "about": "Erfahren Sie mehr über unsere Mission",
+            "events": "Kommende Veranstaltungen und Webinare",
+            "contact": "Treten Sie mit uns in Kontakt"
+        }
+    },
+    "Footer": {
+        "description": "In Afrika gegründetes KI-Unternehmen, das intelligente Plattformen, Infrastruktur und Sprachtechnologien aufbaut.",
+        "products": "Produkte",
+        "company": "Unternehmen",
+        "legal": "Rechtliches",
+        "privacy": "Datenschutzrichtlinie",
+        "terms": "Nutzungsbedingungen",
+        "rights": "Alle Rechte vorbehalten.",
+        "links": {
+            "solutions": "Lösungen",
+            "about": "Unternehmen",
+            "contact": "Kontakt",
+            "docs": "Docs"
+        }
+    },
+    "Partnerships": {
+        "ecosystem": "Ökosystem",
+        "title": "Unterstützt von Branchenführern",
+        "description": "Wir integrieren uns mit den besten Tools und Plattformen.",
+        "tools": {
+            "rag": "RAG-Pipelines",
+            "vector": "Vektordatenbanken",
+            "llm": "LLM-Orchestrierung",
+            "stt": "Speech-to-Text",
+            "doc": "Dokumentenverarbeitung",
+            "agents": "KI-Agenten",
+            "embeddings": "Embeddings",
+            "fineTuning": "Feineinstellung"
+        }
+    },
+    "Testimonials": {
+        "badge": "Testimonials",
+        "title": "Von Führungskräften vertraut",
+        "description": "Sehen Sie, was Organisationen in ganz Afrika sagen.",
+        "items": {
+            "aminata": {
+                "quote": "Geneline-X hat unsere Dokumentenverarbeitung transformiert.",
+                "author": "Aminata Kamara",
+                "role": "CTO",
+                "org": "TechAfrica"
+            },
+            "mohamed": {
+                "quote": "Die STT-Funktionen von Kay-X sind ein Game-Changer.",
+                "author": "Mohamed Bangura",
+                "role": "Operations Director",
+                "org": "SaloneTel"
+            },
+            "fatmata": {
+                "quote": "Die robusteste KI-Infrastruktur, die wir je benutzt haben.",
+                "author": "Fatmata Sesay",
+                "role": "Lead Data Scientist",
+                "org": "DataFlow"
+            }
+        }
+    },
+    "Hero": {
+        "title": "Die erste <africanAI>afrikanische KI</africanAI>-Infrastruktur",
+        "subtitle": "Multilinguale Intelligenz, gebaut für globale Skalierung.",
+        "getStarted": "Loslegen",
+        "tryDemo": "Demo testen",
+        "contactUs": "Kontaktieren Sie uns",
+        "footer": "Innovation in ganz Afrika und darüber hinaus vorantreiben",
+        "trustedBy": "Von Branchenführern vertraut",
+        "stats": {
+            "languages": "Sprachen",
+            "uptime": "Verfügbarkeit",
+            "latency": "Latenz"
+        }
+    },
+    "KrioModel": {
+        "badge": "Native Sprache KI",
+        "title": "Sprachbarrieren überwinden",
+        "description": "Unsere maßgeschneiderten Modelle verstehen die Nuancen afrikanischer Sprachen.",
+        "watchDemo": "Demo ansehen",
+        "experience": "Erleben Sie die Kraft von KRIO in Aktion",
+        "components": {
+            "neural": {
+                "title": "Neuronale Architektur",
+                "desc": "Fortschrittliche Transformer-basierte Architektur.",
+                "highlight": "Auf modernster Forschung aufgebaut"
+            },
+            "performance": {
+                "title": "Blitzschnelle Leistung",
+                "desc": "Beispiellose Inferenzgeschwindigkeit.",
+                "highlight": "10x schneller als die Konkurrenz"
+            },
+            "security": {
+                "title": "Unternehmenssicherheit",
+                "desc": "Verschlüsselung auf Militärniveau.",
+                "highlight": "Zero-Trust-Architektur"
+            },
+            "modular": {
+                "title": "Modulares Framework",
+                "desc": "Flexible, modular aufbaubare Komponenten.",
+                "highlight": "Plug-and-Play-Fähigkeiten"
+            }
+        }
+    },
+    "HowItWorks": {
+        "badge": "Wie es funktioniert",
+        "title": "Von Daten zu Intelligenz",
+        "description": "Unsere Plattform transformiert Ihre Arbeit mit KI.",
+        "steps": {
+            "ingest": {
+                "title": "Daten aufnehmen",
+                "desc": "Verbinden Sie Dokumente, Medien oder Datenquellen."
+            },
+            "process": {
+                "title": "Verarbeiten & Verstehen",
+                "desc": "RAG-Pipelines und KI-Modelle."
+            },
+            "build": {
+                "title": "Erstellen & Bereitstellen",
+                "desc": "Nutzen Sie unsere APIs und SDKs."
+            },
+            "scale": {
+                "title": "Skalieren & Optimieren",
+                "desc": "Infrastruktur auf Unternehmensebene."
+            }
+        }
+    },
+    "Stats": {
+        "processed": "Täglich verarbeitete Dokumente",
+        "uptime": "Verfügbarkeitsgarantie",
+        "latency": "Durchschnittliche Antwortzeit",
+        "languages": "Unterstützte afrikanische Sprachen"
+    },
+    "Events": {
+        "title": "Kommende Veranstaltungen",
+        "badge": "Community",
+        "noEvents": "Noch ruhig hier...",
+        "description": "Wir planen gerade unsere nächsten Workshops und Konferenzen. Bei Geneline-X braut sich etwas Großes zusammen.",
+        "stayTuned": "Bleiben Sie dran",
+        "notifyMe": "Benachrichtigen"
+    },
+    "Developers": {
+        "title": "Für Entwickler gebaut",
+        "badge": "Ökosystem",
+        "description": "Leistungsstarke APIs und flexible SDKs. Bauen Sie mit uns die Zukunft der afrikanischen KI.",
+        "integrationTitle": "Nahtlose Integration",
+        "integrationDesc": "Unsere Dienste sind für jeden Workflow konzipiert.",
+        "docsSoon": "Dokumentation folgt in Kürze",
+        "docsDesc": "Wir arbeiten an unseren API-Referenzen."
+    }
+}

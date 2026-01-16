@@ -1,0 +1,64 @@
+{
+    "Navbar": {
+        "products": "产品",
+        "developers": "开发者",
+        "solutions": "解决方案",
+        "company": "公司",
+        "getStarted": "开始使用",
+        "search": "搜索...",
+        "quickLinks": "快速链接",
+        "about": "关于我们",
+        "events": "活动",
+        "contactUs": "联系我们",
+        "tryDemo": "尝试演示",
+        "documentation": "文档",
+        "productsDesc": {
+            "xplain": "文档和媒体智能",
+            "genestudio": "商业聊天机器人创建",
+            "kayx": "克里奥尔语到英语的语音识别",
+            "infra": "RAG、向量数据库、人工智能代理"
+        },
+        "companyDesc": {
+            "about": "了解我们的使命和愿景",
+            "events": "即将举行的活动和网络研讨会",
+            "contact": "与我们联系"
+        }
+    },
+    "Footer": {
+        "description": "一家成立于非洲的人工智能公司，致力于构建智能平台、基础设施和语言技术。",
+        "products": "产品",
+        "Stats": {
+            "processed": "每日处理文档",
+            "uptime": "在线时间保障",
+            "latency": "平均响应时间",
+            "languages": "支持的非洲语言"
+        },
+        "company": "公司",
+        "legal": "法律",
+        "privacy": "隐私政策",
+        "terms": "服务条款",
+        "rights": "版权所有。"
+    },
+    "Hero": {
+        "title": "第一个 <africanAI>非洲人工智能</africanAI> 基础设施",
+        "tryDemo": "尝试演示",
+        "contactUs": "联系我们",
+        "noEvents": "目前暂无活动...",
+        "description": "我们正在计划下一波研讨会和会议。重大消息即将公布。",
+        "stayTuned": "敬请期待",
+        "notifyMe": "通知我"
+    },
+    "Events": {
+        "title": "活动预告",
+        "badge": "社区"
+    },
+    "Developers": {
+        "title": "为开发者打造",
+        "badge": "生态系统",
+        "description": "强大的 API 和灵活的 SDK。与我们一起构建非洲 AI 的未来。",
+        "integrationTitle": "无缝集成",
+        "integrationDesc": "我们的服务旨在集成到任何工作流程中。",
+        "docsSoon": "文档即将上线",
+        "docsDesc": "我们正在优化我们的 API 参考和指南。"
+    }
+}

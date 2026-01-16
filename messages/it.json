@@ -1,0 +1,67 @@
+{
+    "Navbar": {
+        "products": "Prodotti",
+        "developers": "Sviluppatori",
+        "solutions": "Soluzioni",
+        "company": "Azienda",
+        "getStarted": "Inizia",
+        "search": "Cerca...",
+        "quickLinks": "Link rapidi",
+        "about": "Chi siamo",
+        "events": "Eventi",
+        "contactUs": "Contattaci",
+        "tryDemo": "Prova Demo",
+        "documentation": "Documentazione",
+        "productsDesc": {
+            "xplain": "Intelligenza per documenti e media",
+            "genestudio": "Creazione di chatbot aziendali",
+            "kayx": "Riconoscimento vocale Krio-Inglese",
+            "infra": "RAG, database vettoriali, agenti IA"
+        },
+        "companyDesc": {
+            "about": "Scopri la nostra missione e visione",
+            "events": "Prossimi eventi e webinar",
+            "contact": "Mettiti in contatto con noi"
+        }
+    },
+    "Footer": {
+        "description": "Azienda di IA fondata in Africa, che costruisce piattaforme intelligenti, infrastrutture e tecnologie linguistiche.",
+        "products": "Prodotti",
+        "company": "Azienda",
+        "legal": "Legale",
+        "privacy": "Informativa sulla Privacy",
+        "terms": "Termini di Servizio",
+        "rights": "Tutti i diritti riservati."
+    },
+    "Stats": {
+        "processed": "Documenti Elaborati Giornalmente",
+        "uptime": "Garanzia di Disponibilità",
+        "latency": "Tempo di Risposta Medio",
+        "languages": "Lingue Africane Supportate"
+    },
+    "Hero": {
+        "title": "La prima infrastruttura di <africanAI>IA Africana</africanAI>",
+        "contactUs": "Contattaci",
+        "noEvents": "Tutto calmo per ora...",
+        "description": "Stiamo pianificando i nostri prossimi workshop e conferenze. Qualcosa di grande sta arrivando.",
+        "stayTuned": "Resta Sintonizzato",
+        "notifyMe": "Avvisami"
+    },
+    "Events": {
+        "title": "Prossimi Eventi",
+        "badge": "Community",
+        "noEvents": "Tutto calmo per ora...",
+        "description": "Stiamo pianificando i nostri prossimi workshop e conferenze. Qualcosa di grande sta arrivando.",
+        "stayTuned": "Resta Sintonizzato",
+        "notifyMe": "Avvisami"
+    },
+    "Developers": {
+        "title": "Costruito per gli Sviluppatori",
+        "badge": "Ecosistema",
+        "description": "API potenti e SDK flessibili. Costruisci il futuro dell'IA africana con noi.",
+        "integrationTitle": "Integrazione Perfetta",
+        "integrationDesc": "I nostri servizi sono progettati per ogni flusso di lavoro.",
+        "docsSoon": "Documentazione in Arrivo",
+        "docsDesc": "Stiamo perfezionando i nostri riferimenti API."
+    }
+}

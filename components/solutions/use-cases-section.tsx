@@ -105,9 +105,8 @@ export function UseCasesSection() {
           {useCases.map((useCase, index) => (
             <div
               key={useCase.title}
-              className={`group relative p-6 lg:p-8 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`group relative p-6 lg:p-8 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Category badge */}

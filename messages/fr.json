@@ -16,6 +16,7 @@
             "xplain": "Intelligence documentaire et média",
             "genestudio": "Création de chatbot d'entreprise",
             "kayx": "Reconnaissance vocale Krio-Anglais",
+            "kaccp": "Plateforme linguistique open-source",
             "infra": "RAG, bases de données vectorielles, agents IA"
         },
         "companyDesc": {
@@ -167,5 +168,26 @@
         "integrationDesc": "Nos services sont conçus pour être intégrés dans n'importe quel flux de travail. De la santé à la finance, nous fournissons les briques de l'intelligence.",
         "docsSoon": "Documentation Bientôt Disponible",
         "docsDesc": "Nous peaufinons nos références d'API et nos guides. Bientôt, vous aurez tout ce dont vous avez besoin pour déployer Geneline-X en quelques minutes."
+    },
+    "KACCP": {
+        "badge": "Open Source",
+        "title": "KACCP : La Fondation de Kay-X",
+        "description": "KACCP (Krio Audio Corpus Curation Platform) est la plateforme qui nous a permis de développer notre modèle phare Krio. C'est un mouvement open-source pour créer un ensemble de données linguistiques de haute qualité.",
+        "longDescription": "Développé par Geneline-X, KACCP permet la transcription collaborative, la révision et l'exportation d'ensembles de données pour la recherche et la technologie linguistique. La plateforme est conçue pour l'évolutivité et le support futur d'autres langues.",
+        "link": "Explorer KACCP",
+        "features": {
+            "transcribe": {
+                "title": "Transcription Collaborative",
+                "desc": "Engagez les communautés pour transcrire les clips audio Krio en anglais avec précision et contexte."
+            },
+            "curate": {
+                "title": "Curation de Haute Qualité",
+                "desc": "Processus de révision rigoureux garantissant la meilleure qualité de données pour l'entraînement de modèles linguistiques avancés."
+            },
+            "research": {
+                "title": "Axé sur la Recherche",
+                "desc": "Un ensemble de données ouvert qui donne du pouvoir aux chercheurs et aux innovateurs technologiques à travers le monde."
+            }
+        }
     }
 }

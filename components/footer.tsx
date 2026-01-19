@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/routing"
 import Image from "next/image"
-import { ExternalLink, Github, Instagram, Facebook, Linkedin } from "lucide-react"
+import { ExternalLink, Github, Facebook, Linkedin } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
@@ -13,7 +13,7 @@ const social = [
   },
   {
     name: "X (Twitter)",
-    href: "https://x.com/geneline-x",
+    href: "https://x.com/GenelineX1333?t=_ouVWfMlC--LmiH2h61XpQ&s=09",
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -31,39 +31,40 @@ const social = [
   },
   {
     name: "Facebook",
-    href: "https://facebook.com/geneline-x",
+    href: "https://www.facebook.com/profile.php?id=61573120467513",
     icon: <Facebook className="w-5 h-5" />,
   },
   {
     name: "Linkedin",
-    href: "https://linkedin.com/company/geneline-x",
+    href: "https://www.linkedin.com/company/geneline-x",
     icon: <Linkedin className="w-5 h-5" />,
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com/geneline-x",
-    icon: <Instagram className="w-5 h-5" />,
-  },
+  }
 ]
 
 export function Footer() {
   const t = useTranslations("Footer")
 
-  const productsList = [
+  interface FooterLink {
+    name: string
+    href: string
+    external?: boolean
+  }
+
+  const productsList: FooterLink[] = [
+    { name: "KACCP (Open Source)", href: "https://kaccp.vercel.app", external: true },
+    { name: "Kay-X", href: "https://kay-x-entreprise.vercel.app", external: true },
     { name: "Xplain AI", href: "https://xplain-ai.net", external: true },
     { name: "Genestudio", href: "https://genistud.io", external: true },
-    { name: "Kay-X", href: "https://kay-x-entreprise.vercel.app", external: true },
     { name: "AI Infrastructure", href: "https://gen-x-service-dashboard.vercel.app", external: true },
   ]
 
-  const companyList = [
+  const companyList: FooterLink[] = [
     { name: t("links.solutions"), href: "/solutions" },
     { name: t("links.about"), href: "/company" },
-    { name: t("links.contact"), href: "/contact-us" },
-    { name: t("links.docs"), href: "https://docs.geneline-x.com", external: true },
+    { name: t("links.contact"), href: "/contact-us" }
   ]
 
-  const legalList = [
+  const legalList: FooterLink[] = [
     { name: t("privacy"), href: "/privacy" },
     { name: t("terms"), href: "/terms" },
   ]

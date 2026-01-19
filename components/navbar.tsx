@@ -25,6 +25,7 @@ export function Navbar() {
   const [isSearchClosing, setIsSearchClosing] = useState(false)
 
   const products = [
+    { name: "KACCP", description: t("productsDesc.kaccp"), href: "https://kaccp.vercel.app" },
     { name: "Xplain AI", description: t("productsDesc.xplain"), href: "https://xplain-ai.net" },
     { name: "Genestudio", description: t("productsDesc.genestudio"), href: "https://genistud.io" },
     { name: "Kay-X", description: t("productsDesc.kayx"), href: "https://kay-x-entreprise.vercel.app" },

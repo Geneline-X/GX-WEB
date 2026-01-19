@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { KrioModelSection } from "@/components/home/krio-model-section"
+import { KACCPSection } from "@/components/home/kaccp-section"
 import { FeaturesSection } from "@/components/home/features-section"
 import { IntegrationSection } from "@/components/home/integration-section"
 import { CustomerStoriesSection } from "@/components/home/customer-stories-section"
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <KrioModelSection />
+      <KACCPSection />
       <HowItWorksSection />
       <StatsSection />
       <PartnershipsSection />

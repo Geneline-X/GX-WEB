@@ -16,6 +16,7 @@
             "xplain": "Document & media intelligence",
             "genestudio": "Business chatbot creation",
             "kayx": "Krio-to-English speech-to-text",
+            "kaccp": "Open-source language platform",
             "infra": "RAG, vector databases, AI agents"
         },
         "companyDesc": {
@@ -167,5 +168,26 @@
         "integrationDesc": "Our services are designed to be integrated into any workflow. From healthcare to finance, we provide the building blocks for intelligence.",
         "docsSoon": "Documentation Coming Soon",
         "docsDesc": "We're polishing our API references and guides. Soon, you'll have everything you need to deploy Geneline-X in minutes."
+    },
+    "KACCP": {
+        "badge": "Open Source",
+        "title": "KACCP: The Foundation of Kay-X",
+        "description": "KACCP (Krio Audio Corpus Curation Platform) is how we arrived at our flagship Krio model. It's an open-source movement to build a high-quality, low-resource language dataset.",
+        "longDescription": "Developed by Geneline-X, KACCP enables collaborative transcription, review, and dataset export for research and language technology. The platform is designed for scalability and future support for additional languages.",
+        "link": "Explore KACCP",
+        "features": {
+            "transcribe": {
+                "title": "Collaborative Transcription",
+                "desc": "Engage communities to transcribe Krio audio clips into English with precision and context."
+            },
+            "curate": {
+                "title": "High-Quality Curation",
+                "desc": "Rigorous review processes ensuring the highest quality dataset for training advanced language models."
+            },
+            "research": {
+                "title": "Research Focused",
+                "desc": "An open dataset that empowers researchers and tech-innovators across the globe."
+            }
+        }
     }
 }

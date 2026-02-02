@@ -34,6 +34,7 @@ export function Navbar() {
 
   const companyLinks = [
     { name: t("about"), description: t("companyDesc.about"), href: "/company" },
+    { name: t("blog"), description: t("companyDesc.blog"), href: "/blog" },
     { name: t("events"), description: t("companyDesc.events"), href: "/events" },
     { name: t("contactUs"), description: t("companyDesc.contact"), href: "/contact-us" }
   ]

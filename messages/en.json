@@ -12,6 +12,7 @@
         "contactUs": "Contact Us",
         "tryDemo": "Try Demo",
         "documentation": "Documentation",
+        "blog": "Blog",
         "productsDesc": {
             "xplain": "Document & media intelligence",
             "genestudio": "Business chatbot creation",
@@ -22,7 +23,8 @@
         "companyDesc": {
             "about": "Learn about our mission and vision",
             "events": "Upcoming events and webinars",
-            "contact": "Get in touch with us"
+            "contact": "Get in touch with us",
+            "blog": "Read our latest technical research and insights"
         }
     },
     "Footer": {

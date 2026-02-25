@@ -12,16 +12,19 @@
         "contactUs": "Contáctenos",
         "tryDemo": "Probar Demo",
         "documentation": "Documentación",
+        "blog": "Blog",
         "productsDesc": {
             "xplain": "Inteligencia de documentos y medios",
             "genestudio": "Creación de chatbots empresariales",
             "kayx": "Speech-to-text de Krio a Inglés",
+            "kaccp": "Plataforma lingüística de código abierto",
             "infra": "RAG, bases de datos vectoriales, agentes de IA"
         },
         "companyDesc": {
             "about": "Conozca nuestra misión y visión",
             "events": "Próximos eventos y seminarios web",
-            "contact": "Póngase en contacto con nosotros"
+            "contact": "Póngase en contacto con nosotros",
+            "blog": "Lea nuestras últimas investigaciones y perspectivas"
         }
     },
     "Footer": {
@@ -167,5 +170,26 @@
         "integrationDesc": "Nuestros servicios están diseñados para integrarse en cualquier flujo de trabajo.",
         "docsSoon": "Documentación Próximamente",
         "docsDesc": "Estamos puliendo nuestras referencias de API."
+    },
+    "KACCP": {
+        "badge": "Código Abierto",
+        "title": "KACCP: La Base de Kay-X",
+        "description": "KACCP (Krio Audio Corpus Curation Platform) es cómo llegamos a nuestro modelo Krio insignia. Es un movimiento de código abierto para construir un conjunto de datos lingüísticos de alta calidad.",
+        "longDescription": "Desarrollado por Geneline-X, KACCP permite la transcripción colaborativa, revisión y exportación de conjuntos de datos para investigación y tecnología lingüística.",
+        "link": "Explorar KACCP",
+        "features": {
+            "transcribe": {
+                "title": "Transcripción Colaborativa",
+                "desc": "Involucra a las comunidades para transcribir clips de audio Krio al inglés con precisión y contexto."
+            },
+            "curate": {
+                "title": "Curación de Alta Calidad",
+                "desc": "Rigurosos procesos de revisión que garantizan la más alta calidad del conjunto de datos."
+            },
+            "research": {
+                "title": "Enfocado en la Investigación",
+                "desc": "Un conjunto de datos abierto que empodera a investigadores e innovadores tecnológicos de todo el mundo."
+            }
+        }
     }
 }

@@ -12,45 +12,155 @@
         "contactUs": "联系我们",
         "tryDemo": "尝试演示",
         "documentation": "文档",
+        "blog": "博客",
         "productsDesc": {
             "xplain": "文档和媒体智能",
             "genestudio": "商业聊天机器人创建",
             "kayx": "克里奥尔语到英语的语音识别",
+            "kaccp": "开源语言平台",
             "infra": "RAG、向量数据库、人工智能代理"
         },
         "companyDesc": {
             "about": "了解我们的使命和愿景",
             "events": "即将举行的活动和网络研讨会",
-            "contact": "与我们联系"
+            "contact": "与我们联系",
+            "blog": "阅读我们最新的技术研究和见解"
         }
     },
     "Footer": {
         "description": "一家成立于非洲的人工智能公司，致力于构建智能平台、基础设施和语言技术。",
         "products": "产品",
-        "Stats": {
-            "processed": "每日处理文档",
-            "uptime": "在线时间保障",
-            "latency": "平均响应时间",
-            "languages": "支持的非洲语言"
-        },
         "company": "公司",
         "legal": "法律",
         "privacy": "隐私政策",
         "terms": "服务条款",
-        "rights": "版权所有。"
+        "rights": "版权所有。",
+        "links": {
+            "solutions": "解决方案",
+            "about": "公司",
+            "contact": "联系我们",
+            "docs": "文档"
+        }
+    },
+    "Stats": {
+        "processed": "每日处理文档",
+        "uptime": "在线时间保障",
+        "latency": "平均响应时间",
+        "languages": "支持的非洲语言"
+    },
+    "Partnerships": {
+        "ecosystem": "生态系统",
+        "title": "由行业领导者提供支持",
+        "description": "我们与最佳工具和平台集成，提供企业级 AI 解决方案。",
+        "tools": {
+            "rag": "RAG 管道",
+            "vector": "向量数据库",
+            "llm": "LLM 编排",
+            "stt": "语音识别",
+            "doc": "文档处理",
+            "agents": "AI 代理",
+            "embeddings": "嵌入",
+            "fineTuning": "微调"
+        }
+    },
+    "Testimonials": {
+        "badge": "用户评价",
+        "title": "受到领导者的信任",
+        "description": "看看非洲各地的组织如何评价与 Geneline-X 的合作。",
+        "items": {
+            "aminata": {
+                "quote": "Geneline-X 改变了我们的文档处理方式。在多种非洲语言中的准确性无与伦比。",
+                "author": "Aminata Kamara",
+                "role": "CTO",
+                "org": "TechAfrica"
+            },
+            "mohamed": {
+                "quote": "Kay-X 的 STT 功能彻底改变了我们在塞拉利昂的客户服务。",
+                "author": "Mohamed Bangura",
+                "role": "运营总监",
+                "org": "SaloneTel"
+            },
+            "fatmata": {
+                "quote": "我们使用过的最强大的 AI 基础设施。它轻松处理我们复杂的数据需求。",
+                "author": "Fatmata Sesay",
+                "role": "首席数据科学家",
+                "org": "DataFlow"
+            }
+        }
     },
     "Hero": {
         "title": "第一个 <africanAI>非洲人工智能</africanAI> 基础设施",
+        "subtitle": "多语言智能，为全球规模而构建。",
+        "getStarted": "开始使用",
         "tryDemo": "尝试演示",
         "contactUs": "联系我们",
-        "noEvents": "目前暂无活动...",
-        "description": "我们正在计划下一波研讨会和会议。重大消息即将公布。",
-        "stayTuned": "敬请期待",
-        "notifyMe": "通知我"
+        "footer": "推动非洲及全球的创新",
+        "trustedBy": "受到行业领导者的信任",
+        "stats": {
+            "languages": "语言",
+            "uptime": "正常运行时间",
+            "latency": "延迟"
+        }
+    },
+    "KrioModel": {
+        "badge": "母语 AI",
+        "title": "打破语言障碍",
+        "description": "我们的定制模型理解非洲语言和方言的细微差别，从塞拉利昂的克里奥尔语开始。",
+        "watchDemo": "观看演示",
+        "experience": "体验 KRIO 的强大功能",
+        "components": {
+            "neural": {
+                "title": "神经网络架构",
+                "desc": "先进的基于 Transformer 的架构，针对多模态理解和生成进行优化。",
+                "highlight": "构建于前沿研究之上"
+            },
+            "performance": {
+                "title": "极速性能",
+                "desc": "前所未有的推理速度，达到毫秒级响应时间。",
+                "highlight": "比竞争对手快10倍"
+            },
+            "security": {
+                "title": "企业级安全",
+                "desc": "内置军事级加密和 GDPR、SOC2、HIPAA 合规性。",
+                "highlight": "零信任架构"
+            },
+            "modular": {
+                "title": "模块化框架",
+                "desc": "灵活、可组合的模块，无需重新训练即可适应您的特定用例。",
+                "highlight": "即插即用功能"
+            }
+        }
+    },
+    "HowItWorks": {
+        "badge": "工作原理",
+        "title": "从数据到智能",
+        "description": "我们的平台改变您使用 AI 的方式——简单开始，强大扩展。",
+        "steps": {
+            "ingest": {
+                "title": "摄取您的数据",
+                "desc": "连接文档、媒体或自定义数据源。"
+            },
+            "process": {
+                "title": "处理与理解",
+                "desc": "RAG 管道、向量嵌入和 AI 模型将原始数据转化为可操作的智能。"
+            },
+            "build": {
+                "title": "构建与部署",
+                "desc": "使用我们的 API 和 SDK 构建自定义 AI 应用程序、聊天机器人或集成。"
+            },
+            "scale": {
+                "title": "扩展与优化",
+                "desc": "随需求扩展的企业级基础设施。"
+            }
+        }
     },
     "Events": {
         "title": "活动预告",
-        "badge": "社区"
+        "badge": "社区",
+        "noEvents": "目前暂无活动...",
+        "description": "我们正在计划下一波研讨会、黑客马拉松和会议。重大消息即将公布。",
+        "stayTuned": "敬请期待",
+        "notifyMe": "通知我"
     },
     "Developers": {
         "title": "为开发者打造",
@@ -60,5 +170,26 @@
         "integrationDesc": "我们的服务旨在集成到任何工作流程中。",
         "docsSoon": "文档即将上线",
         "docsDesc": "我们正在优化我们的 API 参考和指南。"
+    },
+    "KACCP": {
+        "badge": "开源",
+        "title": "KACCP：Kay-X 的基础",
+        "description": "KACCP（克里奥尔音频语料库管理平台）是我们开发旗舰克里奥尔模型的途径。这是一个构建高质量低资源语言数据集的开源运动。",
+        "longDescription": "由 Geneline-X 开发，KACCP 支持协作转录、审查和数据集导出，用于研究和语言技术。",
+        "link": "探索 KACCP",
+        "features": {
+            "transcribe": {
+                "title": "协作转录",
+                "desc": "让社区精确而有上下文地将克里奥尔音频片段转录成英语。"
+            },
+            "curate": {
+                "title": "高质量管理",
+                "desc": "严格的审查流程确保训练先进语言模型的最高质量数据集。"
+            },
+            "research": {
+                "title": "研究导向",
+                "desc": "一个开放的数据集，赋能全球的研究人员和技术创新者。"
+            }
+        }
     }
 }

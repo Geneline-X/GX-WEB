@@ -51,8 +51,8 @@ export function HeroSection() {
                     <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 -ml-5 opacity-0 group-hover:ml-2 group-hover:opacity-100 transition-all duration-300 font-bold" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="h-12 sm:h-14 px-8 sm:px-12 min-w-[180px] sm:min-w-[200px] rounded-none border-2 border-foreground hover:bg-foreground hover:text-background bg-transparent font-semibold uppercase text-[10px] sm:text-xs tracking-wider shadow-sm hover:shadow-md transition-all group overflow-hidden" asChild>
-                  <Link href="/contact-us" className="flex items-center justify-center text-foreground group-hover:text-background transition-colors">
+                <Button size="lg" variant="outline" className="h-12 sm:h-14 px-8 sm:px-12 min-w-[180px] sm:min-w-[200px] rounded-none border-2 border-foreground hover:bg-foreground dark:hover:bg-foreground hover:text-background dark:hover:text-background bg-transparent font-semibold uppercase text-[10px] sm:text-xs tracking-wider shadow-sm hover:shadow-md transition-all group overflow-hidden" asChild>
+                  <Link href="/contact-us" className="flex items-center justify-center text-foreground group-hover:text-background dark:group-hover:text-background transition-colors">
                     <span className="transition-transform duration-300">{t("contactUs")}</span>
                     <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 -ml-5 opacity-0 group-hover:ml-2 group-hover:opacity-100 transition-all duration-300 font-bold" />
                   </Link>

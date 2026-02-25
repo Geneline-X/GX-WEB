@@ -70,7 +70,7 @@ export function CalendlySection() {
           <div className="animate-in mt-12 text-center" style={{ opacity: 0, transform: "translateY(24px)" }}>
             <p className="text-muted-foreground">
               Prefer email?{" "}
-              <a href="mailto:contact@geneline-x.com" className="text-primary hover:underline underline-offset-4">
+              <a href="mailto:info@geneline-x.net" className="text-primary hover:underline underline-offset-4">
                 info@geneline-x.net
               </a>
             </p>

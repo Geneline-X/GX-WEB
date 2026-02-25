@@ -4,10 +4,27 @@
         "developers": "Entwickler",
         "solutions": "Lösungen",
         "company": "Unternehmen",
+        "getStarted": "Loslegen",
+        "search": "Suchen...",
+        "quickLinks": "Schnelllinks",
+        "about": "Über uns",
+        "events": "Veranstaltungen",
+        "contactUs": "Kontakt",
+        "tryDemo": "Demo testen",
+        "documentation": "Dokumentation",
+        "blog": "Blog",
+        "productsDesc": {
+            "xplain": "Dokument- und Mediaintelligenz",
+            "genestudio": "Business-Chatbot-Erstellung",
+            "kayx": "Krio-Englisch-Spracherkennung",
+            "kaccp": "Open-Source-Sprachplattform",
+            "infra": "RAG, Vektordatenbanken, KI-Agenten"
+        },
         "companyDesc": {
             "about": "Erfahren Sie mehr über unsere Mission",
             "events": "Kommende Veranstaltungen und Webinare",
-            "contact": "Treten Sie mit uns in Kontakt"
+            "contact": "Treten Sie mit uns in Kontakt",
+            "blog": "Lesen Sie unsere neuesten Forschungsartikel"
         }
     },
     "Footer": {
@@ -153,5 +170,26 @@
         "integrationDesc": "Unsere Dienste sind für jeden Workflow konzipiert.",
         "docsSoon": "Dokumentation folgt in Kürze",
         "docsDesc": "Wir arbeiten an unseren API-Referenzen."
+    },
+    "KACCP": {
+        "badge": "Open Source",
+        "title": "KACCP: Das Fundament von Kay-X",
+        "description": "KACCP (Krio Audio Corpus Curation Platform) ist unser Open-Source-Projekt zum Aufbau eines hochwertigen Krio-Sprachdatensatzes.",
+        "longDescription": "Entwickelt von Geneline-X, ermöglicht KACCP kollaborative Transkription, Überprüfung und Datensatz-Export für Forschung und Sprachtechnologie.",
+        "link": "KACCP erkunden",
+        "features": {
+            "transcribe": {
+                "title": "Kollaborative Transkription",
+                "desc": "Gemeinschaften einbinden, um Krio-Audioclips präzise ins Englische zu transkribieren."
+            },
+            "curate": {
+                "title": "Hochwertige Kuratierung",
+                "desc": "Strenge Überprüfungsprozesse für höchste Datensatzqualität."
+            },
+            "research": {
+                "title": "Forschungsorientiert",
+                "desc": "Ein offener Datensatz, der Forscher und Technologieinnovatoren weltweit stärkt."
+            }
+        }
     }
 }

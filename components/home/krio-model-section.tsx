@@ -7,6 +7,25 @@ import { Brain, Zap, Shield, Layers, Play } from "lucide-react"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 
+// Pre-computed particle positions to avoid Math.random() hydration mismatches
+const PARTICLES = [
+  { left: 8.85, top: 75.28, duration: 4.6, delay: 1.2 },
+  { left: 77.84, top: 78.73, duration: 5.1, delay: 0.3 },
+  { left: 77.37, top: 26.19, duration: 4.3, delay: 1.7 },
+  { left: 66.30, top: 44.98, duration: 5.4, delay: 0.8 },
+  { left: 86.06, top: 40.99, duration: 4.8, delay: 1.4 },
+  { left: 35.82, top: 33.31, duration: 5.2, delay: 0.1 },
+  { left: 10.15, top: 78.58, duration: 4.1, delay: 1.9 },
+  { left: 72.95, top: 26.37, duration: 5.7, delay: 0.5 },
+  { left: 19.63, top: 40.21, duration: 4.9, delay: 1.1 },
+  { left: 38.38, top: 89.59, duration: 5.3, delay: 0.7 },
+  { left: 24.58, top: 24.20, duration: 4.5, delay: 1.6 },
+  { left: 23.33, top: 16.82, duration: 5.0, delay: 0.4 },
+  { left: 92.11, top: 32.19, duration: 4.7, delay: 1.3 },
+  { left: 89.61, top: 82.88, duration: 5.6, delay: 0.9 },
+  { left: 83.82, top: 82.46, duration: 4.2, delay: 1.8 },
+]
+
 export function KrioModelSection() {
   const t = useTranslations("KrioModel")
   const containerRef = useStaggerReveal<HTMLDivElement>({ stagger: 0.2 })
@@ -79,7 +98,7 @@ export function KrioModelSection() {
             className="text-[clamp(2rem,8vw,3.5rem)] sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-6 text-foreground leading-[1.1]"
           >
             {t.rich("title", {
-              span: (chunks) => <span className="text-primary">{chunks}</span>
+              span: (chunks: React.ReactNode) => <span className="text-primary">{chunks}</span>
             })}
           </motion.h2>
           <motion.p
@@ -167,22 +186,16 @@ export function KrioModelSection() {
 
               {/* Floating particles effect */}
               <div className="absolute inset-0 pointer-events-none">
-                {[...Array(15)].map((_, i) => (
+                {PARTICLES.map((p, i) => (
                   <motion.div
                     key={i}
                     className="absolute w-1 h-1 bg-primary/40 rounded-full"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                    }}
-                    animate={{
-                      y: [0, -40, 0],
-                      opacity: [0, 0.6, 0],
-                    }}
+                    style={{ left: `${p.left}%`, top: `${p.top}%` }}
+                    animate={{ y: [0, -40, 0], opacity: [0, 0.6, 0] }}
                     transition={{
-                      duration: 4 + Math.random() * 2,
+                      duration: p.duration,
                       repeat: Infinity,
-                      delay: Math.random() * 2,
+                      delay: p.delay,
                     }}
                   />
                 ))}

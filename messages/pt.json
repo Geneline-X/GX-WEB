@@ -12,16 +12,19 @@
         "contactUs": "Contate-nos",
         "tryDemo": "Experimentar Demo",
         "documentation": "Documentação",
+        "blog": "Blog",
         "productsDesc": {
             "xplain": "Inteligência de documentos e mídia",
             "genestudio": "Criação de chatbots de negócios",
             "kayx": "Reconhecimento de voz Krio-Inglês",
+            "kaccp": "Plataforma linguística open-source",
             "infra": "RAG, bancos de dados vetoriais, agentes IA"
         },
         "companyDesc": {
             "about": "Saiba mais sobre nossa missão e visão",
             "events": "Próximos eventos e webinars",
-            "contact": "Entre em contato conosco"
+            "contact": "Entre em contato conosco",
+            "blog": "Leia nossas últimas pesquisas e insights"
         }
     },
     "Footer": {
@@ -31,7 +34,119 @@
         "legal": "Jurídico",
         "privacy": "Política de Privacidade",
         "terms": "Termos de Serviço",
-        "rights": "Todos os direitos reservados."
+        "rights": "Todos os direitos reservados.",
+        "links": {
+            "solutions": "Soluções",
+            "about": "Empresa",
+            "contact": "Contate-nos",
+            "docs": "Docs"
+        }
+    },
+    "Partnerships": {
+        "ecosystem": "Ecossistema",
+        "title": "Impulsionado por Líderes da Indústria",
+        "description": "Integramos as melhores ferramentas e plataformas para entregar soluções de IA de nível empresarial.",
+        "tools": {
+            "rag": "Pipelines RAG",
+            "vector": "Bancos de Dados Vetoriais",
+            "llm": "Orquestração LLM",
+            "stt": "Reconhecimento de Voz",
+            "doc": "Processamento de Documentos",
+            "agents": "Agentes IA",
+            "embeddings": "Embeddings",
+            "fineTuning": "Ajuste Fino"
+        }
+    },
+    "Testimonials": {
+        "badge": "Depoimentos",
+        "title": "Confiado por Líderes",
+        "description": "Veja o que organizações em toda a África dizem sobre trabalhar com a Geneline-X.",
+        "items": {
+            "aminata": {
+                "quote": "A Geneline-X transformou nosso processamento de documentos. A precisão em múltiplos idiomas africanos é incomparável.",
+                "author": "Aminata Kamara",
+                "role": "CTO",
+                "org": "TechAfrica"
+            },
+            "mohamed": {
+                "quote": "As capacidades STT do Kay-X são uma revolução para nosso atendimento ao cliente em Serra Leoa.",
+                "author": "Mohamed Bangura",
+                "role": "Diretor de Operações",
+                "org": "SaloneTel"
+            },
+            "fatmata": {
+                "quote": "A infraestrutura de IA mais robusta que já usamos. Ela lida com nossas complexas necessidades de dados com facilidade.",
+                "author": "Fatmata Sesay",
+                "role": "Cientista de Dados Principal",
+                "org": "DataFlow"
+            }
+        }
+    },
+    "Hero": {
+        "title": "A primeira infraestrutura de <africanAI>IA Africana</africanAI>",
+        "subtitle": "Inteligência multilíngue, construída para escala global.",
+        "getStarted": "Começar",
+        "tryDemo": "Experimentar Demo",
+        "contactUs": "Contate-nos",
+        "footer": "Impulsionando a Inovação pela África e Além",
+        "trustedBy": "Confiado por Líderes da Indústria",
+        "stats": {
+            "languages": "Idiomas",
+            "uptime": "Disponibilidade",
+            "latency": "Latência"
+        }
+    },
+    "KrioModel": {
+        "badge": "IA em Língua Nativa",
+        "title": "Quebrando a Barreira do Idioma",
+        "description": "Nossos modelos personalizados entendem as nuances das línguas e dialetos africanos, começando com o Krio da Serra Leoa.",
+        "watchDemo": "Assistir Demo",
+        "experience": "Experimente o poder do KRIO em ação",
+        "components": {
+            "neural": {
+                "title": "Arquitetura Neural",
+                "desc": "Arquitetura avançada baseada em transformers, otimizada para compreensão e geração multimodal.",
+                "highlight": "Construído em pesquisa de ponta"
+            },
+            "performance": {
+                "title": "Desempenho Relâmpago",
+                "desc": "Velocidade de inferência sem precedentes com eficiência de computação otimizada.",
+                "highlight": "10x mais rápido que os concorrentes"
+            },
+            "security": {
+                "title": "Segurança Empresarial",
+                "desc": "Criptografia de nível militar e conformidade com GDPR, SOC2 e HIPAA.",
+                "highlight": "Arquitetura zero-trust"
+            },
+            "modular": {
+                "title": "Framework Modular",
+                "desc": "Módulos flexíveis e combináveis que se adaptam aos seus casos de uso específicos.",
+                "highlight": "Capacidades plug-and-play"
+            }
+        }
+    },
+    "HowItWorks": {
+        "badge": "Como Funciona",
+        "title": "Dos Dados à Inteligência",
+        "description": "Nossa plataforma transforma como você trabalha com IA.",
+        "steps": {
+            "ingest": {
+                "title": "Ingerir seus Dados",
+                "desc": "Conecte documentos, mídia ou fontes de dados personalizadas."
+            },
+            "process": {
+                "title": "Processar & Entender",
+                "desc": "Pipelines RAG, embeddings vetoriais e modelos de IA transformam dados brutos em inteligência acionável."
+            },
+            "build": {
+                "title": "Construir & Implantar",
+                "desc": "Use nossas APIs e SDKs para criar aplicativos de IA personalizados, chatbots ou integrações."
+            },
+            "scale": {
+                "title": "Escalar & Otimizar",
+                "desc": "Infraestrutura de nível empresarial que escala com suas necessidades."
+            }
+        }
     },
     "Stats": {
         "processed": "Documentos Processados Diariamente",
@@ -39,25 +154,42 @@
         "latency": "Tempo de Resposta Médio",
         "languages": "Idiomas Africanos Suportados"
     },
-    "Hero": {
-        "title": "A primeira infraestrutura de <africanAI>IA Africana</africanAI>",
-        "noEvents": "Tudo calmo por enquanto...",
-        "description": "Estamos planejando nossa próxima onda de workshops e conferências. Algo grande está por vir.",
-        "stayTuned": "Fique Atento",
-        "notifyMe": "Notifique-me",
-        "contactUs": "Contate-nos"
-    },
     "Events": {
         "title": "Próximos Eventos",
-        "badge": "Comunidade"
+        "badge": "Comunidade",
+        "noEvents": "Tudo calmo por enquanto...",
+        "description": "Estamos planejando nossa próxima onda de workshops, hackathons e conferências. Algo grande está por vir.",
+        "stayTuned": "Fique Atento",
+        "notifyMe": "Notifique-me"
     },
     "Developers": {
         "title": "Feito para Desenvolvedores",
         "badge": "Ecossistema",
         "description": "APIs poderosas e SDKs flexíveis. Construa o futuro da IA africana conosco.",
         "integrationTitle": "Integração Perfeita",
-        "integrationDesc": "Nossos serviços são projetados para qualquer fluxo de trabajo.",
+        "integrationDesc": "Nossos serviços são projetados para qualquer fluxo de trabalho.",
         "docsSoon": "Documentação em Breve",
         "docsDesc": "Estamos polindo nossas referências de API."
+    },
+    "KACCP": {
+        "badge": "Open Source",
+        "title": "KACCP: A Fundação do Kay-X",
+        "description": "KACCP (Krio Audio Corpus Curation Platform) é como chegamos ao nosso modelo Krio principal. É um movimento open-source para construir um dataset linguístico de alta qualidade.",
+        "longDescription": "Desenvolvido pela Geneline-X, o KACCP permite transcrição colaborativa, revisão e exportação de datasets para pesquisa e tecnologia linguística.",
+        "link": "Explorar KACCP",
+        "features": {
+            "transcribe": {
+                "title": "Transcrição Colaborativa",
+                "desc": "Engaje comunidades para transcrever clipes de áudio Krio em inglês com precisão e contexto."
+            },
+            "curate": {
+                "title": "Curadoria de Alta Qualidade",
+                "desc": "Processos de revisão rigorosos garantindo a mais alta qualidade de dataset."
+            },
+            "research": {
+                "title": "Focado em Pesquisa",
+                "desc": "Um dataset aberto que capacita pesquisadores e inovadores tecnológicos em todo o mundo."
+            }
+        }
     }
 }

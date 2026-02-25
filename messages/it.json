@@ -12,16 +12,19 @@
         "contactUs": "Contattaci",
         "tryDemo": "Prova Demo",
         "documentation": "Documentazione",
+        "blog": "Blog",
         "productsDesc": {
             "xplain": "Intelligenza per documenti e media",
             "genestudio": "Creazione di chatbot aziendali",
             "kayx": "Riconoscimento vocale Krio-Inglese",
+            "kaccp": "Piattaforma linguistica open-source",
             "infra": "RAG, database vettoriali, agenti IA"
         },
         "companyDesc": {
             "about": "Scopri la nostra missione e visione",
             "events": "Prossimi eventi e webinar",
-            "contact": "Mettiti in contatto con noi"
+            "contact": "Mettiti in contatto con noi",
+            "blog": "Leggi le nostre ultime ricerche e approfondimenti"
         }
     },
     "Footer": {
@@ -31,21 +34,125 @@
         "legal": "Legale",
         "privacy": "Informativa sulla Privacy",
         "terms": "Termini di Servizio",
-        "rights": "Tutti i diritti riservati."
+        "rights": "Tutti i diritti riservati.",
+        "links": {
+            "solutions": "Soluzioni",
+            "about": "Azienda",
+            "contact": "Contattaci",
+            "docs": "Docs"
+        }
+    },
+    "Partnerships": {
+        "ecosystem": "Ecosistema",
+        "title": "Supportato dai Leader del Settore",
+        "description": "Integriamo i migliori strumenti e piattaforme per soluzioni AI di livello enterprise.",
+        "tools": {
+            "rag": "Pipeline RAG",
+            "vector": "Database Vettoriali",
+            "llm": "Orchestrazione LLM",
+            "stt": "Riconoscimento Vocale",
+            "doc": "Elaborazione Documenti",
+            "agents": "Agenti IA",
+            "embeddings": "Embedding",
+            "fineTuning": "Fine-tuning"
+        }
+    },
+    "Testimonials": {
+        "badge": "Testimonianze",
+        "title": "Fidato dai Leader",
+        "description": "Scopri cosa dicono le organizzazioni africane della loro collaborazione con Geneline-X.",
+        "items": {
+            "aminata": {
+                "quote": "Geneline-X ha trasformato l'elaborazione dei nostri documenti. La precisione in più lingue africane è impareggiabile.",
+                "author": "Aminata Kamara",
+                "role": "CTO",
+                "org": "TechAfrica"
+            },
+            "mohamed": {
+                "quote": "Le capacità STT di Kay-X sono un punto di svolta per il nostro servizio clienti in Sierra Leone.",
+                "author": "Mohamed Bangura",
+                "role": "Direttore Operativo",
+                "org": "SaloneTel"
+            },
+            "fatmata": {
+                "quote": "L'infrastruttura AI più robusta che abbiamo mai utilizzato. Gestisce le nostre esigenze dati complesse con facilità.",
+                "author": "Fatmata Sesay",
+                "role": "Lead Data Scientist",
+                "org": "DataFlow"
+            }
+        }
+    },
+    "Hero": {
+        "title": "La prima infrastruttura di <africanAI>IA Africana</africanAI>",
+        "subtitle": "Intelligenza multilingue, costruita per scala globale.",
+        "getStarted": "Inizia",
+        "tryDemo": "Prova Demo",
+        "contactUs": "Contattaci",
+        "footer": "Alimentare l'Innovazione in Africa e Oltre",
+        "trustedBy": "Fidato dai Leader del Settore",
+        "stats": {
+            "languages": "Lingue",
+            "uptime": "Disponibilità",
+            "latency": "Latenza"
+        }
+    },
+    "KrioModel": {
+        "badge": "IA in Lingua Nativa",
+        "title": "Abbattere la Barriera Linguistica",
+        "description": "I nostri modelli personalizzati comprendono le sfumature delle lingue e dei dialetti africani, a partire dal Krio della Sierra Leone.",
+        "watchDemo": "Guarda la Demo",
+        "experience": "Sperimenta la potenza di KRIO in azione",
+        "components": {
+            "neural": {
+                "title": "Architettura Neurale",
+                "desc": "Architettura avanzata basata su transformer, ottimizzata per la comprensione e generazione multimodale.",
+                "highlight": "Costruito su ricerca all'avanguardia"
+            },
+            "performance": {
+                "title": "Prestazioni Fulminee",
+                "desc": "Velocità di inferenza senza precedenti con efficienza di calcolo ottimizzata.",
+                "highlight": "10x più veloce dei concorrenti"
+            },
+            "security": {
+                "title": "Sicurezza Enterprise",
+                "desc": "Crittografia di livello militare e conformità agli standard GDPR, SOC2 e HIPAA.",
+                "highlight": "Architettura zero-trust"
+            },
+            "modular": {
+                "title": "Framework Modulare",
+                "desc": "Moduli flessibili e componibili che si adattano ai tuoi casi d'uso specifici.",
+                "highlight": "Capacità plug-and-play"
+            }
+        }
+    },
+    "HowItWorks": {
+        "badge": "Come Funziona",
+        "title": "Dai Dati all'Intelligenza",
+        "description": "La nostra piattaforma trasforma il tuo modo di lavorare con l'IA.",
+        "steps": {
+            "ingest": {
+                "title": "Acquisisci i tuoi Dati",
+                "desc": "Collega documenti, media o sorgenti dati personalizzate."
+            },
+            "process": {
+                "title": "Elabora & Comprendi",
+                "desc": "Pipeline RAG, embedding vettoriali e modelli IA trasformano i dati grezzi in intelligenza."
+            },
+            "build": {
+                "title": "Costruisci & Distribuisci",
+                "desc": "Usa le nostre API e SDK per creare applicazioni IA, chatbot o integrazioni personalizzate."
+            },
+            "scale": {
+                "title": "Scala & Ottimizza",
+                "desc": "Infrastruttura di livello enterprise che si scala con le tue esigenze."
+            }
+        }
     },
     "Stats": {
         "processed": "Documenti Elaborati Giornalmente",
         "uptime": "Garanzia di Disponibilità",
         "latency": "Tempo di Risposta Medio",
         "languages": "Lingue Africane Supportate"
-    },
-    "Hero": {
-        "title": "La prima infrastruttura di <africanAI>IA Africana</africanAI>",
-        "contactUs": "Contattaci",
-        "noEvents": "Tutto calmo per ora...",
-        "description": "Stiamo pianificando i nostri prossimi workshop e conferenze. Qualcosa di grande sta arrivando.",
-        "stayTuned": "Resta Sintonizzato",
-        "notifyMe": "Avvisami"
     },
     "Events": {
         "title": "Prossimi Eventi",
@@ -63,5 +170,26 @@
         "integrationDesc": "I nostri servizi sono progettati per ogni flusso di lavoro.",
         "docsSoon": "Documentazione in Arrivo",
         "docsDesc": "Stiamo perfezionando i nostri riferimenti API."
+    },
+    "KACCP": {
+        "badge": "Open Source",
+        "title": "KACCP: Il Fondamento di Kay-X",
+        "description": "KACCP (Krio Audio Corpus Curation Platform) è come siamo arrivati al nostro modello Krio di punta. È un movimento open-source per costruire un dataset linguistico di alta qualità.",
+        "longDescription": "Sviluppato da Geneline-X, KACCP consente la trascrizione collaborativa, la revisione e l'esportazione di dataset per la ricerca e la tecnologia linguistica.",
+        "link": "Esplora KACCP",
+        "features": {
+            "transcribe": {
+                "title": "Trascrizione Collaborativa",
+                "desc": "Coinvolgi le comunità per trascrivere clip audio Krio in inglese con precisione e contesto."
+            },
+            "curate": {
+                "title": "Curation di Alta Qualità",
+                "desc": "Processi di revisione rigorosi per garantire la massima qualità del dataset."
+            },
+            "research": {
+                "title": "Orientato alla Ricerca",
+                "desc": "Un dataset aperto che potenzia ricercatori e innovatori tecnologici in tutto il mondo."
+            }
+        }
     }
 }

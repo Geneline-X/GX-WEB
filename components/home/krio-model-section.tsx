@@ -30,7 +30,6 @@ export function KrioModelSection() {
   const t = useTranslations("KrioModel")
   const containerRef = useStaggerReveal<HTMLDivElement>({ stagger: 0.2 })
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const [isVideoPaused, setIsVideoPaused] = useState(false)
 
   const krioComponents = [
     {
@@ -58,17 +57,6 @@ export function KrioModelSection() {
       highlight: t("components.modular.highlight"),
     },
   ]
-
-  const handleVideoClick = (e: React.MouseEvent<HTMLVideoElement>) => {
-    const video = e.currentTarget
-    if (video.paused) {
-      video.play()
-      setIsVideoPaused(false)
-    } else {
-      video.pause()
-      setIsVideoPaused(true)
-    }
-  }
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-background">
@@ -118,7 +106,7 @@ export function KrioModelSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-20 relative group"
+          className="mb-20 relative group -mx-4 sm:-mx-6 lg:-mx-8"
         >
           {/* Outer glow effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-primary via-primary/50 to-primary rounded-none blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700 animate-pulse-slow" />
@@ -134,7 +122,7 @@ export function KrioModelSection() {
             {/* Video or placeholder */}
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
               {/* Animated grid background */}
-              <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.07]">
+              <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none">
                 <div className="absolute inset-0" style={{
                   backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
                   backgroundSize: '40px 40px'
@@ -175,9 +163,9 @@ export function KrioModelSection() {
               {/* Video player */}
               {isVideoPlaying && (
                 <video
-                  className="w-full h-full object-cover cursor-pointer"
+                  className="w-full h-full object-contain"
                   autoPlay
-                  onClick={handleVideoClick}
+                  controls
                   src="/videos/krio-demo.mp4"
                 >
                   Your browser does not support the video tag.

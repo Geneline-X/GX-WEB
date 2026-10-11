@@ -1,4 +1,4 @@
-// Legal text ported verbatim from the previous site (legacy/app/[locale]/terms).
+// Legal text ported verbatim from the previous site.
 export const TERMS_SECTIONS = [
   { label: "1. Acceptance", id: "acceptance" },
   { label: "2. Registration", id: "registration" },

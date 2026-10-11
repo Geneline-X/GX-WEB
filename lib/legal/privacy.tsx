@@ -1,4 +1,4 @@
-// Legal text ported verbatim from the previous site (legacy/app/[locale]/privacy).
+// Legal text ported verbatim from the previous site.
 export const PRIVACY_SECTIONS = [
   { label: "Introduction", id: "intro" },
   { label: "Information Collection", id: "collection" },

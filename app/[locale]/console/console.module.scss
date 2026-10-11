@@ -1,0 +1,26 @@
+@use "abstracts" as *;
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.note {
+  margin: 0 0 var(--space-5);
+  color: var(--fg-muted);
+  font-size: 13.5px;
+}
+
+.charts {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 10px;
+
+  @include up("xl") {
+    grid-template-columns: 1fr 1fr;
+  }
+}

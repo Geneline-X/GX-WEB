@@ -1,0 +1,27 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+// logo-mark.png is logo.png cropped to the diamond, so this is the visible size.
+.mark {
+  width: 28px;
+  height: 28px;
+}
+
+.word {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.x {
+  color: var(--c-logo);
+
+  [data-theme="dark"] &,
+  [data-theme="adire"] & {
+    color: var(--accent-text);
+  }
+}

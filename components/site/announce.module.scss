@@ -1,0 +1,32 @@
+.bar {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.text {
+  margin: 0;
+  padding: 9px var(--gutter);
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line-strong);
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+}

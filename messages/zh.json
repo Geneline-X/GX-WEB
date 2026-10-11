@@ -191,5 +191,463 @@
                 "desc": "一个开放的数据集，赋能全球的研究人员和技术创新者。"
             }
         }
+    },
+    "Site": {
+        "skip": "跳到正文",
+        "announce": {
+            "text": "一起在 KACCP 上建设克里奥语语音语料库。",
+            "cta": "参与贡献"
+        },
+        "nav": {
+            "products": "产品",
+            "pipeline": "流程",
+            "research": "研究",
+            "company": "公司",
+            "developers": "开发者",
+            "contact": "联系我们",
+            "console": "打开控制台",
+            "menu": "菜单",
+            "close": "关闭菜单",
+            "home": "GenelineX 首页",
+            "primary": "主导航",
+            "language": "语言"
+        },
+        "products": {
+            "kayx": {
+                "desc": "克里奥语转英语语音识别"
+            },
+            "kaccp": {
+                "desc": "开放的克里奥语音频语料库"
+            },
+            "xplain": {
+                "desc": "文档与媒体智能"
+            },
+            "genestudio": {
+                "desc": "无需代码的企业聊天机器人"
+            },
+            "infra": {
+                "name": "基础设施",
+                "desc": "RAG、向量数据库、AI 智能体"
+            }
+        },
+        "footer": {
+            "tagline": "一家创立于非洲的 AI 公司，为非洲语言构建数据、模型和 API。",
+            "products": "产品",
+            "company": "公司",
+            "resources": "资源",
+            "legal": "法律",
+            "about": "关于我们",
+            "events": "活动",
+            "contact": "联系我们",
+            "research": "研究",
+            "developers": "开发者",
+            "console": "控制台",
+            "privacy": "隐私政策",
+            "terms": "服务条款",
+            "rights": "保留所有权利。",
+            "social": "GenelineX 社交媒体"
+        },
+        "motion": {
+            "pause": "暂停动画",
+            "play": "播放动画"
+        }
+    },
+    "Home": {
+        "hero": {
+            "title": "<serif>会说</serif>非洲语言的 AI",
+            "subtitle": "语音 AI，从克里奥语开始。",
+            "primary": "免费试用 API"
+        },
+        "logos": {
+            "label": "技术合作"
+        },
+        "problem": {
+            "title": "<dim>多数 AI 能听懂一百种语言。</dim>非洲有两千种语言。",
+            "p1": "语音和语言模型从网上的文字中学习，而大多数非洲语言在网上几乎没有存在感。因此，这些模型会听错克里奥语、豪萨语和沃洛夫语使用者的话，甚至完全听不懂。",
+            "p2": "GenelineX 补齐缺失的部分：母语者的录音、经第二位母语者核对的转写，以及针对每种语言训练和评估的模型。",
+            "without": "没有语料库，<em>模型只能靠猜</em>",
+            "with": "有了流程，<b>每段录音都有价值</b>",
+            "diagram": "示意图。左侧：零散的音频片段，路径断裂、处理失败。右侧：每位说话者的录音沿清晰路径，最终成为经过核验的转写。"
+        },
+        "pipeline": {
+            "eyebrow": "流程",
+            "title": "<serif>从一段语音消息到</serif>可调用的模型",
+            "steps": {
+                "collect": {
+                    "title": "采集",
+                    "body": "母语者在我们的开放整理平台 KACCP 上录制并上传音频。每段录音都保留说话人、地区和授权信息。"
+                },
+                "curate": {
+                    "title": "整理",
+                    "body": "录音被切分为语句并转写，再由第二位母语者核对后才进入语料库。",
+                    "meta": "双重审核"
+                },
+                "train": {
+                    "title": "训练",
+                    "body": "我们用低秩适配器微调语音和语言模型，只更新不到 2% 的权重，因此每新增一种语言，成本只是完整训练的一小部分。",
+                    "meta": "LoRA 适配器"
+                },
+                "deploy": {
+                    "title": "部署",
+                    "body": "模型通过 Kay-X API 提供服务，并内置于 Xplain 和 GeneStudio 等产品中，随着新录音的加入持续改进。",
+                    "meta": "Kay-X API"
+                }
+            }
+        },
+        "stack": {
+            "eyebrow": "产品",
+            "title": "一套技术栈，<serif>从语料到产品</serif>",
+            "intro": "每一层都能独立运作，并为下一层提供支撑。",
+            "label": "四层架构，一条流程",
+            "layers": {
+                "apps": "应用",
+                "models": "模型",
+                "data": "数据",
+                "infra": "基础设施"
+            },
+            "visit": "访问 {name}"
+        },
+        "research": {
+            "eyebrow": "研究",
+            "title": "<serif>来自</serif>实验室的笔记",
+            "read": "在 Medium 上阅读",
+            "all": "全部研究"
+        },
+        "cta": {
+            "title": "<serifi>Kushɛ.</serifi> 让 AI 学会你的语言。",
+            "body": "Kushɛ 在克里奥语里是“你好”。告诉我们你使用哪种语言、想构建什么。",
+            "primary": "联系我们",
+            "secondary": "为 KACCP 做贡献"
+        },
+        "try": {
+            "label": "试用 Kay-X 语音转文字",
+            "mode": "输入方式",
+            "speak": "说话",
+            "upload": "上传",
+            "recording": "正在聆听…",
+            "ready": "录音已就绪",
+            "record": "开始录音",
+            "stop": "停止录音",
+            "send": "转写",
+            "clear": "清除录音",
+            "language": "语言",
+            "output": "输出",
+            "outputs": {
+                "transcript": "克里奥语",
+                "english": "英语",
+                "both": "两者"
+            },
+            "console": "控制台",
+            "api": "API 文档",
+            "tabs": {
+                "label": "结果",
+                "transcript": "转写",
+                "english": "英语"
+            },
+            "outputEmpty": "转写结果将显示在这里。",
+            "notConnected": "此处尚未接入实时结果。请前往",
+            "placeholder": "用克里奥语输入，或点击麦克风说话…",
+            "fieldLabel": "克里奥语文本"
+        }
+    },
+    "Console": {
+        "meta": {
+            "title": "控制台"
+        },
+        "shell": {
+            "workspace": "工作区",
+            "build": "构建",
+            "overview": "概览",
+            "datasets": "数据集",
+            "runs": "训练任务",
+            "playground": "试验场",
+            "back": "返回网站",
+            "nav": "控制台",
+            "dark": "切换到深色主题",
+            "light": "切换到浅色主题",
+            "menu": "打开导航",
+            "close": "关闭导航",
+            "sample": "尚未接入实时数据"
+        },
+        "empty": {
+            "title": "暂无数据",
+            "needs": "需要：{what}"
+        },
+        "overview": {
+            "title": "概览",
+            "desc": "整个工作区的语料规模、审核进度和模型质量。",
+            "tiles": {
+                "hours": "语料时长",
+                "clips": "录音片段",
+                "reviewed": "已审核",
+                "speakers": "说话人",
+                "bestWer": "最佳 WER"
+            },
+            "tileNeeds": "来自 KACCP 导出的工作区汇总数据",
+            "hoursChart": "各语言语料时长",
+            "hoursNeeds": "来自 KACCP 导出的各语言时长",
+            "werChart": "各训练任务的词错误率",
+            "werNeeds": "每个已完成训练任务的 WER",
+            "recent": "最近的训练任务",
+            "viewAll": "查看全部训练任务"
+        },
+        "datasets": {
+            "title": "数据集",
+            "desc": "语料库中的音频，按语言划分。",
+            "cols": {
+                "language": "语言",
+                "clips": "录音片段",
+                "hours": "时长",
+                "reviewed": "已审核",
+                "speakers": "说话人",
+                "updated": "更新时间"
+            },
+            "needs": "每种语言一行：录音片段、时长、审核比例、说话人和最近一次导出日期"
+        },
+        "runs": {
+            "title": "训练任务",
+            "desc": "训练和微调任务，按时间从新到旧排列。",
+            "cols": {
+                "run": "任务",
+                "model": "模型",
+                "language": "语言",
+                "status": "状态",
+                "started": "开始时间",
+                "duration": "时长"
+            },
+            "status": {
+                "queued": "排队中",
+                "running": "运行中",
+                "succeeded": "已成功",
+                "failed": "已失败"
+            },
+            "needs": "来自训练记录的任务 ID、模型、基础模型、语言、状态、WER、开始时间和时长"
+        },
+        "chart": {
+            "table": "显示表格",
+            "chart": "显示图表"
+        },
+        "playground": {
+            "title": "语音转文字试验场",
+            "desc": "录制或上传一段音频，用 Kay-X 转写。",
+            "language": "语言",
+            "input": "输入",
+            "output": "转写",
+            "record": "开始录音",
+            "stop": "停止录音",
+            "upload": "上传音频",
+            "transcribe": "转写",
+            "clear": "清除",
+            "idle": "用麦克风录音，或上传一个音频文件。",
+            "recording": "录音中",
+            "ready": "录音已就绪",
+            "duration": "时长",
+            "denied": "麦克风权限已被阻止。请在浏览器的网站设置中允许后重试。",
+            "unsupported": "此浏览器无法录音，请改为上传文件。",
+            "badFile": "无法将该文件读取为音频。请尝试 WAV、MP3、M4A 或 WebM 文件。",
+            "transcriptEmpty": "接入 Kay-X API 后，转写结果将显示在这里。",
+            "apiNeeds": "Kay-X API 的接口地址、API 密钥和请求格式",
+            "level": "输入音量"
+        }
+    },
+    "Pages": {
+        "company": {
+            "eyebrow": "公司",
+            "title": "<serif>创立于</serif>塞拉利昂弗里敦",
+            "lead": "GenelineX 是一家创立于非洲的 AI 公司，构建让软件理解非洲语言的数据、模型和 API。",
+            "principles": {
+                "mission": {
+                    "title": "使命",
+                    "body": "打造 AI 基础设施，帮助非洲企业和开发者构建世界一流的智能应用。"
+                },
+                "vision": {
+                    "title": "愿景",
+                    "body": "让每个人都能用上 AI，不受地域限制，并让非洲创新引领全球进步。"
+                },
+                "approach": {
+                    "title": "方法",
+                    "body": "我们将 AI 研究与深入的本地理解相结合，打造在真实非洲场景中可用的解决方案。"
+                }
+            },
+            "timelineTitle": "<serif>我们的</serif>发展历程",
+            "timeline": [
+                {
+                    "year": "2023",
+                    "title": "在弗里敦创立",
+                    "body": "GenelineX 在塞拉利昂成立，致力于把世界一流的 AI 技术带到非洲。"
+                },
+                {
+                    "year": "2023",
+                    "title": "Xplain AI 上线",
+                    "body": "发布文档智能平台，帮助企业大规模处理文档。"
+                },
+                {
+                    "year": "2024",
+                    "title": "启动 Kay-X 研发",
+                    "body": "开始研发克里奥语转英语语音识别，这是塞拉利昂语言领域的首创。"
+                },
+                {
+                    "year": "2024",
+                    "title": "GeneStudio 发布",
+                    "body": "推出无代码聊天机器人平台，让企业无需工程团队也能使用 AI。"
+                },
+                {
+                    "year": "2025",
+                    "title": "基础设施 API",
+                    "body": "通过 API 和文档向开发者开放我们的 AI 基础设施。"
+                }
+            ],
+            "numbersTitle": "数据一览",
+            "numbers": {
+                "products": "产品",
+                "languages": "支持的语言",
+                "clients": "服务的机构",
+                "team": "团队成员"
+            },
+            "numbersNeeds": "以上每一项经过确认的最新数据"
+        },
+        "solutions": {
+            "eyebrow": "解决方案",
+            "title": "<serif>为你的团队</serif>日常工作而打造",
+            "lead": "理解本地语境和本地语言的文档、语音与对话工具。",
+            "uses": "使用",
+            "items": [
+                {
+                    "category": "医疗",
+                    "title": "医疗文档智能",
+                    "body": "借助 AI 提取与摘要，处理病历、研究论文和临床文档。",
+                    "product": "Xplain",
+                    "features": [
+                        "病历分析",
+                        "研究综述",
+                        "合规文档"
+                    ]
+                },
+                {
+                    "category": "教育",
+                    "title": "学习助手",
+                    "body": "理解本地语境和语言（包括克里奥语）的辅导老师和助手。",
+                    "product": "GeneStudio + Kay-X",
+                    "features": [
+                        "多语言支持",
+                        "符合课程的回答",
+                        "学习进度跟踪"
+                    ]
+                },
+                {
+                    "category": "政府",
+                    "title": "公共服务自动化",
+                    "body": "借助文档处理和本地语言语音助手，让公民服务更快捷。",
+                    "product": "完整平台",
+                    "features": [
+                        "文档核验",
+                        "语音服务",
+                        "多语言公民支持"
+                    ]
+                },
+                {
+                    "category": "企业",
+                    "title": "知识管理",
+                    "body": "把内部文档变成可检索的知识库，提供检索增强的回答。",
+                    "product": "基础设施",
+                    "features": [
+                        "内部知识库",
+                        "语义搜索",
+                        "定制 AI 智能体"
+                    ]
+                },
+                {
+                    "category": "法律",
+                    "title": "合同分析",
+                    "body": "借助文档智能审阅合同、提取条款并标记风险。",
+                    "product": "Xplain",
+                    "features": [
+                        "条款提取",
+                        "风险识别",
+                        "合规检查"
+                    ]
+                },
+                {
+                    "category": "物流",
+                    "title": "运营智能",
+                    "body": "自动读取运输单据、发票和运营数据。",
+                    "product": "Xplain + API",
+                    "features": [
+                        "文档处理",
+                        "数据提取",
+                        "流程自动化"
+                    ]
+                }
+            ],
+            "custom": "没有看到你的行业？我们可以定制解决方案。",
+            "customCta": "联系我们"
+        },
+        "contact": {
+            "eyebrow": "联系我们",
+            "title": "<serif>聊聊</serif>你的语言",
+            "lead": "与团队预约 30 分钟。带上一个使用场景、一份数据集，或只是一个问题。",
+            "reasons": [
+                {
+                    "title": "观看演示",
+                    "body": "用你自己的材料演示 Kay-X、Xplain 或 GeneStudio。"
+                },
+                {
+                    "title": "规划项目",
+                    "body": "为你的机构规划语音或语言项目。"
+                },
+                {
+                    "title": "数据合作",
+                    "body": "贡献录音，或与我们共建新语言的语料库。"
+                }
+            ],
+            "schedule": "选择时间",
+            "email": "更喜欢用邮件？",
+            "calendar": "预约日历"
+        },
+        "blog": {
+            "eyebrow": "研究",
+            "title": "<serif>来自</serif>实验室的笔记",
+            "lead": "GenelineX 团队关于语音、语言以及面向低资源语言的高效 AI 的技术文章。"
+        },
+        "events": {
+            "eyebrow": "社区",
+            "title": "<serif>工作坊、黑客松</serif>与分享会",
+            "lead": "在这里与团队和建设非洲语言 AI 的社区见面。",
+            "empty": "目前没有已安排的活动。",
+            "emptyBody": "我们正在筹备下一轮工作坊和黑客松。",
+            "notify": "接收通知"
+        },
+        "developers": {
+            "eyebrow": "开发者",
+            "title": "<serif>开发者平台</serif>即将上线",
+            "lead": "面向非洲语言的语音、文档和检索 API，配有文档和 API 密钥。我们正在准备中。",
+            "waitlist": {
+                "title": "加入候补名单，抢先体验",
+                "body": "留下你的邮箱和你正在构建的项目。API 开放时我们会第一时间通知你。",
+                "email": "工作邮箱",
+                "emailHint": "you@company.com",
+                "project": "你在构建什么？",
+                "projectHint": "选填——例如：为诊所打造的克里奥语语音助手…",
+                "submit": "加入候补名单",
+                "note": "将打开你的邮件应用，并自动填好你的信息。",
+                "subject": "开发者 API 候补名单",
+                "cta": "加入候补名单",
+                "close": "关闭"
+            }
+        },
+        "legal": {
+            "eyebrow": "法律",
+            "sections": "本页内容",
+            "version": "版本 2.0",
+            "effective": "生效日期：{date}",
+            "privacy": {
+                "title": "隐私政策",
+                "lead": "说明你使用我们的网站、产品和服务时，GenelineX 如何收集、使用和保护信息。"
+            },
+            "terms": {
+                "title": "服务条款",
+                "lead": "使用我们的服务前，请仔细阅读这些条款。使用 GenelineX 即表示你同意这些条款。"
+            }
+        }
     }
 }

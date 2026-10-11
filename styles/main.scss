@@ -1,0 +1,9 @@
+// Global entry. Base rules sit in Tailwind's `base` layer so utilities
+// can still override them; component modules stay unlayered.
+@use "sass:meta";
+@use "base/root";
+
+@layer base {
+  @include meta.load-css("base/base");
+  @include meta.load-css("base/typography");
+}

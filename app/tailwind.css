@@ -1,0 +1,27 @@
+/* Tailwind handles surface-level layout. Colours, type and motion come
+   from the SCSS design system (styles/) through these CSS variables. */
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-sunken: var(--bg-sunken);
+  --color-raised: var(--bg-raised);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-subtle: var(--fg-subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-live: var(--live);
+
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+}

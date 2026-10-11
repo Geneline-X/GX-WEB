@@ -1,0 +1,72 @@
+@use "sass:list";
+@use "sass:map";
+@use "../abstracts" as *;
+
+@mixin emit-theme($name) {
+  @each $key, $value in map.get($themes, $name) {
+    --#{$key}: #{$value};
+  }
+  @if $name == "light" {
+    color-scheme: light;
+  } @else {
+    color-scheme: dark;
+  }
+}
+
+:root {
+  @each $name, $value in $palette {
+    --c-#{$name}: #{$value};
+  }
+
+  --font-display: #{$font-display};
+  --font-sans: #{$font-sans};
+  --font-mono: #{$font-mono};
+
+  @each $step, $range in $type-scale {
+    --fs-#{$step}: #{fluid(list.nth($range, 1), list.nth($range, 2))};
+  }
+
+  @each $key, $value in $space {
+    --space-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $radius {
+    --radius-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $notch {
+    --notch-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $durations {
+    --dur-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $easings {
+    --ease-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $z {
+    --z-#{$key}: #{$value};
+  }
+
+  --max: #{map.get($layout, "max")};
+  --gutter: #{map.get($layout, "gutter")};
+  --nav-h: #{map.get($layout, "nav-h")};
+
+  @include emit-theme("light");
+}
+
+@each $name, $_ in $themes {
+  [data-theme="#{$name}"] {
+    @include emit-theme($name);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    @each $key, $_ in $durations {
+      --dur-#{$key}: 1ms;
+    }
+  }
+}

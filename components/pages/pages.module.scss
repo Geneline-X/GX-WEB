@@ -1,0 +1,373 @@
+@use "abstracts" as *;
+
+// ── Page hero ────────────────────────────────────────────────
+.hero {
+  padding-block: clamp(4rem, 9vw, 7.5rem) clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.heroInner {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 900px;
+
+  p {
+    max-width: 52ch;
+    margin: 0;
+  }
+}
+
+.heroTitle {
+  margin: 0;
+}
+
+.block {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.blockTitle {
+  margin: 0 0 var(--space-7);
+}
+
+// ── Three-up cards (company principles, contact reasons) ─────
+.trio {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--line);
+  border: 1px solid var(--line);
+
+  @include up("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  li {
+    display: grid;
+    align-content: start;
+    gap: var(--space-3);
+    padding: var(--space-6) var(--space-5);
+    background: var(--bg);
+  }
+
+  h2,
+  h3 {
+    margin: 0;
+    font-size: var(--fs-h4);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
+}
+
+// ── Timeline ─────────────────────────────────────────────────
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+
+  li {
+    display: grid;
+    gap: var(--space-2) var(--space-6);
+    padding-block: var(--space-5);
+    border-bottom: 1px solid var(--line);
+
+    @include up("md") {
+      grid-template-columns: 120px 1fr 1.4fr;
+      align-items: baseline;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-size: var(--fs-h4);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
+}
+
+.year {
+  color: var(--accent-text);
+  font-size: 14px;
+}
+
+// ── Numbers ──────────────────────────────────────────────────
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.number {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-md);
+
+  p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
+}
+
+.numberEmpty {
+  height: 40px;
+  background: repeating-linear-gradient(90deg, var(--line-strong) 0 12px, transparent 12px 17px);
+  mask-image: repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 7px);
+}
+
+.note {
+  margin: var(--space-4) 0 0;
+  color: var(--fg-muted);
+  font-size: var(--fs-small);
+}
+
+// ── Use cases ────────────────────────────────────────────────
+.cases {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include up("md") {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include up("xl") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.case {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  @include notch(var(--notch-lg), "tr");
+
+  h2 {
+    margin: 0;
+    font-size: var(--fs-h4);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.caseHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--fg-muted);
+}
+
+.custom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+
+  p {
+    margin: 0;
+    font-size: var(--fs-h4);
+    letter-spacing: -0.02em;
+  }
+}
+
+// ── Contact ──────────────────────────────────────────────────
+.calendar {
+  min-height: 700px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  overflow: hidden;
+
+  :global(.calendly-inline-widget) {
+    min-width: 320px;
+    height: 700px;
+  }
+}
+
+.mail {
+  margin-top: var(--space-5);
+  color: var(--fg-muted);
+
+  a {
+    color: var(--accent-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+// ── Empty panel (events, developers) ─────────────────────────
+.emptyPanel {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+
+  h2 {
+    margin: 0;
+    font-size: var(--fs-h3);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    max-width: 52ch;
+    margin: 0;
+    color: var(--fg-muted);
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+// ── Legal ────────────────────────────────────────────────────
+.legal {
+  display: grid;
+  gap: var(--space-7);
+
+  @include up("lg") {
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-9);
+  }
+}
+
+.toc {
+  @include up("lg") {
+    position: sticky;
+    top: calc(var(--nav-h) + 2rem);
+    align-self: start;
+  }
+
+  p {
+    margin: 0 0 var(--space-3);
+    color: var(--fg-muted);
+  }
+
+  ol {
+    display: grid;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    padding: 6px 10px;
+    margin-inline: -10px;
+    border-radius: var(--radius-sm);
+    color: var(--fg-muted);
+    font-size: var(--fs-small);
+
+    &:hover {
+      background: var(--accent-soft);
+      color: var(--fg);
+    }
+  }
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-4);
+  color: var(--fg-muted);
+}
+
+// Long-form text.
+.prose {
+  max-width: 68ch;
+
+  section + section {
+    margin-top: var(--space-8);
+    padding-top: var(--space-7);
+    border-top: 1px solid var(--line);
+  }
+
+  h2 {
+    margin: 0 0 var(--space-4);
+    font-size: var(--fs-h3);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    scroll-margin-top: calc(var(--nav-h) + 1.5rem);
+  }
+
+  h3 {
+    margin: var(--space-6) 0 var(--space-3);
+    font-size: var(--fs-h4);
+    font-weight: 500;
+  }
+
+  p,
+  li {
+    color: var(--fg-muted);
+    line-height: 1.65;
+  }
+
+  p {
+    margin: 0 0 var(--space-4);
+  }
+
+  ul {
+    margin: 0 0 var(--space-4);
+    padding-left: 1.2em;
+  }
+
+  li + li {
+    margin-top: var(--space-2);
+  }
+
+  strong {
+    color: var(--fg);
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--accent-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}

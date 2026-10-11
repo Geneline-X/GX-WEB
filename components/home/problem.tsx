@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl"
 import { Container } from "@/components/ds/primitives"
 import { rich } from "@/components/ds/rich"
 import { Reveal } from "@/components/motion/reveal"
-import { Journey } from "./journey"
+import { LanguagesField } from "./languages-field"
 import styles from "./problem.module.scss"
 
 export function Problem() {
@@ -21,15 +21,13 @@ export function Problem() {
         </Reveal>
 
         <figure className={styles.figure}>
-          <figcaption className="sr-only">{t("diagram")}</figcaption>
-          <div className={styles.card}>
-            <p className={`t-h4 ${styles.cardTitle}`}>{t.rich("without", rich)}</p>
-            <Journey variant="mess" />
-          </div>
-          <div className={`${styles.card} ${styles.clean}`} data-theme="adire">
-            <p className={`t-h4 ${styles.cardTitle}`}>{t.rich("with", rich)}</p>
-            <Journey variant="clean" />
-          </div>
+          <LanguagesField />
+          <figcaption className={styles.legend}>
+            <span className={styles.key} data-heard>
+              {t("legendHeard")}
+            </span>
+            <span className={styles.key}>{t("legendSpoken")}</span>
+          </figcaption>
         </figure>
       </Container>
     </section>

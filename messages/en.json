@@ -270,9 +270,8 @@
             "title": "<dim>Most AI hears a hundred languages.</dim> Africa speaks two thousand.",
             "p1": "Speech and language models learn from what’s written online, and most African languages barely appear there. So the models mishear Krio, Hausa and Wolof speakers, or don’t hear them at all.",
             "p2": "GenelineX builds what’s missing: recordings from native speakers, transcripts checked by a second speaker, and models trained and measured for each language.",
-            "without": "Without a corpus, <em>models guess</em>",
-            "with": "With a pipeline, <b>every clip counts</b>",
-            "diagram": "Diagram. Left: scattered audio clips with broken paths and failures. Right: each speaker’s clip moves along a clean path to a verified transcript."
+            "legendHeard": "≈100 languages most speech AI hears",
+            "legendSpoken": "≈2,000 languages spoken in Africa"
         },
         "pipeline": {
             "eyebrow": "The pipeline",

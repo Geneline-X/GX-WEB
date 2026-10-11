@@ -38,33 +38,33 @@
 }
 
 .figure {
-  display: grid;
-  gap: 10px;
-  margin: clamp(3rem, 7vw, 5.5rem) 0 0;
+  margin: clamp(3rem, 7vw, 5rem) 0 0;
 }
 
-.card {
-  padding: clamp(1.25rem, 3vw, 2.5rem);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  background: var(--bg);
-}
-
-.clean {
-  border-color: transparent;
-}
-
-.cardTitle {
-  margin: 0 0 clamp(1.25rem, 3vw, 2.25rem);
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin-top: var(--space-5);
   color: var(--fg-muted);
+  font-size: var(--fs-small);
+}
 
-  em {
-    font-style: normal;
-    color: var(--danger);
+.key {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  // A thread swatch, same shape as the field.
+  &::before {
+    content: "";
+    width: 14px;
+    height: 3px;
+    border-radius: 1px;
+    background: var(--line-strong);
   }
 
-  strong {
-    font-weight: 500;
-    color: var(--fg);
+  &[data-heard]::before {
+    background: var(--accent-text);
   }
 }

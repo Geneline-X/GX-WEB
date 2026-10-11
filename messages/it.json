@@ -265,9 +265,8 @@
             "title": "<dim>La maggior parte delle IA sente cento lingue.</dim> L’Africa ne parla duemila.",
             "p1": "I modelli vocali e linguistici imparano da ciò che è scritto online, e la maggior parte delle lingue africane lì quasi non compare. Così i modelli capiscono male chi parla krio, hausa o wolof, o non li capiscono affatto.",
             "p2": "GenelineX costruisce ciò che manca: registrazioni di parlanti nativi, trascrizioni verificate da un secondo parlante e modelli addestrati e misurati per ogni lingua.",
-            "without": "Senza un corpus, <em>i modelli tirano a indovinare</em>",
-            "with": "Con una pipeline, <b>ogni clip conta</b>",
-            "diagram": "Diagramma. A sinistra: clip audio sparse, con percorsi interrotti ed errori. A destra: la clip di ogni parlante segue un percorso pulito fino a una trascrizione verificata."
+            "legendHeard": "≈100 lingue che la maggior parte delle IA vocali sente",
+            "legendSpoken": "≈2.000 lingue parlate in Africa"
         },
         "pipeline": {
             "eyebrow": "La pipeline",

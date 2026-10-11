@@ -1,0 +1,143 @@
+@use "abstracts" as *;
+
+.section {
+  padding-block: clamp(4rem, 8vw, 7rem) clamp(5rem, 10vw, 9rem);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-7);
+
+  @include up("lg") {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-8);
+  }
+}
+
+.text {
+  // On small screens the canvas sticks on top and steps scroll beneath it.
+  @include down("lg") {
+    order: 2;
+  }
+}
+
+.head {
+  display: grid;
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+
+  h2 {
+    max-width: 18ch;
+    margin: 0;
+  }
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  gap: var(--space-3);
+  min-height: 62vh;
+  align-content: center;
+  padding-left: var(--space-6);
+  border-left: 1px solid var(--line);
+  opacity: 0.38;
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    border-color var(--dur-slow) var(--ease-out);
+
+  h3 {
+    margin: 0;
+  }
+
+  &[data-active] {
+    opacity: 1;
+    border-left-color: var(--accent-text);
+  }
+
+  @include down("lg") {
+    min-height: 0;
+    padding-block: var(--space-7);
+    opacity: 1;
+  }
+}
+
+.index {
+  color: var(--accent-text);
+  font-size: 13px;
+}
+
+.body {
+  max-width: 40ch;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+}
+
+.meta {
+  margin: var(--space-2) 0 0;
+  color: var(--fg-subtle);
+}
+
+.sticky {
+  position: relative;
+
+  @include down("lg") {
+    position: sticky;
+    top: var(--nav-h);
+    z-index: 1;
+    order: 1;
+    background: var(--bg);
+  }
+}
+
+.canvasBox {
+  position: sticky;
+  top: calc(var(--nav-h) + 4vh);
+  height: calc(100vh - var(--nav-h) - 8vh);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(60% 50% at 50% 45%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%),
+    var(--bg-sunken);
+  overflow: hidden;
+
+  @include down("lg") {
+    position: relative;
+    top: 0;
+    height: 42vh;
+  }
+}
+
+.rail {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    flex: 1;
+    padding-top: 10px;
+    border-top: 2px solid var(--line-strong);
+    color: var(--fg-subtle);
+    transition: border-color var(--dur-slow) var(--ease-out), color var(--dur-slow) var(--ease-out);
+
+    &[data-on] {
+      border-top-color: var(--accent-text);
+      color: var(--fg);
+    }
+  }
+}

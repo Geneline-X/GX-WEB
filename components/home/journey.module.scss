@@ -1,0 +1,63 @@
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.grid circle {
+  fill: var(--line-strong);
+}
+
+.line {
+  fill: none;
+  stroke: var(--fg-subtle);
+  stroke-width: 1.5;
+  stroke-dasharray: 1;
+  stroke-linejoin: round;
+
+  [data-variant="clean"] & {
+    stroke: var(--fg);
+    stroke-width: 2;
+  }
+}
+
+// A short bright dash that travels along each clean lane.
+.packet {
+  fill: none;
+  stroke: var(--live);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 0.03 1;
+  stroke-dashoffset: 0.03;
+}
+
+.node {
+  fill: var(--fg);
+}
+
+.icon,
+.done {
+  rect {
+    fill: var(--bg-raised);
+    stroke: var(--line-strong);
+  }
+
+  svg {
+    color: var(--fg);
+  }
+}
+
+.done {
+  rect {
+    fill: var(--c-success);
+    stroke: none;
+  }
+
+  svg {
+    color: #fff;
+  }
+}
+
+.fail svg {
+  color: var(--danger);
+}

@@ -1,0 +1,70 @@
+@use "abstracts" as *;
+
+.section {
+  padding-block: clamp(5rem, 11vw, 9rem) clamp(3rem, 6vw, 5rem);
+  background: var(--bg);
+}
+
+.head {
+  display: grid;
+  gap: var(--space-6);
+
+  @include up("lg") {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-9);
+  }
+}
+
+.title {
+  margin: 0;
+  max-width: 18ch;
+}
+
+.body {
+  display: grid;
+  gap: var(--space-5);
+  align-content: start;
+  padding-top: 0.6em;
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+
+  p {
+    margin: 0;
+  }
+
+  p:last-child {
+    color: var(--fg-muted);
+  }
+}
+
+.figure {
+  display: grid;
+  gap: 10px;
+  margin: clamp(3rem, 7vw, 5.5rem) 0 0;
+}
+
+.card {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--bg);
+}
+
+.clean {
+  border-color: transparent;
+}
+
+.cardTitle {
+  margin: 0 0 clamp(1.25rem, 3vw, 2.25rem);
+  color: var(--fg-muted);
+
+  em {
+    font-style: normal;
+    color: var(--danger);
+  }
+
+  strong {
+    font-weight: 500;
+    color: var(--fg);
+  }
+}

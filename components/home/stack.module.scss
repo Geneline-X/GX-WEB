@@ -1,0 +1,220 @@
+@use "abstracts" as *;
+
+@property --lift {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+.section {
+  padding-block: clamp(4rem, 9vw, 8rem);
+}
+
+.head {
+  display: grid;
+  gap: var(--space-5);
+
+  @include up("lg") {
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-9);
+    align-items: end;
+  }
+
+  p {
+    max-width: 34ch;
+    margin: 0;
+  }
+}
+
+.title {
+  margin: var(--space-4) 0 0;
+}
+
+.body {
+  display: grid;
+  gap: var(--space-7);
+  margin-top: clamp(2rem, 6vw, 4rem);
+
+  @include up("lg") {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+}
+
+// ── Isometric planes ─────────────────────────────────────────
+.iso {
+  position: relative;
+  height: clamp(420px, 52vw, 640px);
+  perspective: 2400px;
+}
+
+.plane {
+  --i: 0;
+  --size: min(78%, 420px);
+  --plane: var(--c-graphite);
+  --plane-fg: var(--c-mist);
+  --dot: rgba(255, 255, 255, 0.12);
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size);
+  aspect-ratio: 1;
+  padding: 7%;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle, var(--dot) 1px, transparent 1.6px) 0 0 / 14px 14px,
+    var(--plane);
+  color: var(--plane-fg);
+  z-index: calc(var(--i) + 1);
+  box-shadow: 0 30px 60px -30px rgba(14, 17, 22, 0.55);
+  transform:
+    translate(-50%, -50%)
+    translateY(calc((var(--i) - 1.5) * -1 * (44px + var(--lift) * 64px)))
+    rotateX(58deg)
+    rotateZ(-45deg);
+  transition:
+    filter var(--dur-base) var(--ease-out),
+    opacity var(--dur-base) var(--ease-out);
+
+  &[data-layer="models"] {
+    --plane: var(--c-adire);
+    --dot: rgba(255, 255, 255, 0.16);
+  }
+
+  &[data-layer="data"] {
+    --plane: var(--c-signal);
+    --dot: rgba(255, 255, 255, 0.22);
+  }
+
+  &[data-layer="infra"] {
+    --plane: var(--c-paper-2);
+    --plane-fg: var(--c-ink);
+    --dot: rgba(14, 17, 22, 0.14);
+    box-shadow: inset 0 0 0 1px var(--line-strong), 0 30px 60px -30px rgba(14, 17, 22, 0.35);
+  }
+
+  &[data-dim] {
+    opacity: 0.35;
+    filter: saturate(0.4);
+  }
+
+  &[data-focus] {
+    box-shadow: 0 0 0 2px var(--c-saffron), 0 30px 60px -30px rgba(14, 17, 22, 0.55);
+  }
+}
+
+.planeLabel {
+  position: absolute;
+  right: 7%;
+  bottom: 6%;
+  font-size: clamp(14px, 1.6vw, 20px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 600;
+
+  [data-layer="infra"] & {
+    background: rgba(14, 17, 22, 0.08);
+  }
+}
+
+// ── Layer list ───────────────────────────────────────────────
+.label {
+  margin: 0 0 var(--space-5);
+  color: var(--fg-muted);
+}
+
+.list {
+  display: grid;
+}
+
+.group {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--line);
+
+  ul {
+    display: grid;
+    gap: 2px;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.layerName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.square {
+  width: 8px;
+  height: 8px;
+  background: var(--c-graphite);
+
+  &[data-layer="models"] { background: var(--c-adire); }
+  &[data-layer="data"] { background: var(--c-signal); }
+  &[data-layer="infra"] { background: var(--c-paper-2); box-shadow: inset 0 0 0 1px var(--line-strong); }
+}
+
+.product {
+  display: grid;
+  gap: 2px;
+  padding: 8px 18px;
+  margin-inline: -10px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    background: var(--accent-soft);
+
+    .arrow {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.productName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-text);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.productDesc {
+  color: var(--fg-muted);
+  font-size: var(--fs-small);
+}

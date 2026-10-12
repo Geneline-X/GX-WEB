@@ -87,6 +87,17 @@
     --btn-fg: var(--on-accent);
   }
 
+  // Quiet grey action, e.g. under a card.
+  &[data-variant="soft"] {
+    --btn-bg: var(--bg-sunken);
+    --btn-fg: var(--fg);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
   &[data-variant="ghost"] {
     --btn-bg: transparent;
     --btn-fg: var(--fg);
@@ -124,6 +135,13 @@
     @include hover {
       --btn-bg: var(--solid);
       --btn-fg: var(--on-solid);
+    }
+  }
+
+  &[data-variant="soft"] {
+    @include hover {
+      --btn-bg: var(--accent-soft);
+      --btn-fg: var(--accent-text);
     }
   }
 

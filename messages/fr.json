@@ -274,23 +274,31 @@
             "steps": {
                 "collect": {
                     "title": "Collecter",
-                    "body": "Des locuteurs natifs enregistrent et envoient de l’audio sur KACCP, notre plateforme ouverte de curation. Chaque extrait conserve son locuteur, sa région et son consentement."
+                    "body": "Des locuteurs natifs enregistrent des messages vocaux sur KACCP, notre plateforme ouverte.",
+                    "cta": "Contribuer sur KACCP"
                 },
                 "curate": {
                     "title": "Organiser",
-                    "body": "Les extraits sont découpés en énoncés et transcrits, puis vérifiés par un second locuteur avant d’entrer dans le corpus.",
-                    "meta": "Double relecture"
+                    "body": "Chaque extrait est transcrit, puis vérifié par un second locuteur.",
+                    "cta": "Voir dans la console"
                 },
                 "train": {
                     "title": "Entraîner",
-                    "body": "Nous affinons des modèles de parole et de langage avec des adaptateurs de faible rang, en modifiant moins de 2 % des poids : chaque nouvelle langue coûte une fraction d’un entraînement complet.",
-                    "meta": "Adaptateurs LoRA"
+                    "body": "De petits adaptateurs affinent chaque langue, en modifiant moins de 2 % des poids.",
+                    "cta": "Lire la recherche"
                 },
                 "deploy": {
                     "title": "Déployer",
-                    "body": "Les modèles sont servis par l’API Kay-X et intégrés à des produits comme Xplain et GeneStudio, et continuent de s’améliorer à chaque nouvel extrait.",
-                    "meta": "API Kay-X"
+                    "body": "Les modèles sont servis par l’API Kay-X et intégrés à nos produits.",
+                    "cta": "Essayer Kay-X"
                 }
+            },
+            "visual": {
+                "voiceNotes": "Messages vocaux",
+                "review": "Relecture par un second locuteur",
+                "english": "Comment t’appelles-tu ?",
+                "reviewOn": "Relecture : activée",
+                "shipsTo": "Déployé vers"
             }
         },
         "stack": {

@@ -274,23 +274,31 @@
             "steps": {
                 "collect": {
                     "title": "Raccogliere",
-                    "body": "Parlanti nativi registrano e caricano audio su KACCP, la nostra piattaforma aperta di curatela. Ogni clip conserva parlante, regione e consenso."
+                    "body": "Parlanti nativi registrano messaggi vocali su KACCP, la nostra piattaforma aperta.",
+                    "cta": "Contribuisci su KACCP"
                 },
                 "curate": {
                     "title": "Curare",
-                    "body": "Le clip vengono divise in enunciati e trascritte, poi verificate da un secondo parlante prima di entrare nel corpus.",
-                    "meta": "Doppia revisione"
+                    "body": "Ogni clip viene trascritta e poi verificata da un secondo parlante.",
+                    "cta": "Vedi nella console"
                 },
                 "train": {
                     "title": "Addestrare",
-                    "body": "Perfezioniamo modelli vocali e linguistici con adattatori a basso rango, aggiornando meno del 2% dei pesi: ogni nuova lingua costa una frazione di un addestramento completo.",
-                    "meta": "Adattatori LoRA"
+                    "body": "Piccoli adattatori perfezionano ogni lingua, aggiornando meno del 2% dei pesi.",
+                    "cta": "Leggi la ricerca"
                 },
                 "deploy": {
                     "title": "Distribuire",
-                    "body": "I modelli funzionano dietro l’API Kay-X e dentro prodotti come Xplain e GeneStudio, e migliorano a ogni nuova clip.",
-                    "meta": "API Kay-X"
+                    "body": "I modelli funzionano dietro l’API Kay-X e dentro i nostri prodotti.",
+                    "cta": "Prova Kay-X"
                 }
+            },
+            "visual": {
+                "voiceNotes": "Messaggi vocali",
+                "review": "Revisione di un secondo parlante",
+                "english": "Come ti chiami?",
+                "reviewOn": "Revisione: attiva",
+                "shipsTo": "Distribuito su"
             }
         },
         "stack": {

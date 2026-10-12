@@ -3,7 +3,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react"
 import { Link } from "@/i18n/routing"
 import styles from "./button.module.scss"
 
-type Variant = "solid" | "outline" | "accent" | "ghost"
+type Variant = "solid" | "outline" | "accent" | "ghost" | "soft"
 type Size = "sm" | "md" | "lg"
 
 type Common = {

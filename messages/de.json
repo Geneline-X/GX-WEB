@@ -274,23 +274,31 @@
             "steps": {
                 "collect": {
                     "title": "Sammeln",
-                    "body": "Muttersprachler nehmen Audio auf und laden es auf KACCP hoch, unsere offene Kuratierungsplattform. Jeder Clip behält Sprecher, Region und Einwilligung."
+                    "body": "Muttersprachler nehmen Sprachnachrichten auf KACCP auf, unserer offenen Plattform.",
+                    "cta": "Zu KACCP beitragen"
                 },
                 "curate": {
                     "title": "Kuratieren",
-                    "body": "Clips werden in Äußerungen zerlegt und transkribiert und dann von einer zweiten Person geprüft, bevor sie in den Korpus gelangen.",
-                    "meta": "Doppelte Prüfung"
+                    "body": "Jeder Clip wird transkribiert und dann von einer zweiten Person geprüft.",
+                    "cta": "In der Konsole ansehen"
                 },
                 "train": {
                     "title": "Trainieren",
-                    "body": "Wir verfeinern Spracherkennungs- und Sprachmodelle mit Low-Rank-Adaptern und ändern dabei weniger als 2 % der Gewichte – so kostet jede neue Sprache nur einen Bruchteil eines vollständigen Trainings.",
-                    "meta": "LoRA-Adapter"
+                    "body": "Kleine Adapter verfeinern jede Sprache und ändern dabei weniger als 2 % der Gewichte.",
+                    "cta": "Zur Forschung"
                 },
                 "deploy": {
                     "title": "Bereitstellen",
-                    "body": "Die Modelle laufen hinter der Kay-X-API und in Produkten wie Xplain und GeneStudio und werden mit jedem neuen Clip besser.",
-                    "meta": "Kay-X-API"
+                    "body": "Die Modelle laufen hinter der Kay-X-API und in unseren Produkten.",
+                    "cta": "Kay-X testen"
                 }
+            },
+            "visual": {
+                "voiceNotes": "Sprachnachrichten",
+                "review": "Prüfung durch eine zweite Person",
+                "english": "Wie heißt du?",
+                "reviewOn": "Prüfung: an",
+                "shipsTo": "Geht an"
             }
         },
         "stack": {

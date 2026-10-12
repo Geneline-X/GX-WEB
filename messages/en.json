@@ -279,24 +279,31 @@
             "steps": {
                 "collect": {
                     "title": "Collect",
-                    "body": "Native speakers record and upload audio on KACCP, our open curation platform. Every clip keeps its speaker, region and consent.",
-                    "meta": "KACCP"
+                    "body": "Native speakers record voice notes on KACCP, our open platform.",
+                    "cta": "Contribute on KACCP"
                 },
                 "curate": {
                     "title": "Curate",
-                    "body": "Clips are split into utterances and transcribed, then checked by a second speaker before they enter the corpus.",
-                    "meta": "Two-pass review"
+                    "body": "Every clip is transcribed, then checked by a second speaker.",
+                    "cta": "See it in the console"
                 },
                 "train": {
                     "title": "Train",
-                    "body": "We fine-tune speech and language models with low-rank adapters, updating under 2% of the weights, so each new language costs a fraction of a full training run.",
-                    "meta": "LoRA adapters"
+                    "body": "Small adapters fine-tune each language, updating under 2% of the weights.",
+                    "cta": "Read the research"
                 },
                 "deploy": {
                     "title": "Deploy",
-                    "body": "Models ship behind the Kay-X API and inside products like Xplain and GeneStudio, and keep improving as new clips arrive.",
-                    "meta": "Kay-X API"
+                    "body": "Models ship behind the Kay-X API and inside our products.",
+                    "cta": "Try Kay-X"
                 }
+            },
+            "visual": {
+                "voiceNotes": "Voice notes",
+                "review": "Second-speaker review",
+                "english": "What is your name?",
+                "reviewOn": "Review: on",
+                "shipsTo": "Ships to"
             }
         },
         "stack": {

@@ -274,23 +274,31 @@
             "steps": {
                 "collect": {
                     "title": "Recopilar",
-                    "body": "Hablantes nativos graban y suben audio en KACCP, nuestra plataforma abierta de curación. Cada clip conserva su hablante, región y consentimiento."
+                    "body": "Hablantes nativos graban notas de voz en KACCP, nuestra plataforma abierta.",
+                    "cta": "Contribuir en KACCP"
                 },
                 "curate": {
                     "title": "Curar",
-                    "body": "Los clips se dividen en enunciados y se transcriben, y un segundo hablante los revisa antes de que entren en el corpus.",
-                    "meta": "Revisión doble"
+                    "body": "Cada clip se transcribe y luego lo revisa un segundo hablante.",
+                    "cta": "Verlo en la consola"
                 },
                 "train": {
                     "title": "Entrenar",
-                    "body": "Ajustamos modelos de voz y de lenguaje con adaptadores de bajo rango, actualizando menos del 2 % de los pesos, así cada nuevo idioma cuesta una fracción de un entrenamiento completo.",
-                    "meta": "Adaptadores LoRA"
+                    "body": "Pequeños adaptadores ajustan cada idioma, actualizando menos del 2 % de los pesos.",
+                    "cta": "Leer la investigación"
                 },
                 "deploy": {
                     "title": "Desplegar",
-                    "body": "Los modelos se sirven a través de la API de Kay-X y dentro de productos como Xplain y GeneStudio, y siguen mejorando con cada clip nuevo.",
-                    "meta": "API de Kay-X"
+                    "body": "Los modelos se sirven con la API de Kay-X y dentro de nuestros productos.",
+                    "cta": "Probar Kay-X"
                 }
+            },
+            "visual": {
+                "voiceNotes": "Notas de voz",
+                "review": "Revisión por un segundo hablante",
+                "english": "¿Cómo te llamas?",
+                "reviewOn": "Revisión: activada",
+                "shipsTo": "Se despliega en"
             }
         },
         "stack": {

@@ -1,143 +1,197 @@
 @use "abstracts" as *;
 
 .section {
-  padding-block: clamp(4rem, 8vw, 7rem) clamp(5rem, 10vw, 9rem);
+  padding-block: clamp(5rem, 10vw, 8rem);
   background: var(--bg);
-  border-top: 1px solid var(--line);
-}
-
-.grid {
-  display: grid;
-  gap: var(--space-7);
-
-  @include up("lg") {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: var(--space-8);
-  }
-}
-
-.text {
-  // On small screens the canvas sticks on top and steps scroll beneath it.
-  @include down("lg") {
-    order: 2;
-  }
 }
 
 .head {
   display: grid;
-  gap: var(--space-5);
-  margin-bottom: var(--space-7);
+  justify-items: center;
+  gap: var(--space-4);
+  text-align: center;
+
+  p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
 
   h2 {
-    max-width: 18ch;
+    max-width: 22ch;
     margin: 0;
   }
 }
 
-.steps {
-  margin: 0;
+.grid {
+  display: grid;
+  gap: var(--space-7) var(--space-5);
+  margin: clamp(2.5rem, 6vw, 4rem) 0 0;
   padding: 0;
   list-style: none;
-}
 
-.step {
-  display: grid;
-  gap: var(--space-3);
-  min-height: 62vh;
-  align-content: center;
-  padding-left: var(--space-6);
-  border-left: 1px solid var(--line);
-  opacity: 0.38;
-  transition:
-    opacity var(--dur-slow) var(--ease-out),
-    border-color var(--dur-slow) var(--ease-out);
-
-  h3 {
-    margin: 0;
+  @include up("md") {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  &[data-active] {
-    opacity: 1;
-    border-left-color: var(--accent-text);
-  }
-
-  @include down("lg") {
-    min-height: 0;
-    padding-block: var(--space-7);
-    opacity: 1;
+  @include up("xl") {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.index {
-  color: var(--accent-text);
-  font-size: 13px;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+// Square photo with a small piece of UI floating on it.
+.visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--bg-sunken);
+}
+
+.photo {
+  object-fit: cover;
+  transition: transform var(--dur-slower) var(--ease-out);
+
+  .card:hover & {
+    transform: scale(1.03);
+  }
+}
+
+.title {
+  margin: var(--space-5) 0 0;
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 .body {
-  max-width: 40ch;
-  margin: 0;
-  color: var(--fg-muted);
-  font-size: var(--fs-lead);
-  line-height: 1.45;
-}
-
-.meta {
   margin: var(--space-2) 0 0;
-  color: var(--fg-subtle);
+  color: var(--fg-muted);
 }
 
-.sticky {
-  position: relative;
-
-  @include down("lg") {
-    position: sticky;
-    top: var(--nav-h);
-    z-index: 1;
-    order: 1;
-    background: var(--bg);
-  }
+.cta {
+  margin-top: var(--space-5);
 }
 
-.canvasBox {
-  position: sticky;
-  top: calc(var(--nav-h) + 4vh);
-  height: calc(100vh - var(--nav-h) - 8vh);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  background:
-    radial-gradient(60% 50% at 50% 45%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%),
-    var(--bg-sunken);
-  overflow: hidden;
-
-  @include down("lg") {
-    position: relative;
-    top: 0;
-    height: 42vh;
-  }
-}
-
-.rail {
+// ── Overlays (Exa-style UI on the picture) ───────────────────
+.chip {
   position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 18px;
+  padding: 4px 8px;
+  background: var(--c-ink);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.note,
+.ships {
+  position: absolute;
+  inset: auto 9% 50% 9%;
+  translate: 0 50%;
+
+  // Keep faces clear: the review note sits in the lower part of its photo.
+  &.note {
+    inset: auto 9% 15% 9%;
+    translate: none;
+  }
+
+  padding: 16px 18px 18px;
+  background: var(--c-chalk);
+  color: var(--c-ink);
+  box-shadow: 0 18px 40px -16px rgba(5, 10, 40, 0.55);
+}
+
+.noteLabel {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   gap: 8px;
+  margin: 0 0 10px;
+  color: var(--c-ink-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  span {
+    width: 8px;
+    height: 8px;
+    background: var(--c-signal);
+  }
+}
+
+.krio {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.english {
+  margin: 4px 0 0;
+  color: var(--c-ink-2);
+  font-size: 14px;
+
+  mark {
+    padding: 0 2px;
+    background: color-mix(in srgb, var(--c-signal) 14%, transparent);
+    color: inherit;
+  }
+}
+
+.note .chip[data-solid] {
+  position: absolute;
+  left: 50%;
+  bottom: -38px;
+  translate: -50% 0;
+}
+
+.code {
+  position: absolute;
+  inset: auto 9% 50% 9%;
+  translate: 0 50%;
+  margin: 0;
+  padding: 16px 18px;
+  background: #05070d;
+  color: #e6e9f5;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-variation-settings: "wdth" 85;
+  line-height: 1.7;
+  white-space: pre;
+  overflow: hidden;
+  box-shadow: 0 18px 40px -16px rgba(5, 10, 40, 0.6);
+}
+
+.ships ul {
+  display: grid;
+  gap: 6px;
   margin: 0;
   padding: 0;
   list-style: none;
 
   li {
-    flex: 1;
-    padding-top: 10px;
-    border-top: 2px solid var(--line-strong);
-    color: var(--fg-subtle);
-    transition: border-color var(--dur-slow) var(--ease-out), color var(--dur-slow) var(--ease-out);
-
-    &[data-on] {
-      border-top-color: var(--accent-text);
-      color: var(--fg);
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid var(--c-paper-2);
+    font-size: 14px;
+    font-weight: 500;
   }
+}
+
+.shipArrow {
+  width: 16px;
+  height: 16px;
+  color: var(--c-signal);
+  stroke-width: 2.25;
 }

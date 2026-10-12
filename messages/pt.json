@@ -274,23 +274,31 @@
             "steps": {
                 "collect": {
                     "title": "Coletar",
-                    "body": "Falantes nativos gravam e enviam áudio no KACCP, nossa plataforma aberta de curadoria. Cada clipe mantém seu falante, região e consentimento."
+                    "body": "Falantes nativos gravam mensagens de voz no KACCP, nossa plataforma aberta.",
+                    "cta": "Contribuir no KACCP"
                 },
                 "curate": {
                     "title": "Curar",
-                    "body": "Os clipes são divididos em enunciados e transcritos, e um segundo falante os revisa antes de entrarem no corpus.",
-                    "meta": "Revisão dupla"
+                    "body": "Cada clipe é transcrito e depois revisado por um segundo falante.",
+                    "cta": "Ver no console"
                 },
                 "train": {
                     "title": "Treinar",
-                    "body": "Ajustamos modelos de fala e de linguagem com adaptadores de baixo posto, atualizando menos de 2% dos pesos, então cada novo idioma custa uma fração de um treinamento completo.",
-                    "meta": "Adaptadores LoRA"
+                    "body": "Pequenos adaptadores ajustam cada idioma, atualizando menos de 2% dos pesos.",
+                    "cta": "Ler a pesquisa"
                 },
                 "deploy": {
                     "title": "Implantar",
-                    "body": "Os modelos rodam por trás da API Kay-X e dentro de produtos como Xplain e GeneStudio, e continuam melhorando a cada novo clipe.",
-                    "meta": "API Kay-X"
+                    "body": "Os modelos rodam por trás da API Kay-X e dentro dos nossos produtos.",
+                    "cta": "Experimentar o Kay-X"
                 }
+            },
+            "visual": {
+                "voiceNotes": "Mensagens de voz",
+                "review": "Revisão por um segundo falante",
+                "english": "Qual é o seu nome?",
+                "reviewOn": "Revisão: ativada",
+                "shipsTo": "Vai para"
             }
         },
         "stack": {

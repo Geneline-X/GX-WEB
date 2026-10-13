@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react"
 import { Loom, type LoomFit, type LoomShape } from "@/lib/gl/loom"
 import { gsap } from "@/lib/motion/gsap"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
-import { useMotionPaused } from "@/lib/motion/pause"
 import styles from "./loom-canvas.module.scss"
 
 type Props = {
@@ -23,9 +22,6 @@ export function LoomCanvas({ shape = "africa", fit, interactive = false, intro =
   const loomRef = useRef<Loom | null>(null)
   const [failed, setFailed] = useState(false)
   const reduced = useReducedMotion()
-  const paused = useMotionPaused()
-  const pausedRef = useRef(paused)
-  pausedRef.current = paused
   const onReadyRef = useRef(onReady)
   onReadyRef.current = onReady
 
@@ -42,7 +38,7 @@ export function LoomCanvas({ shape = "africa", fit, interactive = false, intro =
     }
     loomRef.current = loom
     if (fit) loom.fit = fit
-    loom.still = reduced || pausedRef.current
+    loom.still = reduced
 
     loom.resize()
     const ro = new ResizeObserver(() => loom.resize())
@@ -84,10 +80,6 @@ export function LoomCanvas({ shape = "africa", fit, interactive = false, intro =
     // fit is read once; layout changes go through ResizeObserver.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reduced, intro, shape])
-
-  useEffect(() => {
-    if (loomRef.current) loomRef.current.still = reduced || paused
-  }, [reduced, paused])
 
   // Listen on the window: content often sits on top of the canvas.
   useEffect(() => {

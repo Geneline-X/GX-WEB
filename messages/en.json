@@ -334,7 +334,8 @@
             "eyebrow": "Research",
             "title": "<serif>Notes from</serif> the lab",
             "read": "Read on Medium",
-            "all": "All research"
+            "all": "All research",
+            "paper": "Paper {n}"
         },
         "cta": {
             "title": "<serifi>Kushɛ.</serifi> Let’s teach AI your language.",

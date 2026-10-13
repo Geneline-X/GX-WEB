@@ -7,6 +7,8 @@ export interface ResearchPost {
     tags: string[]
     externalUrl: string
     featured: boolean
+    /** Illustration on the card: adapter events over time, or a speech waveform. */
+    visual: "events" | "waveform"
 }
 
 export const POSTS: ResearchPost[] = [
@@ -17,6 +19,7 @@ export const POSTS: ResearchPost[] = [
         author: "Dennis Stephens (Geneline-X / GX)",
         date: "January 2026",
         tags: ["Continual Learning", "Autonomous Agents", "Low-Rank Adaptation (LoRA)", "Speech & Language AI"],
+        visual: "events",
         externalUrl: "https://medium.com/@kamaradennis36/self-reflective-learning-systems-event-driven-continual-adaptation-via-agent-triggered-low-rank-e43d180391c1",
         featured: true,
     },
@@ -27,6 +30,7 @@ export const POSTS: ResearchPost[] = [
         author: "Geneline-X",
         date: "January 2026",
         tags: ["Generative Audio", "Low-Resource NLP", "Speech Synthesis", "Efficient AI", "African Languages"],
+        visual: "waveform",
         externalUrl: "https://medium.com/@info_33991/breaking-the-silence-high-fidelity-krio-synthesis-via-parameter-efficient-flow-matching-bd45f71b42b4",
         featured: true,
     }

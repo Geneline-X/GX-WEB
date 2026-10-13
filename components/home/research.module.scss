@@ -5,26 +5,26 @@
 }
 
 .head {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: end;
-  gap: var(--space-5);
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  text-align: center;
 }
 
 .title {
-  margin: var(--space-4) 0 0;
+  margin: 0;
 }
 
+// Flush, edge-to-edge colour tiles.
 .list {
   display: grid;
-  gap: var(--space-4);
-  margin: var(--space-7) 0 0;
+  margin: clamp(2.5rem, 6vw, 4rem) auto 0;
   padding: 0;
   list-style: none;
+  max-width: 1120px;
 
   @include up("md") {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   &[data-bare] {
@@ -32,40 +32,103 @@
   }
 }
 
-.card {
+.tile {
+  --tile: var(--c-saffron);
+
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: var(--space-5);
-  border: 1px solid var(--line);
-  background: var(--bg-raised);
-  @include notch(var(--notch-lg), "tr");
-  transition: border-color var(--dur-base) var(--ease-out);
+  min-height: clamp(380px, 38vw, 480px);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+  background: var(--tile);
+  color: var(--c-ink);
+  transition:
+    transform var(--dur-slow) var(--ease-out),
+    box-shadow var(--dur-slow) var(--ease-out);
 
-  // The title link stretches over the whole card.
-  &:has(.link:hover) {
-    .glyph {
-      color: var(--accent);
-      transform: scale(1.03);
-    }
+  &[data-tone="glow"] {
+    --tile: var(--c-signal-glow);
+  }
 
-    .read {
-      background: var(--solid);
-      color: var(--on-solid);
+  // Lift on hover, like a card pulled from the stack.
+  @include motion-ok {
+    &:hover,
+    &:has(.link:focus-visible) {
+      z-index: 1;
+      transform: translateY(-8px);
+      box-shadow: 0 28px 50px -24px rgba(14, 17, 22, 0.45);
     }
+  }
+
+  &:hover .mark,
+  &:has(.link:focus-visible) .mark {
+    opacity: 0.4;
   }
 
   &:has(.link:focus-visible) {
-    box-shadow: inset 0 0 0 2px var(--focus);
+    outline: 3px solid var(--c-ink);
+    outline-offset: -3px;
   }
 }
 
+// Oversized thread illustration as a faint background mark.
+// Sits across the open middle of the tile, clear of the summary text.
+.mark {
+  position: absolute;
+  top: 30%;
+  left: -12%;
+  width: 135%;
+  height: auto;
+  color: #fff;
+  opacity: 0.32;
+  pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-out);
+
+  rect,
+  circle {
+    fill: currentColor;
+  }
+
+  // Highlighted threads (synthesised stretch, adapter updates) read stronger.
+  rect {
+    opacity: 0.6;
+  }
+
+  rect[data-on] {
+    opacity: 1;
+  }
+
+  line {
+    stroke: currentColor;
+    stroke-dasharray: 3 5;
+  }
+}
+
+.meta {
+  position: relative;
+  margin: 0 0 var(--space-4);
+  opacity: 0.75;
+}
+
+// Static, so the title link's overlay is positioned against the tile.
+.postTitle {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+// The title link covers the whole tile.
 .link {
   &::after {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 2;
   }
 
   &:focus-visible {
@@ -73,59 +136,46 @@
   }
 }
 
-.glyph {
-  height: 150px;
-  margin: var(--space-4) auto var(--space-6);
-  color: var(--fg-subtle);
-  transition: color var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
-}
-
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  padding-top: var(--space-4);
-  border-top: 1px dashed var(--line-strong);
-  color: var(--accent-text);
-}
-
-.postTitle {
-  margin: var(--space-3) 0 0;
-  font-size: var(--fs-h4);
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+.foot {
+  position: relative;
+  margin-top: auto;
+  padding-top: var(--space-6);
 }
 
 .summary {
-  margin: var(--space-3) 0 0;
-  color: var(--fg-muted);
-  font-size: var(--fs-small);
+  max-width: 40ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.foot {
-  display: flex;
-  justify-content: space-between;
+.more {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-4);
-  margin-top: auto;
-  padding-top: var(--space-5);
-}
-
-.read {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  flex: none;
-  border: 1px solid var(--line-strong);
-  transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+  gap: 8px;
+  margin-top: var(--space-4);
+  font-size: 12px;
+  font-weight: 500;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
+    transition: transform var(--dur-base) var(--ease-spring);
   }
+
+  .tile:hover & svg {
+    transform: translateX(4px);
+  }
+}
+
+.all {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 5vw, 3rem);
 }

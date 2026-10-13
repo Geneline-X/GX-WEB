@@ -329,7 +329,8 @@
             "eyebrow": "Forschung",
             "title": "<serif>Notizen aus</serif> dem Labor",
             "read": "Auf Medium lesen",
-            "all": "Alle Beiträge"
+            "all": "Alle Beiträge",
+            "paper": "Beitrag {n}"
         },
         "cta": {
             "title": "<serifi>Kushɛ.</serifi> Bringen wir der KI Ihre Sprache bei.",

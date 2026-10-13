@@ -329,7 +329,8 @@
             "eyebrow": "研究",
             "title": "<serif>来自</serif>实验室的笔记",
             "read": "在 Medium 上阅读",
-            "all": "全部研究"
+            "all": "全部研究",
+            "paper": "论文 {n}"
         },
         "cta": {
             "title": "<serifi>Kushɛ.</serifi> 让 AI 学会你的语言。",

@@ -250,6 +250,19 @@
         "motion": {
             "pause": "Metti in pausa l’animazione",
             "play": "Riproduci l’animazione"
+        },
+        "cookies": {
+            "region": "Consenso ai cookie",
+            "text": "Usiamo i cookie per ricordare la tua lingua e caricare il calendario delle prenotazioni.",
+            "settings": "Impostazioni dei cookie",
+            "reject": "Rifiuta tutti",
+            "accept": "Accetta tutti",
+            "save": "Salva preferenze",
+            "essentialTitle": "Essenziali",
+            "essentialBody": "Ricordano la tua lingua. Sempre attivi.",
+            "calendarTitle": "Calendario delle prenotazioni",
+            "calendarBody": "Calendly, nella pagina dei contatti, imposta i propri cookie.",
+            "policy": "Informativa sulla privacy"
         }
     },
     "Home": {
@@ -604,7 +617,10 @@
             ],
             "schedule": "Scegli un orario",
             "email": "Preferisci l’e-mail?",
-            "calendar": "Calendario delle prenotazioni"
+            "calendar": "Calendario delle prenotazioni",
+            "blockedTitle": "Il calendario delle prenotazioni è disattivato",
+            "blockedBody": "Calendly imposta i propri cookie, quindi si carica solo dopo che li hai consentiti. Puoi anche scriverci qui sotto.",
+            "allow": "Consenti i cookie e carica il calendario"
         },
         "blog": {
             "eyebrow": "Ricerca",

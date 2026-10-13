@@ -255,6 +255,19 @@
         "motion": {
             "pause": "Pause animation",
             "play": "Play animation"
+        },
+        "cookies": {
+            "region": "Cookie consent",
+            "text": "We use cookies to remember your language and to load our booking calendar.",
+            "settings": "Cookie settings",
+            "reject": "Reject all",
+            "accept": "Accept all",
+            "save": "Save preferences",
+            "essentialTitle": "Essential",
+            "essentialBody": "Remembers your language. Always on.",
+            "calendarTitle": "Booking calendar",
+            "calendarBody": "Calendly, on our contact page, sets its own cookies.",
+            "policy": "Privacy policy"
         }
     },
     "Home": {
@@ -616,7 +629,10 @@
             ],
             "schedule": "Pick a time",
             "email": "Prefer email?",
-            "calendar": "Booking calendar"
+            "calendar": "Booking calendar",
+            "blockedTitle": "The booking calendar is off",
+            "blockedBody": "Calendly sets its own cookies, so it only loads once you allow them. You can also email us below.",
+            "allow": "Allow cookies and load calendar"
         },
         "blog": {
             "eyebrow": "Research",

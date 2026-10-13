@@ -250,6 +250,19 @@
         "motion": {
             "pause": "Animation pausieren",
             "play": "Animation abspielen"
+        },
+        "cookies": {
+            "region": "Cookie-Einwilligung",
+            "text": "Wir verwenden Cookies, um uns Ihre Sprache zu merken und unseren Buchungskalender zu laden.",
+            "settings": "Cookie-Einstellungen",
+            "reject": "Alle ablehnen",
+            "accept": "Alle akzeptieren",
+            "save": "Einstellungen speichern",
+            "essentialTitle": "Notwendig",
+            "essentialBody": "Merkt sich Ihre Sprache. Immer aktiv.",
+            "calendarTitle": "Buchungskalender",
+            "calendarBody": "Calendly auf unserer Kontaktseite setzt eigene Cookies.",
+            "policy": "Datenschutzerklärung"
         }
     },
     "Home": {
@@ -609,7 +622,10 @@
             ],
             "schedule": "Termin wählen",
             "email": "Lieber per E-Mail?",
-            "calendar": "Buchungskalender"
+            "calendar": "Buchungskalender",
+            "blockedTitle": "Der Buchungskalender ist ausgeschaltet",
+            "blockedBody": "Calendly setzt eigene Cookies und wird deshalb erst geladen, wenn Sie sie erlauben. Sie können uns auch unten eine E-Mail schreiben.",
+            "allow": "Cookies erlauben und Kalender laden"
         },
         "blog": {
             "eyebrow": "Forschung",

@@ -1,0 +1,217 @@
+@use "abstracts" as *;
+
+.wrap {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(12px, 3vw, 24px);
+  z-index: var(--z-overlay);
+  display: grid;
+  gap: 10px;
+  width: min(820px, calc(100vw - 2 * var(--gutter)));
+  translate: -50% 0;
+  color: var(--fg);
+
+  // On phones the bar spans the screen with a small, fixed margin.
+  @include down("md") {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    translate: none;
+  }
+
+  @include motion-ok {
+    animation: rise var(--dur-slow) var(--ease-out);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+// ── The bar ──────────────────────────────────────────────────
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 10px 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg-raised);
+  box-shadow:
+    0 1px 3px rgba(14, 17, 22, 0.06),
+    0 18px 44px -18px rgba(14, 17, 22, 0.3);
+
+  @include down("md") {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px;
+  }
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.4;
+
+  @include down("md") {
+    flex-basis: calc(100% - 40px);
+    font-size: 13.5px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+
+  // Phones: two equal buttons side by side, settings link centred below.
+  @include down("md") {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+
+    > :global(*) {
+      width: 100%;
+    }
+
+    .link {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-self: center;
+      width: auto;
+      font-size: 13.5px;
+    }
+  }
+}
+
+.link {
+  padding: 6px 8px;
+  border: 0;
+  background: none;
+  color: var(--fg);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line-strong);
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+// ── Settings panel ───────────────────────────────────────────
+.panel {
+  display: grid;
+  gap: 14px;
+  justify-self: end;
+  width: min(420px, 100%);
+  padding: 18px 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  box-shadow: 0 18px 44px -18px rgba(14, 17, 22, 0.3);
+
+  @include motion-ok {
+    animation: pop var(--dur-base) var(--ease-out);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.rowTitle {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.rowBody {
+  margin: 2px 0 0;
+  color: var(--fg-muted);
+  font-size: 13.5px;
+}
+
+// Toggle switch; its state lives in aria-checked.
+.switch {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 24px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--line-strong);
+  transition: background-color var(--dur-fast) var(--ease-out);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(14, 17, 22, 0.25);
+    transition: transform var(--dur-base) var(--ease-spring);
+  }
+
+  &[aria-checked="true"] {
+    background: var(--accent);
+
+    &::after {
+      transform: translateX(16px);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+}
+
+.panelFoot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 4px;
+
+  .link {
+    padding-inline: 0;
+    color: var(--fg-muted);
+  }
+}

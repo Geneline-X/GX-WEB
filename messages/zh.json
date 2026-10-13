@@ -250,6 +250,19 @@
         "motion": {
             "pause": "暂停动画",
             "play": "播放动画"
+        },
+        "cookies": {
+            "region": "Cookie 同意",
+            "text": "我们使用 Cookie 来记住你的语言，并加载我们的预约日历。",
+            "settings": "Cookie 设置",
+            "reject": "全部拒绝",
+            "accept": "全部接受",
+            "save": "保存偏好",
+            "essentialTitle": "必要",
+            "essentialBody": "记住你的语言。始终开启。",
+            "calendarTitle": "预约日历",
+            "calendarBody": "联系页面上的 Calendly 会设置自己的 Cookie。",
+            "policy": "隐私政策"
         }
     },
     "Home": {
@@ -609,7 +622,10 @@
             ],
             "schedule": "选择时间",
             "email": "更喜欢用邮件？",
-            "calendar": "预约日历"
+            "calendar": "预约日历",
+            "blockedTitle": "预约日历已关闭",
+            "blockedBody": "Calendly 会设置自己的 Cookie，因此只有在你允许后才会加载。你也可以通过下方邮箱联系我们。",
+            "allow": "允许 Cookie 并加载日历"
         },
         "blog": {
             "eyebrow": "研究",

@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, getTranslations } from "next-intl/server"
 import { SmoothScroll } from "@/components/motion/smooth-scroll"
+import { CookieBanner } from "@/components/site/cookie-banner"
 import "../tailwind.css"
 import "@/styles/main.scss"
 
@@ -76,6 +77,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll />
           {children}
+          <CookieBanner />
         </NextIntlClientProvider>
         <Analytics />
       </body>

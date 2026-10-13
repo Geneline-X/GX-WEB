@@ -250,6 +250,19 @@
         "motion": {
             "pause": "Pausar animação",
             "play": "Reproduzir animação"
+        },
+        "cookies": {
+            "region": "Consentimento de cookies",
+            "text": "Usamos cookies para lembrar seu idioma e carregar nosso calendário de agendamento.",
+            "settings": "Configurações de cookies",
+            "reject": "Rejeitar todos",
+            "accept": "Aceitar todos",
+            "save": "Salvar preferências",
+            "essentialTitle": "Essenciais",
+            "essentialBody": "Lembram seu idioma. Sempre ativos.",
+            "calendarTitle": "Calendário de agendamento",
+            "calendarBody": "O Calendly, na nossa página de contato, usa os próprios cookies.",
+            "policy": "Política de privacidade"
         }
     },
     "Home": {
@@ -604,7 +617,10 @@
             ],
             "schedule": "Escolha um horário",
             "email": "Prefere e-mail?",
-            "calendar": "Calendário de agendamento"
+            "calendar": "Calendário de agendamento",
+            "blockedTitle": "O calendário de agendamento está desativado",
+            "blockedBody": "O Calendly usa os próprios cookies, então só carrega depois que você os permitir. Você também pode nos enviar um e-mail abaixo.",
+            "allow": "Permitir cookies e carregar o calendário"
         },
         "blog": {
             "eyebrow": "Pesquisa",

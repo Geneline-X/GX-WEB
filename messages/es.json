@@ -250,6 +250,19 @@
         "motion": {
             "pause": "Pausar animación",
             "play": "Reproducir animación"
+        },
+        "cookies": {
+            "region": "Consentimiento de cookies",
+            "text": "Usamos cookies para recordar tu idioma y cargar nuestro calendario de reservas.",
+            "settings": "Configuración de cookies",
+            "reject": "Rechazar todas",
+            "accept": "Aceptar todas",
+            "save": "Guardar preferencias",
+            "essentialTitle": "Esenciales",
+            "essentialBody": "Recuerdan tu idioma. Siempre activas.",
+            "calendarTitle": "Calendario de reservas",
+            "calendarBody": "Calendly, en nuestra página de contacto, usa sus propias cookies.",
+            "policy": "Política de privacidad"
         }
     },
     "Home": {
@@ -604,7 +617,10 @@
             ],
             "schedule": "Elige un horario",
             "email": "¿Prefieres el correo?",
-            "calendar": "Calendario de reservas"
+            "calendar": "Calendario de reservas",
+            "blockedTitle": "El calendario de reservas está desactivado",
+            "blockedBody": "Calendly usa sus propias cookies, así que solo se carga cuando las permites. También puedes escribirnos abajo.",
+            "allow": "Permitir cookies y cargar el calendario"
         },
         "blog": {
             "eyebrow": "Investigación",

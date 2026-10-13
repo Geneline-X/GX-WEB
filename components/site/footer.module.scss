@@ -30,18 +30,26 @@
   }
 }
 
-.prefs {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
 .tagline {
   max-width: 32ch;
   margin: 0;
   color: var(--fg-muted);
   font-size: var(--fs-small);
+}
+
+// A button styled like the footer links (reopens the cookie banner).
+.linkButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--fg-muted);
+  font-size: 15px;
+  text-align: left;
+  transition: color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--fg);
+  }
 }
 
 .col {

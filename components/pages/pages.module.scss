@@ -224,6 +224,34 @@
   }
 }
 
+// Shown instead of Calendly until third-party cookies are allowed.
+.calendarBlocked {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+
+  h3 {
+    margin: 0;
+    font-size: var(--fs-h4);
+    font-weight: 500;
+  }
+
+  p {
+    max-width: 48ch;
+    margin: 0 0 var(--space-2);
+    color: var(--fg-muted);
+  }
+}
+
+.blockedIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--fg-subtle);
+}
+
 .mail {
   margin-top: var(--space-5);
   color: var(--fg-muted);

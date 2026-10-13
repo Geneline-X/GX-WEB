@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing"
 import { EXTERNAL, PRODUCTS } from "@/lib/site"
 import { Logo } from "./logo"
 import { LocaleSelect } from "./locale-select"
-import { PauseToggle } from "@/components/motion/pause-toggle"
+import { CookieSettings } from "./cookie-settings"
 import styles from "./footer.module.scss"
 
 const SOCIAL = [
@@ -55,10 +55,7 @@ export function Footer() {
         <div className={styles.brand}>
           <Logo />
           <p className={styles.tagline}>{t("footer.tagline")}</p>
-          <div className={styles.prefs}>
-            <LocaleSelect placement="top" />
-            <PauseToggle />
-          </div>
+          <LocaleSelect placement="top" />
         </div>
 
         {columns.map((col) => (
@@ -80,6 +77,11 @@ export function Footer() {
                   </li>
                 )
               })}
+              {col.title === t("footer.legal") && (
+                <li>
+                  <CookieSettings className={styles.linkButton} />
+                </li>
+              )}
             </ul>
           </nav>
         ))}

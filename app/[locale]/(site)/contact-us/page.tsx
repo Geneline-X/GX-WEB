@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import { useTranslations } from "next-intl"
 import { Container } from "@/components/ds/primitives"
 import { rich } from "@/components/ds/rich"
 import { PageHero } from "@/components/pages/page-hero"
+import { CalendlyEmbed } from "@/components/pages/calendly-embed"
 import { CONTACT } from "@/lib/site"
 import styles from "@/components/pages/pages.module.scss"
 
@@ -35,10 +35,7 @@ export default function ContactPage() {
           <h2 id="schedule-title" className={`t-h3 ${styles.blockTitle}`}>
             {t("schedule")}
           </h2>
-          <div className={styles.calendar}>
-            <div className="calendly-inline-widget" data-url={CONTACT.calendly} title={t("calendar")} />
-          </div>
-          <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+          <CalendlyEmbed />
           <p className={styles.mail}>
             {t("email")} <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           </p>

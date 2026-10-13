@@ -281,6 +281,11 @@
   gap: 18px;
   padding: 16px 12px 22px;
 
+  // Phones: only Krio is available, so skip the options and keep the box short.
+  @include down("md") {
+    display: none;
+  }
+
   @include up("md") {
     border-right: 1px solid var(--line);
   }
@@ -365,6 +370,13 @@
   span:last-child {
     width: 85%;
     opacity: 0.6;
+  }
+
+  // Phones: two slots are enough.
+  @include down("md") {
+    &:nth-child(n + 3) {
+      display: none;
+    }
   }
 }
 

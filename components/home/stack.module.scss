@@ -54,6 +54,10 @@
 .plane {
   --i: 0;
   --size: min(78%, 420px);
+
+  @include down("md") {
+    --size: min(58%, 300px);
+  }
   --plane: var(--c-graphite);
   --plane-fg: var(--c-mist);
   --dot: rgba(255, 255, 255, 0.12);

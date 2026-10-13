@@ -76,6 +76,26 @@
     font-size: 13px;
   }
 
+  // Phones: tighter buttons so labels never crowd or wrap.
+  @include down("sm") {
+    --h: 40px;
+    --px: 14px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+
+    &[data-size="sm"] {
+      --h: 34px;
+      --px: 10px;
+      font-size: 10.5px;
+    }
+
+    &[data-size="lg"] {
+      --h: 46px;
+      --px: 18px;
+      font-size: 12px;
+    }
+  }
+
   &[data-variant="outline"] {
     --btn-bg: var(--fg);
     --btn-fg: var(--fg);

@@ -8,7 +8,7 @@ export function Announce() {
   return (
     <div className={styles.bar} data-theme="adire">
       <p className={styles.text}>
-        {t("text")}{" "}
+        <span className={styles.message}>{t("text")}</span>
         <a href={EXTERNAL.kaccp} target="_blank" rel="noreferrer" className={styles.link}>
           {t("cta")}
           <ArrowUpRight aria-hidden className={styles.icon} />

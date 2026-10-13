@@ -8,6 +8,8 @@
 
 .section {
   padding-block: clamp(4rem, 9vw, 8rem);
+  // The rotated planes can poke a pixel past narrow screens.
+  overflow-x: clip;
 }
 
 .head {

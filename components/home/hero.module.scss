@@ -1,0 +1,66 @@
+@use "abstracts" as *;
+
+.hero {
+  position: relative;
+  padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(4rem, 8vw, 7rem);
+  overflow: clip;
+
+  // Hidden until GSAP plays the entrance (see <noscript> in the root layout).
+  @include motion-ok {
+    [data-in] {
+      opacity: 0;
+    }
+  }
+}
+
+.copy {
+  @include container;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.75rem, 1.6rem + 4.8vw, 5.75rem);
+}
+
+.line {
+  padding-bottom: 0.06em;
+}
+
+.sub {
+  margin: var(--space-4) 0 0;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: var(--space-6);
+}
+
+.try {
+  width: 100%;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+// Woven tiles flank the copy, like a mosaic around a doorway.
+// Sized to the viewport, not the hero's content: the mosaic is laid out from
+// the canvas size, so content growth (e.g. the try box textarea) must not
+// resize it or every tile would be rebuilt and jump.
+.stage {
+  position: absolute;
+  inset: 0 0 auto;
+  height: max(760px, 100svh);
+  z-index: 0;
+  pointer-events: none;
+
+  @include down("lg") {
+    display: none;
+  }
+}
+

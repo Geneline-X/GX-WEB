@@ -1,0 +1,141 @@
+@use "abstracts" as *;
+
+.dialog {
+  width: min(560px, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  color: var(--fg);
+  // Don't inherit alignment from wherever the trigger sits (e.g. the centred hero).
+  text-align: left;
+  box-shadow: 0 30px 80px -20px rgba(14, 17, 22, 0.45);
+  overscroll-behavior: contain;
+
+  &::backdrop {
+    background: rgba(14, 17, 22, 0.45);
+    backdrop-filter: blur(4px);
+  }
+
+  @include motion-ok {
+    &[open] {
+      animation: rise var(--dur-slow) var(--ease-out);
+    }
+
+    &[open]::backdrop {
+      animation: fade var(--dur-base) var(--ease-out);
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.form {
+  position: relative;
+  display: grid;
+  justify-items: stretch;
+  gap: var(--space-4);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+
+  h2 {
+    margin: 0;
+    padding-right: 40px;
+    font-size: var(--fs-h3);
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  > p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--fg-muted);
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background: var(--bg-sunken);
+    color: var(--fg);
+  }
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+
+  span {
+    font-size: var(--fs-small);
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    color: var(--fg);
+    font: inherit;
+    font-size: 15px;
+    transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+
+    &::placeholder {
+      color: var(--fg-subtle);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: var(--space-2);
+}
+
+.note {
+  color: var(--fg-muted);
+  font-size: 13px;
+}

@@ -1,0 +1,94 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "tokens" as *;
+
+@mixin up($bp) {
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin down($bp) {
+  @media (max-width: (map.get($breakpoints, $bp) - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin motion-ok {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Visible, consistent keyboard focus everywhere.
+@mixin focus-ring($offset: 3px) {
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: $offset;
+  }
+}
+
+@mixin sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Fluid size between 360px and 1440px viewports.
+@function fluid($min, $max) {
+  $slope: math.div($max - $min, 67.5rem); // (1440-360)/16 = 67.5rem
+  $base: $min - $slope * 22.5rem;          // 360/16 = 22.5rem
+  @return clamp(#{$min}, #{$base} + #{$slope * 100vw}, #{$max});
+}
+
+@mixin type($step) {
+  $range: map.get($type-scale, $step);
+  font-size: fluid(list.nth($range, 1), list.nth($range, 2));
+}
+
+// Corner-cut shape. $corner: "br" | "tr" | "both".
+@mixin notch($size: map.get($notch, "md"), $corner: "br") {
+  @if $corner == "br" {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$size}), calc(100% - #{$size}) 100%, 0 100%);
+  } @else if $corner == "tr" {
+    clip-path: polygon(0 0, calc(100% - #{$size}) 0, 100% #{$size}, 100% 100%, 0 100%);
+  } @else {
+    clip-path: polygon(
+      0 0,
+      calc(100% - #{$size}) 0,
+      100% #{$size},
+      100% calc(100% - #{$size}),
+      calc(100% - #{$size}) 100%,
+      0 100%
+    );
+  }
+}
+
+// Strip-weave texture: horizontal dashes, the brand's scanline motif.
+// Dashes come from the background, rows from the mask.
+@mixin weave($color: var(--line-strong), $row: 6px, $thread: 2px, $dash: 14px, $gap: 4px) {
+  background-image: repeating-linear-gradient(90deg, $color 0 $dash, transparent $dash ($dash + $gap));
+  mask-image: repeating-linear-gradient(180deg, #000 0 $thread, transparent $thread $row);
+}
+
+@mixin container {
+  width: 100%;
+  max-width: calc(#{map.get($layout, "max")} + 2 * #{map.get($layout, "gutter")});
+  margin-inline: auto;
+  padding-inline: map.get($layout, "gutter");
+}

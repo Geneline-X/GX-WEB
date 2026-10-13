@@ -191,5 +191,476 @@
                 "desc": "Un conjunto de datos abierto que empodera a investigadores e innovadores tecnológicos de todo el mundo."
             }
         }
+    },
+    "Site": {
+        "skip": "Ir al contenido",
+        "announce": {
+            "text": "Ayuda a construir el corpus de voz en krio en KACCP.",
+            "cta": "Contribuir"
+        },
+        "nav": {
+            "products": "Productos",
+            "pipeline": "Pipeline",
+            "research": "Investigación",
+            "company": "Empresa",
+            "developers": "Desarrolladores",
+            "contact": "Contacto",
+            "console": "Abrir consola",
+            "menu": "Menú",
+            "close": "Cerrar menú",
+            "home": "Inicio de GenelineX",
+            "primary": "Principal",
+            "language": "Idioma"
+        },
+        "products": {
+            "kayx": {
+                "desc": "Voz a texto de krio a inglés"
+            },
+            "kaccp": {
+                "desc": "Corpus de audio abierto en krio"
+            },
+            "xplain": {
+                "desc": "Inteligencia de documentos y medios"
+            },
+            "genestudio": {
+                "desc": "Chatbots empresariales sin código"
+            },
+            "infra": {
+                "name": "Infraestructura",
+                "desc": "RAG, bases de datos vectoriales, agentes de IA"
+            }
+        },
+        "footer": {
+            "tagline": "Empresa de IA fundada en África que crea los datos, los modelos y las API para las lenguas africanas.",
+            "products": "Productos",
+            "company": "Empresa",
+            "resources": "Recursos",
+            "legal": "Legal",
+            "about": "Acerca de",
+            "events": "Eventos",
+            "contact": "Contacto",
+            "research": "Investigación",
+            "developers": "Desarrolladores",
+            "console": "Consola",
+            "privacy": "Política de privacidad",
+            "terms": "Términos del servicio",
+            "rights": "Todos los derechos reservados.",
+            "social": "GenelineX en redes sociales"
+        },
+        "cookies": {
+            "region": "Consentimiento de cookies",
+            "text": "Usamos cookies para recordar tu idioma y cargar nuestro calendario de reservas.",
+            "settings": "Configuración de cookies",
+            "reject": "Rechazar todas",
+            "accept": "Aceptar todas",
+            "save": "Guardar preferencias",
+            "essentialTitle": "Esenciales",
+            "essentialBody": "Recuerdan tu idioma. Siempre activas.",
+            "calendarTitle": "Calendario de reservas",
+            "calendarBody": "Calendly, en nuestra página de contacto, usa sus propias cookies.",
+            "policy": "Política de privacidad"
+        }
+    },
+    "Home": {
+        "hero": {
+            "title": "<serif>IA que habla</serif> África",
+            "subtitle": "IA de voz, empezando por el krio.",
+            "primary": "Prueba la API gratis"
+        },
+        "logos": {
+            "label": "Construido con"
+        },
+        "problem": {
+            "title": "<dim>La mayoría de las IA oyen cien idiomas.</dim> África habla dos mil.",
+            "p1": "Los modelos de voz y de lenguaje aprenden de lo que está escrito en internet, y la mayoría de las lenguas africanas casi no aparecen allí. Por eso los modelos entienden mal a quienes hablan krio, hausa o wolof, o no los entienden en absoluto.",
+            "p2": "GenelineX construye lo que falta: grabaciones de hablantes nativos, transcripciones revisadas por un segundo hablante y modelos entrenados y evaluados para cada idioma."
+        },
+        "pipeline": {
+            "eyebrow": "El pipeline",
+            "title": "<serif>De una nota de voz a</serif> un modelo listo para usar",
+            "steps": {
+                "collect": {
+                    "title": "Recopilar",
+                    "body": "Hablantes nativos graban notas de voz en KACCP, nuestra plataforma abierta.",
+                    "cta": "Contribuir en KACCP"
+                },
+                "curate": {
+                    "title": "Curar",
+                    "body": "Cada clip se transcribe y luego lo revisa un segundo hablante.",
+                    "cta": "Verlo en la consola"
+                },
+                "train": {
+                    "title": "Entrenar",
+                    "body": "Pequeños adaptadores ajustan cada idioma, actualizando menos del 2 % de los pesos.",
+                    "cta": "Leer la investigación"
+                },
+                "deploy": {
+                    "title": "Desplegar",
+                    "body": "Los modelos se sirven con la API de Kay-X y dentro de nuestros productos.",
+                    "cta": "Probar Kay-X"
+                }
+            },
+            "visual": {
+                "voiceNotes": "Notas de voz",
+                "review": "Revisión por un segundo hablante",
+                "english": "¿Cómo te llamas?",
+                "reviewOn": "Revisión: activada",
+                "shipsTo": "Se despliega en"
+            }
+        },
+        "stack": {
+            "eyebrow": "Productos",
+            "title": "Una sola plataforma, <serif>del corpus al producto</serif>",
+            "intro": "Cada capa funciona por sí sola, y cada una alimenta a la siguiente.",
+            "label": "Cuatro capas, un pipeline",
+            "layers": {
+                "apps": "Aplicaciones",
+                "models": "Modelos",
+                "data": "Datos",
+                "infra": "Infraestructura"
+            },
+            "visit": "Visitar {name}"
+        },
+        "research": {
+            "eyebrow": "Investigación",
+            "title": "<serif>Notas del</serif> laboratorio",
+            "read": "Leer en Medium",
+            "all": "Toda la investigación",
+            "paper": "Artículo {n}"
+        },
+        "cta": {
+            "title": "<serifi>Kushɛ.</serifi> Enseñemos tu idioma a la IA.",
+            "body": "Kushɛ significa hola en krio. Cuéntanos en qué idioma trabajas y qué quieres construir.",
+            "primary": "Habla con nosotros",
+            "secondary": "Contribuir a KACCP"
+        },
+        "try": {
+            "label": "Prueba la voz a texto de Kay-X",
+            "mode": "Entrada",
+            "speak": "Hablar",
+            "upload": "Subir",
+            "recording": "Escuchando…",
+            "ready": "Clip listo",
+            "record": "Empezar a grabar",
+            "stop": "Detener grabación",
+            "send": "Transcribir",
+            "clear": "Borrar clip",
+            "language": "Idioma",
+            "output": "Salida",
+            "outputs": {
+                "transcript": "Krio",
+                "english": "Inglés",
+                "both": "Ambos"
+            },
+            "api": "Documentación de la API",
+            "tabs": {
+                "label": "Resultado",
+                "transcript": "Transcripción",
+                "english": "Inglés"
+            },
+            "outputEmpty": "Tu transcripción aparecerá aquí.",
+            "notConnected": "Los resultados en vivo aún no están conectados aquí. Pruébalo en",
+            "placeholder": "Escribe en krio o pulsa el micrófono para hablar…",
+            "fieldLabel": "Texto en krio"
+        }
+    },
+    "Console": {
+        "shell": {
+            "workspace": "Espacio de trabajo",
+            "build": "Crear",
+            "overview": "Resumen",
+            "datasets": "Conjuntos de datos",
+            "runs": "Entrenamientos",
+            "playground": "Zona de pruebas",
+            "back": "Volver al sitio",
+            "dark": "Cambiar a tema oscuro",
+            "light": "Cambiar a tema claro",
+            "menu": "Abrir navegación",
+            "close": "Cerrar navegación",
+            "sample": "Sin datos conectados"
+        },
+        "empty": {
+            "title": "Aún no hay datos",
+            "needs": "Necesita: {what}"
+        },
+        "overview": {
+            "title": "Resumen",
+            "desc": "Tamaño del corpus, avance de la revisión y calidad de los modelos en todo el espacio de trabajo.",
+            "tiles": {
+                "hours": "Horas de corpus",
+                "clips": "Clips",
+                "reviewed": "Revisados",
+                "speakers": "Hablantes",
+                "bestWer": "Mejor WER"
+            },
+            "tileNeeds": "los totales del espacio de trabajo de la exportación de KACCP",
+            "hoursChart": "Horas de corpus por idioma",
+            "hoursNeeds": "las horas por idioma de la exportación de KACCP",
+            "werChart": "Tasa de error de palabras por entrenamiento",
+            "werNeeds": "el WER de cada entrenamiento terminado",
+            "recent": "Entrenamientos recientes",
+            "viewAll": "Ver todos los entrenamientos"
+        },
+        "datasets": {
+            "title": "Conjuntos de datos",
+            "desc": "El audio del corpus, por idioma.",
+            "cols": {
+                "language": "Idioma",
+                "clips": "Clips",
+                "hours": "Horas",
+                "reviewed": "Revisados",
+                "speakers": "Hablantes",
+                "updated": "Actualizado"
+            },
+            "needs": "una fila por idioma: clips, horas, % revisado, hablantes y fecha de la última exportación"
+        },
+        "runs": {
+            "title": "Entrenamientos",
+            "desc": "Entrenamientos y ajustes, del más reciente al más antiguo.",
+            "cols": {
+                "run": "Entrenamiento",
+                "model": "Modelo",
+                "language": "Idioma",
+                "status": "Estado",
+                "started": "Inicio",
+                "duration": "Duración"
+            },
+            "status": {
+                "queued": "En cola",
+                "running": "En curso",
+                "succeeded": "Completado",
+                "failed": "Fallido"
+            },
+            "needs": "ID, modelo, modelo base, idioma, estado, WER, hora de inicio y duración del registro de entrenamientos"
+        },
+        "chart": {
+            "table": "Mostrar tabla",
+            "chart": "Mostrar gráfico"
+        },
+        "playground": {
+            "title": "Zona de pruebas de voz a texto",
+            "desc": "Graba o sube un clip y transcríbelo con Kay-X.",
+            "language": "Idioma",
+            "input": "Entrada",
+            "output": "Transcripción",
+            "record": "Empezar a grabar",
+            "stop": "Detener grabación",
+            "upload": "Subir audio",
+            "transcribe": "Transcribir",
+            "clear": "Borrar",
+            "idle": "Graba desde tu micrófono o sube un archivo de audio.",
+            "recording": "Grabando",
+            "ready": "Clip listo",
+            "duration": "Duración",
+            "denied": "El acceso al micrófono está bloqueado. Permítelo en la configuración del sitio de tu navegador y vuelve a intentarlo.",
+            "unsupported": "Este navegador no puede grabar audio. Sube un archivo en su lugar.",
+            "badFile": "No se pudo leer ese archivo como audio. Prueba con un archivo WAV, MP3, M4A o WebM.",
+            "transcriptEmpty": "Las transcripciones aparecerán aquí cuando la API de Kay-X esté conectada.",
+            "apiNeeds": "el endpoint de la API de Kay-X, una clave de API y el formato de las solicitudes",
+            "level": "Nivel de entrada"
+        }
+    },
+    "Pages": {
+        "company": {
+            "eyebrow": "Empresa",
+            "title": "<serif>Fundada en</serif> Freetown, Sierra Leona",
+            "lead": "GenelineX es una empresa de IA fundada en África que crea los datos, los modelos y las API que permiten al software entender las lenguas africanas.",
+            "principles": {
+                "mission": {
+                    "title": "Misión",
+                    "body": "Construir infraestructura de IA que permita a empresas y desarrolladores africanos crear aplicaciones inteligentes de nivel mundial."
+                },
+                "vision": {
+                    "title": "Visión",
+                    "body": "Un mundo donde la IA sea accesible para todos, sin importar la geografía, y donde la innovación africana lidere el progreso global."
+                },
+                "approach": {
+                    "title": "Enfoque",
+                    "body": "Combinamos investigación en IA con un profundo conocimiento local para crear soluciones que funcionan en contextos africanos reales."
+                }
+            },
+            "timelineTitle": "<serif>Cómo</serif> llegamos aquí",
+            "timeline": [
+                {
+                    "year": "2023",
+                    "title": "Fundación en Freetown",
+                    "body": "GenelineX se creó en Sierra Leona para llevar tecnología de IA de nivel mundial a África."
+                },
+                {
+                    "year": "2023",
+                    "title": "Lanzamiento de Xplain AI",
+                    "body": "Lanzamos nuestra plataforma de inteligencia documental para procesar documentos a gran escala."
+                },
+                {
+                    "year": "2024",
+                    "title": "Desarrollo de Kay-X",
+                    "body": "Empezamos el reconocimiento de voz de krio a inglés, el primero de su tipo para las lenguas de Sierra Leona."
+                },
+                {
+                    "year": "2024",
+                    "title": "Lanzamiento de GeneStudio",
+                    "body": "Lanzamos nuestra plataforma de chatbots sin código, para usar IA sin un equipo de ingeniería."
+                },
+                {
+                    "year": "2025",
+                    "title": "API de infraestructura",
+                    "body": "Abrimos nuestra infraestructura de IA a desarrolladores con API y documentación."
+                }
+            ],
+            "numbersTitle": "En cifras",
+            "numbers": {
+                "products": "Productos",
+                "languages": "Idiomas disponibles",
+                "clients": "Organizaciones atendidas",
+                "team": "Miembros del equipo"
+            },
+            "numbersNeeds": "cifras confirmadas y actualizadas para cada una de estas"
+        },
+        "solutions": {
+            "eyebrow": "Soluciones",
+            "title": "<serif>Hecho para el trabajo</serif> que tus equipos ya hacen",
+            "lead": "Herramientas de documentos, voz y chat que entienden el contexto y los idiomas locales.",
+            "uses": "Usa",
+            "items": [
+                {
+                    "category": "Salud",
+                    "title": "Inteligencia de documentos médicos",
+                    "body": "Procesa historias clínicas, artículos de investigación y documentos clínicos con extracción y resúmenes por IA.",
+                    "product": "Xplain",
+                    "features": [
+                        "Análisis de historias clínicas",
+                        "Síntesis de investigación",
+                        "Documentación de cumplimiento"
+                    ]
+                },
+                {
+                    "category": "Educación",
+                    "title": "Asistentes de aprendizaje",
+                    "body": "Tutores y asistentes que entienden el contexto y los idiomas locales, incluido el krio.",
+                    "product": "GeneStudio + Kay-X",
+                    "features": [
+                        "Soporte multilingüe",
+                        "Respuestas alineadas con el plan de estudios",
+                        "Seguimiento del progreso"
+                    ]
+                },
+                {
+                    "category": "Gobierno",
+                    "title": "Automatización de servicios públicos",
+                    "body": "Servicios ciudadanos más rápidos con procesamiento de documentos y asistencia por voz en idiomas locales.",
+                    "product": "Plataforma completa",
+                    "features": [
+                        "Verificación de documentos",
+                        "Servicios por voz",
+                        "Atención ciudadana multilingüe"
+                    ]
+                },
+                {
+                    "category": "Empresa",
+                    "title": "Gestión del conocimiento",
+                    "body": "Convierte los documentos internos en una base de conocimiento consultable con respuestas aumentadas por recuperación.",
+                    "product": "Infraestructura",
+                    "features": [
+                        "Base de conocimiento interna",
+                        "Búsqueda semántica",
+                        "Agentes de IA a medida"
+                    ]
+                },
+                {
+                    "category": "Legal",
+                    "title": "Análisis de contratos",
+                    "body": "Revisa contratos, extrae cláusulas y señala riesgos con inteligencia documental.",
+                    "product": "Xplain",
+                    "features": [
+                        "Extracción de cláusulas",
+                        "Identificación de riesgos",
+                        "Controles de cumplimiento"
+                    ]
+                },
+                {
+                    "category": "Logística",
+                    "title": "Inteligencia operativa",
+                    "body": "Lee automáticamente documentos de envío, facturas y datos operativos.",
+                    "product": "Xplain + API",
+                    "features": [
+                        "Procesamiento de documentos",
+                        "Extracción de datos",
+                        "Automatización de flujos"
+                    ]
+                }
+            ],
+            "custom": "¿No ves tu sector? Creamos soluciones a medida.",
+            "customCta": "Habla con nosotros"
+        },
+        "contact": {
+            "eyebrow": "Contacto",
+            "title": "<serif>Hablemos de</serif> tu idioma",
+            "lead": "Reserva 30 minutos con el equipo. Trae un caso de uso, un conjunto de datos o simplemente una pregunta.",
+            "reasons": [
+                {
+                    "title": "Ver una demo",
+                    "body": "Un recorrido por Kay-X, Xplain o GeneStudio con tu propio material."
+                },
+                {
+                    "title": "Planificar un proyecto",
+                    "body": "Define el alcance de un proyecto de voz o lenguaje para tu organización."
+                },
+                {
+                    "title": "Colaborar en datos",
+                    "body": "Aporta grabaciones o construye con nosotros un corpus para un nuevo idioma."
+                }
+            ],
+            "schedule": "Elige un horario",
+            "email": "¿Prefieres el correo?",
+            "calendar": "Calendario de reservas",
+            "blockedTitle": "El calendario de reservas está desactivado",
+            "blockedBody": "Calendly usa sus propias cookies, así que solo se carga cuando las permites. También puedes escribirnos abajo.",
+            "allow": "Permitir cookies y cargar el calendario"
+        },
+        "blog": {
+            "eyebrow": "Investigación",
+            "title": "<serif>Notas del</serif> laboratorio",
+            "lead": "Artículos técnicos del equipo de GenelineX sobre voz, lenguaje e IA eficiente para lenguas con pocos recursos."
+        },
+        "events": {
+            "eyebrow": "Comunidad",
+            "title": "<serif>Talleres, hackatones</serif> y charlas",
+            "lead": "Dónde conocer al equipo y a la comunidad que construye IA para las lenguas africanas.",
+            "empty": "No hay eventos programados por ahora.",
+            "emptyBody": "Estamos planificando la próxima serie de talleres y hackatones.",
+            "notify": "Recibir aviso"
+        },
+        "developers": {
+            "eyebrow": "Desarrolladores",
+            "title": "<serif>La plataforma para desarrolladores</serif> llega pronto",
+            "lead": "API de voz, documentos y búsqueda para lenguas africanas, con documentación y claves de API. Las estamos preparando.",
+            "waitlist": {
+                "title": "Únete a la lista de espera para el acceso anticipado",
+                "body": "Déjanos tu correo y qué estás construyendo. Te escribiremos cuando abra la API.",
+                "email": "Correo de trabajo",
+                "emailHint": "tu@empresa.com",
+                "project": "¿Qué estás construyendo?",
+                "projectHint": "Opcional — p. ej., un asistente de voz en krio para una clínica…",
+                "submit": "Unirme a la lista",
+                "note": "Abre tu aplicación de correo con tus datos ya completados.",
+                "subject": "Lista de espera de la API para desarrolladores",
+                "cta": "Unirme a la lista",
+                "close": "Cerrar"
+            }
+        },
+        "legal": {
+            "eyebrow": "Legal",
+            "sections": "En esta página",
+            "version": "Versión 2.0",
+            "effective": "Vigente desde el {date}",
+            "privacy": {
+                "title": "Política de privacidad",
+                "lead": "Cómo GenelineX recopila, usa y protege la información cuando usas nuestros sitios, productos y servicios."
+            },
+            "terms": {
+                "title": "Términos del servicio",
+                "lead": "Lee estos términos con atención antes de usar nuestros servicios. Al usar GenelineX, los aceptas."
+            }
+        }
     }
 }

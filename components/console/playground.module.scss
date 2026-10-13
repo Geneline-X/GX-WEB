@@ -1,0 +1,157 @@
+@use "abstracts" as *;
+
+.grid {
+  display: grid;
+  gap: 10px;
+
+  @include up("xl") {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+}
+
+.body {
+  display: grid;
+  gap: var(--space-4);
+  padding: 16px;
+
+  > :global(button) {
+    justify-self: start;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  color: var(--fg-muted);
+}
+
+.select {
+  height: 40px;
+  min-width: 160px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 14.5px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btnIcon {
+  width: 15px;
+  height: 15px;
+  margin-right: -2px;
+}
+
+.stage {
+  position: relative;
+  height: 180px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg-sunken);
+  overflow: hidden;
+
+  &[data-state="recording"] {
+    border-color: color-mix(in srgb, var(--live) 60%, transparent);
+  }
+}
+
+.canvas {
+  position: absolute;
+  inset: 16px 16px 36px;
+  width: calc(100% - 32px);
+  height: calc(100% - 52px);
+}
+
+.hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 1rem;
+  color: var(--fg-muted);
+  font-size: 14px;
+  text-align: center;
+
+  .body > & {
+    position: static;
+    place-items: start;
+    padding: 0;
+  }
+}
+
+.meta {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--fg-muted);
+  font-size: 12px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.problem {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--danger);
+  background: color-mix(in srgb, var(--danger) 8%, transparent);
+  font-size: 14px;
+}
+
+.playback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.audio {
+  flex: 1;
+  min-width: 240px;
+  height: 40px;
+}
+
+.clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 13.5px;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &:hover {
+    color: var(--fg);
+  }
+}

@@ -1,0 +1,141 @@
+@use "abstracts" as *;
+
+.wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color var(--dur-fast) var(--ease-out);
+
+  &:hover,
+  &[aria-expanded="true"] {
+    color: var(--accent-text);
+  }
+}
+
+.globe {
+  width: 15px;
+  height: 15px;
+}
+
+.chev {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--dur-base) var(--ease-out);
+
+  [aria-expanded="true"] > & {
+    transform: rotate(180deg);
+  }
+}
+
+// Floating card, like a classic nav dropdown.
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  z-index: var(--z-overlay);
+  min-width: 180px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg-raised);
+  box-shadow:
+    0 2px 6px rgba(14, 17, 22, 0.06),
+    0 18px 40px -14px rgba(14, 17, 22, 0.28);
+  transform: translateX(-50%);
+
+  // Invisible bridge so the pointer can travel from trigger to card.
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    height: 10px;
+  }
+
+  [data-placement="top"] & {
+    top: auto;
+    bottom: calc(100% + 8px);
+
+    &::before {
+      top: auto;
+      bottom: -10px;
+    }
+  }
+
+  // In the mobile menu the list sits in the flow instead of floating.
+  [data-placement="inline"] & {
+    position: static;
+    margin-top: 6px;
+    transform: none;
+    box-shadow: none;
+  }
+
+  @include motion-ok {
+    &:not([hidden]) {
+      animation: pop var(--dur-base) var(--ease-out);
+    }
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    translate: 0 -4px;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--fg);
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--accent-soft);
+    color: var(--accent-text);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: -2px;
+  }
+
+  &[aria-current] {
+    color: var(--accent-text);
+  }
+}
+
+.check {
+  width: 15px;
+  height: 15px;
+}

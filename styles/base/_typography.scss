@@ -1,0 +1,95 @@
+@use "../abstracts" as *;
+
+// Headlines mix two voices: a light editorial serif (.serif) for the
+// framing words and the grotesk for the words that carry the claim.
+
+.t-display,
+.t-h1,
+.t-h2,
+.t-h3 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.t-display {
+  font-size: var(--fs-display);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.t-h1 {
+  font-size: var(--fs-h1);
+}
+
+.t-h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.04;
+}
+
+.t-h3 {
+  font-size: var(--fs-h3);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.t-h4 {
+  font-size: var(--fs-h4);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.serif {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.025em;
+}
+
+.serif-i {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.02em;
+}
+
+.dim {
+  color: var(--fg-subtle);
+}
+
+.t-lead {
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  color: var(--fg-muted);
+  letter-spacing: -0.005em;
+}
+
+.t-body {
+  font-size: var(--fs-body);
+  color: var(--fg-muted);
+}
+
+.t-small {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+
+// Utility voice: labels, metadata, data.
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-variation-settings: "wdth" 88;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.t-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-variation-settings: "wdth" 82;
+  letter-spacing: -0.01em;
+}

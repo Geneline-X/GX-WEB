@@ -1,97 +1,85 @@
-import type React from "react"
+import type { ReactNode } from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Geist_Mono } from "next/font/google"
+import { Newsreader, Schibsted_Grotesk, Martian_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { ThemeProvider } from "@/components/theme-provider"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import "../globals.css"
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages, getTranslations } from "next-intl/server"
+import { SmoothScroll } from "@/components/motion/smooth-scroll"
+import { CookieBanner } from "@/components/site/cookie-banner"
+import "../tailwind.css"
+import "@/styles/main.scss"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const display = Newsreader({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-newsreader",
 })
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
+const sans = Schibsted_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-schibsted",
+})
+
+const mono = Martian_Mono({
+  subsets: ["latin", "latin-ext"],
+  axes: ["wdth"],
+  variable: "--font-martian",
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://geneline-x.com"),
   title: {
-    default: "Geneline-X | AI Infrastructure for Africa",
-    template: "%s | Geneline-X",
+    default: "GenelineX | The AI pipeline for African languages",
+    template: "%s | GenelineX",
   },
   description:
-    "African-founded AI company building intelligent platforms, infrastructure, and language technologies. Powering the future of AI across the continent.",
-  keywords: [
-    "AI",
-    "artificial intelligence",
-    "Africa",
-    "machine learning",
-    "RAG",
-    "vector database",
-    "Krio",
-    "language technology",
-  ],
-  authors: [{ name: "Geneline-X" }],
-  creator: "Geneline-X",
+    "GenelineX records, transcribes and trains speech and language models for African languages, starting with Krio in Sierra Leone.",
+  keywords: ["AI", "Africa", "African languages", "speech-to-text", "Krio", "low-resource NLP", "Kay-X", "KACCP"],
+  authors: [{ name: "GenelineX" }],
   openGraph: {
     type: "website",
-    locale: "en_US",
-    siteName: "Geneline-X",
-    title: "Geneline-X | AI Infrastructure for Africa",
-    description:
-      "African-founded AI company building intelligent platforms, infrastructure, and language technologies.",
+    siteName: "GenelineX",
+    title: "GenelineX | The AI pipeline for African languages",
+    description: "Data, models and APIs for the languages most AI can’t hear.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Geneline-X | AI Infrastructure for Africa",
-    description:
-      "African-founded AI company building intelligent platforms, infrastructure, and language technologies.",
+    title: "GenelineX | The AI pipeline for African languages",
+    description: "Data, models and APIs for the languages most AI can’t hear.",
   },
-  icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
-  generator: 'v0.app'
+  icons: { icon: "/logo.png", shortcut: "/logo.png", apple: "/logo.png" },
 }
 
 export const viewport: Viewport = {
-  themeColor: "#1a1a2e",
+  themeColor: "#eff0ec",
   width: "device-width",
   initialScale: 1,
 }
 
 export default async function RootLayout({
   children,
-  params
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}>) {
-  const { locale } = await params;
-  const messages = await getMessages();
+  params,
+}: Readonly<{ children: ReactNode; params: Promise<{ locale: string }> }>) {
+  const { locale } = await params
+  const messages = await getMessages()
+  const t = await getTranslations("Site")
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
+    <html lang={locale} className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      <body>
+        <noscript>
+          <style>{`[data-in],[data-r]{opacity:1!important}`}</style>
+        </noscript>
+        <a href="#main" className="skip-link">
+          {t("skip")}
+        </a>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar />
-            <main className="min-h-screen">{children}</main>
-            <Footer />
-            <Analytics />
-          </ThemeProvider>
+          <SmoothScroll />
+          {children}
+          <CookieBanner />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   )

@@ -1,0 +1,238 @@
+@use "abstracts" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: color-mix(in srgb, var(--bg) 0%, transparent);
+  transition:
+    background-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+
+  &[data-scrolled],
+  &[data-open] {
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(14px);
+    box-shadow: 0 1px 0 var(--line);
+  }
+}
+
+.bar {
+  @include container;
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  height: var(--nav-h);
+}
+
+.home {
+  flex: none;
+  padding: 4px;
+  margin: -4px;
+}
+
+.links {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+
+  @include up("lg") {
+    display: flex;
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 15px;
+  font-weight: 450;
+  transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+
+  &:hover,
+  &[aria-expanded="true"],
+  &[aria-current="page"] {
+    color: var(--fg);
+    background: var(--accent-soft);
+  }
+}
+
+.chev {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--dur-base) var(--ease-out);
+
+  [aria-expanded="true"] > & {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -12px;
+  width: 560px;
+  padding: 10px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+
+  // Bridge the gap so the pointer can travel to the panel.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -12px 0 auto;
+    height: 12px;
+  }
+
+  @include motion-ok {
+    &:not([hidden]) {
+      animation: drop var(--dur-base) var(--ease-out);
+    }
+  }
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include down("sm") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    background: var(--accent-soft);
+
+    .productIcon {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.productName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.productIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--accent-text);
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.productDesc {
+  color: var(--fg-muted);
+  font-size: var(--fs-small);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+
+  @include up("lg") {
+    margin-left: 0;
+  }
+}
+
+.locale,
+.contact {
+  @include down("lg") {
+    display: none !important;
+  }
+}
+
+.menuBtn {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @include up("lg") {
+    display: none;
+  }
+}
+
+.mobile {
+  @include container;
+  display: grid;
+  gap: var(--space-5);
+  align-content: start;
+  height: calc(100dvh - var(--nav-h));
+  padding-block: var(--space-5) var(--space-7);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  &[hidden] {
+    display: none;
+  }
+
+  @include up("lg") {
+    display: none;
+  }
+}
+
+.mobileLinks {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+
+  a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: var(--fs-h4);
+    letter-spacing: -0.02em;
+  }
+}

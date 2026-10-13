@@ -1,0 +1,26 @@
+@use "abstracts" as *;
+
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &[data-failed] .canvas {
+    display: none;
+  }
+
+  // No WebGL2: the map falls back to a woven texture so the space isn't empty.
+  &[data-failed][data-shape="africa"] {
+    @include weave(var(--line-strong), 7px, 2px, 12px, 5px);
+    mask-image: radial-gradient(closest-side, #000 40%, transparent),
+      repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 7px);
+    mask-composite: intersect;
+  }
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

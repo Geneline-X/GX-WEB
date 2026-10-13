@@ -1,0 +1,181 @@
+@use "abstracts" as *;
+
+.section {
+  padding-block: clamp(4rem, 9vw, 8rem);
+}
+
+.head {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+}
+
+// Flush, edge-to-edge colour tiles.
+.list {
+  display: grid;
+  margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+  padding: 0;
+  list-style: none;
+  max-width: 1120px;
+
+  @include up("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &[data-bare] {
+    margin-top: 0;
+  }
+}
+
+.tile {
+  --tile: var(--c-saffron);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(380px, 38vw, 480px);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+  background: var(--tile);
+  color: var(--c-ink);
+  transition:
+    transform var(--dur-slow) var(--ease-out),
+    box-shadow var(--dur-slow) var(--ease-out);
+
+  &[data-tone="glow"] {
+    --tile: var(--c-signal-glow);
+  }
+
+  // Lift on hover, like a card pulled from the stack.
+  @include motion-ok {
+    &:hover,
+    &:has(.link:focus-visible) {
+      z-index: 1;
+      transform: translateY(-8px);
+      box-shadow: 0 28px 50px -24px rgba(14, 17, 22, 0.45);
+    }
+  }
+
+  &:hover .mark,
+  &:has(.link:focus-visible) .mark {
+    opacity: 0.4;
+  }
+
+  &:has(.link:focus-visible) {
+    outline: 3px solid var(--c-ink);
+    outline-offset: -3px;
+  }
+}
+
+// Oversized thread illustration as a faint background mark.
+// Sits across the open middle of the tile, clear of the summary text.
+.mark {
+  position: absolute;
+  top: 30%;
+  left: -12%;
+  width: 135%;
+  height: auto;
+  color: #fff;
+  opacity: 0.32;
+  pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-out);
+
+  rect,
+  circle {
+    fill: currentColor;
+  }
+
+  // Highlighted threads (synthesised stretch, adapter updates) read stronger.
+  rect {
+    opacity: 0.6;
+  }
+
+  rect[data-on] {
+    opacity: 1;
+  }
+
+  line {
+    stroke: currentColor;
+    stroke-dasharray: 3 5;
+  }
+}
+
+.meta {
+  position: relative;
+  margin: 0 0 var(--space-4);
+  opacity: 0.75;
+}
+
+// Static, so the title link's overlay is positioned against the tile.
+.postTitle {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+// The title link covers the whole tile.
+.link {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.foot {
+  position: relative;
+  margin-top: auto;
+  padding-top: var(--space-6);
+}
+
+.summary {
+  max-width: 40ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-4);
+  font-size: 12px;
+  font-weight: 500;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--dur-base) var(--ease-spring);
+  }
+
+  .tile:hover & svg {
+    transform: translateX(4px);
+  }
+}
+
+.all {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 5vw, 3rem);
+}

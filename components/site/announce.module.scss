@@ -1,0 +1,49 @@
+.bar {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+// Always one line: the sentence shortens with "…", the link never does.
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+  padding: 9px var(--gutter);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  white-space: nowrap;
+
+  @media (max-width: 640px) {
+    padding-block: 8px;
+    font-size: 12px;
+  }
+}
+
+.message {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line-strong);
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+}

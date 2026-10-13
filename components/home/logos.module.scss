@@ -1,0 +1,69 @@
+@use "abstracts" as *;
+
+.wrap {
+  @include container;
+  padding-block: var(--space-6) var(--space-8);
+}
+
+.frame {
+  display: flex;
+  align-items: stretch;
+
+  @include down("lg") {
+    flex-direction: column;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 18px 24px 18px 0;
+  color: var(--fg-muted);
+  white-space: nowrap;
+
+  @include up("lg") {
+    border-right: 1px solid var(--line);
+  }
+}
+
+.list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include up("lg") {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--fg-muted);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  height: 72px;
+  padding: 0 14px;
+
+  img {
+    height: 24px;
+    max-width: 100%;
+    width: auto;
+    filter: grayscale(1) contrast(1.1);
+    opacity: 0.62;
+    transition: opacity var(--dur-base) var(--ease-out), filter var(--dur-base) var(--ease-out);
+  }
+
+  &:hover img {
+    filter: none;
+    opacity: 1;
+  }
+}

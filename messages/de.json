@@ -277,9 +277,7 @@
         "problem": {
             "title": "<dim>Die meisten KIs verstehen hundert Sprachen.</dim> Afrika spricht zweitausend.",
             "p1": "Spracherkennungs- und Sprachmodelle lernen aus dem, was online geschrieben steht – und die meisten afrikanischen Sprachen kommen dort kaum vor. Deshalb verstehen die Modelle Krio-, Hausa- und Wolof-Sprecher falsch oder gar nicht.",
-            "p2": "GenelineX baut, was fehlt: Aufnahmen von Muttersprachlern, Transkripte, die eine zweite Person prüft, und Modelle, die für jede Sprache trainiert und gemessen werden.",
-            "legendHeard": "≈100 Sprachen, die die meisten Sprach-KIs verstehen",
-            "legendSpoken": "≈2.000 in Afrika gesprochene Sprachen"
+            "p2": "GenelineX baut, was fehlt: Aufnahmen von Muttersprachlern, Transkripte, die eine zweite Person prüft, und Modelle, die für jede Sprache trainiert und gemessen werden."
         },
         "pipeline": {
             "eyebrow": "Die Pipeline",

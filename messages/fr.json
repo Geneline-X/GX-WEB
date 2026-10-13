@@ -277,9 +277,7 @@
         "problem": {
             "title": "<dim>La plupart des IA entendent une centaine de langues.</dim> L’Afrique en parle deux mille.",
             "p1": "Les modèles de parole et de langage apprennent de ce qui est écrit en ligne, et la plupart des langues africaines y sont à peine présentes. Les modèles comprennent donc mal les locuteurs du krio, du haoussa ou du wolof, voire pas du tout.",
-            "p2": "GenelineX construit ce qui manque : des enregistrements de locuteurs natifs, des transcriptions vérifiées par un second locuteur, et des modèles entraînés et évalués pour chaque langue.",
-            "legendHeard": "≈100 langues que la plupart des IA vocales entendent",
-            "legendSpoken": "≈2 000 langues parlées en Afrique"
+            "p2": "GenelineX construit ce qui manque : des enregistrements de locuteurs natifs, des transcriptions vérifiées par un second locuteur, et des modèles entraînés et évalués pour chaque langue."
         },
         "pipeline": {
             "eyebrow": "Le pipeline",

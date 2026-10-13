@@ -277,9 +277,7 @@
         "problem": {
             "title": "<dim>La mayoría de las IA oyen cien idiomas.</dim> África habla dos mil.",
             "p1": "Los modelos de voz y de lenguaje aprenden de lo que está escrito en internet, y la mayoría de las lenguas africanas casi no aparecen allí. Por eso los modelos entienden mal a quienes hablan krio, hausa o wolof, o no los entienden en absoluto.",
-            "p2": "GenelineX construye lo que falta: grabaciones de hablantes nativos, transcripciones revisadas por un segundo hablante y modelos entrenados y evaluados para cada idioma.",
-            "legendHeard": "≈100 idiomas que oye la mayoría de la IA de voz",
-            "legendSpoken": "≈2.000 idiomas hablados en África"
+            "p2": "GenelineX construye lo que falta: grabaciones de hablantes nativos, transcripciones revisadas por un segundo hablante y modelos entrenados y evaluados para cada idioma."
         },
         "pipeline": {
             "eyebrow": "El pipeline",
